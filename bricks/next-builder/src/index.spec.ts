@@ -9,6 +9,8 @@ jest.spyOn(kit, "getRuntime").mockReturnValue({
   registerCustomProcessor: jest.fn(),
 } as any);
 
+// eslint-disable-next-line @typescript-eslint/no-empty-function
+jest.mock("@next-libs/editor-components", () => {});
 // Use `require` instead of `import` to avoid hoisting.
 require("./index");
 
