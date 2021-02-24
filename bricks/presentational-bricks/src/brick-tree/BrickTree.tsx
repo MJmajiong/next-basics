@@ -68,6 +68,7 @@ export interface BrickTreeProps {
   placeholder?: string;
   searchParent?: boolean;
   checkAllEnabled?: boolean;
+  onlyCountLeafNode?: boolean;
   onSelect?(
     selectedKeys: React.Key[],
     info: {
@@ -96,6 +97,7 @@ export function BrickTree(props: BrickTreeProps): React.ReactElement {
     searchParent = false,
     placeholder = "",
     checkAllEnabled,
+    onlyCountLeafNode = false,
   } = props;
   const [allChecked, setAllChecked] = useState(false);
   const [indeterminate, setIndeterminate] = useState(false);
@@ -109,6 +111,8 @@ export function BrickTree(props: BrickTreeProps): React.ReactElement {
   const nodeMatchedRef = useRef<boolean>(false);
 
   const treeData = useMemo(() => getTreeNodes(dataSource), [dataSource]);
+
+  const leafNode: Record<string, any> = {};
 
   useEffect(() => {
     setSelectedKeys(_selectedKeys);
@@ -176,7 +180,11 @@ export function BrickTree(props: BrickTreeProps): React.ReactElement {
     setAllChecked(checked);
     setIndeterminate(false);
     setCheckedKeys(checkedKeys);
-    props.onCheck?.(checkedKeys);
+    if (onlyCountLeafNode && Array.isArray(checkedKeys)) {
+      props.onCheck?.(checkedKeys.filter((node) => leafNode[node]));
+    } else {
+      props.onCheck?.(checkedKeys);
+    }
   };
 
   const onSelect = (
@@ -214,13 +222,28 @@ export function BrickTree(props: BrickTreeProps): React.ReactElement {
         setIndeterminate(allChecked ? false : true);
       }
     }
-
-    props.onCheck?.(checkedKeys);
+    if (onlyCountLeafNode && Array.isArray(checkedKeys)) {
+      props.onCheck?.(checkedKeys.filter((node) => leafNode[node]));
+    } else {
+      props.onCheck?.(checkedKeys);
+    }
   };
 
   const onExpand = (expandedKeys: React.Key[]) => {
     setExpandedKeys(expandedKeys);
   };
+
+  const getLeafNode = (treeNode: DataNode) => {
+    if (!treeNode.children || treeNode.children.length === 0) {
+      leafNode[treeNode.key] = 1;
+    } else {
+      treeNode.children.forEach((node) => getLeafNode(node));
+    }
+  };
+
+  if (configProps.checkable && checkAllEnabled && onlyCountLeafNode) {
+    treeData.forEach((node) => getLeafNode(node));
+  }
 
   return (
     <>
@@ -243,7 +266,13 @@ export function BrickTree(props: BrickTreeProps): React.ReactElement {
             全选
           </Checkbox>
           <span style={{ marginLeft: "auto" }}>
-            已选 {(Array.isArray(checkedKeys) && checkedKeys?.length) || 0} 项
+            已选{" "}
+            {(Array.isArray(checkedKeys) &&
+              (onlyCountLeafNode
+                ? checkedKeys.filter((node) => leafNode[node])?.length
+                : checkedKeys?.length)) ||
+              0}{" "}
+            项
           </span>
         </div>
       )}

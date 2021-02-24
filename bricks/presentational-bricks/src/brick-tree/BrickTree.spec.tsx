@@ -140,4 +140,41 @@ describe("BrickTree", () => {
     expect(checkAllCheckboxProps.checked).toBe(false);
     expect(checkAllCheckboxProps.indeterminate).toBe(false);
   });
+
+  it("should work when onlyCountLeafNode is true", async () => {
+    const onCheckFn = jest.fn();
+    const wrapper = shallow<BrickTreeProps>(
+      <BrickTree
+        onCheck={onCheckFn}
+        dataSource={dataSource}
+        onlyCountLeafNode
+        checkAllEnabled
+        configProps={{ checkable: true }}
+      />
+    );
+
+    const checkAllCheckbox = wrapper
+      .find(Checkbox)
+      .filter("[data-testid='check-all-checkbox']");
+    const tree = wrapper.find(Tree);
+
+    // 全选
+    checkAllCheckbox.invoke("onChange")({
+      target: { checked: true },
+    } as CheckboxChangeEvent);
+    await (global as any).flushPromises();
+    expect(onCheckFn).toHaveBeenCalledWith(["0100", "10"]);
+
+    // 取消全选
+    checkAllCheckbox.invoke("onChange")({
+      target: { checked: false },
+    } as CheckboxChangeEvent);
+    await (global as any).flushPromises();
+    expect(onCheckFn).toHaveBeenCalledWith([]);
+
+    // 树部分选择
+    tree.invoke("onCheck")(["0", "01", "010", "0100"], {} as any);
+    await (global as any).flushPromises();
+    expect(onCheckFn).toHaveBeenCalledWith(["0100"]);
+  });
 });

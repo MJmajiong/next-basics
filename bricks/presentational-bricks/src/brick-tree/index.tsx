@@ -131,6 +131,13 @@ export class BrickTreeElement extends UpdatingElement {
    * @description 全选功能，只有当 `configProps.checkable` 为 `true` 时生效
    */
   @property({ type: Boolean }) checkAllEnabled: boolean;
+  /**
+   * @kind boolean
+   * @required false
+   * @default false
+   * @description 是否只计数叶子节点，只有当 `configProps.checkable` 和 `checkAllEnabled` 为 `true` 时生效
+   */
+  @property({ type: Boolean }) onlyCountLeafNode: boolean;
 
   connectedCallback(): void {
     this.style.display = "flex";
@@ -177,6 +184,7 @@ export class BrickTreeElement extends UpdatingElement {
             placeholder={this.placeholder}
             searchParent={this.searchParent}
             checkAllEnabled={this.checkAllEnabled}
+            onlyCountLeafNode={this.onlyCountLeafNode}
             onSelect={this._handleSelect}
             onCheck={this._handleCheck}
           />
