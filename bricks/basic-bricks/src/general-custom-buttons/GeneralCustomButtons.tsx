@@ -166,14 +166,14 @@ export class GeneralCustomButtons extends React.Component<AdminButtonProps> {
                 }
                 placement={button.tooltipPlacement}
               >
-                <div className={style.dropdownBtnContainer}>{text}</div>
+                {text}
               </Tooltip>
             );
             return (
               <Menu.Item
                 className={classNames({
                   [style.disabledMenuItem]: button.disabled,
-                  [style.dropdownMenuItem]: !button.disabled,
+                  [style.dropdownBtn]: true,
                 })}
                 key={button.eventName}
                 style={{ color: button.disabled ? "" : button.color }}
