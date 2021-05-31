@@ -1,0 +1,12 @@
+.iconContainer {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  > span {
+    font-size: 50px;
+  }
+}

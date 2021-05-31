@@ -68,3 +68,4 @@ import "./brick-illustration";
 import "./dynamic-grid-container";
 import "./general-slider";
 import "./custom-processors/flattenTreeDataListAndCalcRowSpan";
+import "./icon-display";
