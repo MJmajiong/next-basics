@@ -92,3 +92,11 @@ export interface LibraryMenuItem {
     text: string;
   }[];
 }
+
+export interface BrickPreset {
+  type?: "brick";
+  title: string;
+  brick: string;
+  properties?: Record<string, unknown>;
+  preview: SvgrComponent;
+}

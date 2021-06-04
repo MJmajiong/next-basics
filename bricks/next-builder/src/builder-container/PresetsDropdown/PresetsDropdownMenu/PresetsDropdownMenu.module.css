@@ -1,0 +1,11 @@
+.presetsMenuWrapper {
+  padding: var(--card-content-gap);
+}
+
+.presetsMenu {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--card-content-gap);
+  width: 400px;
+  padding: var(--card-content-gap);
+}

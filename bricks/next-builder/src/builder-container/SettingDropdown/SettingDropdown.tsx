@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useMemo, useState } from "react";
 import { SettingOutlined } from "@ant-design/icons";
 import { Dropdown, Menu, Tooltip, Switch } from "antd";
 import { useTranslation } from "react-i18next";
@@ -17,8 +17,8 @@ export function SettingDropdown(): React.ReactElement {
   const { toolboxTab } = useBuilderUIContext();
   const { t } = useTranslation(NS_NEXT_BUILDER);
   const [visible, setVisible] = useState(false);
-  const storage = React.useMemo(() => new JsonStorage(localStorage), []);
-  const [showRelatedBricks, setShowRelatedBricks] = React.useState(
+  const storage = useMemo(() => new JsonStorage(localStorage), []);
+  const [showRelatedBricks, setShowRelatedBricks] = useState(
     storage.getItem(localStorageKeyForShowRelatedNodesBasedOnEvents) ?? false
   );
   const manager = useBuilderDataManager();
@@ -31,30 +31,36 @@ export function SettingDropdown(): React.ReactElement {
     setVisible(value);
   };
 
-  const handleShowRelatedBricksChange = (value: boolean): void => {
-    setShowRelatedBricks(value);
-    storage.setItem(localStorageKeyForShowRelatedNodesBasedOnEvents, value);
-    if (toolboxTab !== ToolboxTab.EVENTS_VIEW) {
-      manager.setShowRelatedNodesBasedOnEvents(value);
-    }
-  };
+  const handleShowRelatedBricksChange = useCallback(
+    (value: boolean): void => {
+      setShowRelatedBricks(value);
+      storage.setItem(localStorageKeyForShowRelatedNodesBasedOnEvents, value);
+      if (toolboxTab !== ToolboxTab.EVENTS_VIEW) {
+        manager.setShowRelatedNodesBasedOnEvents(value);
+      }
+    },
+    [manager, storage, toolboxTab]
+  );
 
-  const content = (
-    <Menu>
-      <div className={styles.settingContainer}>
-        <div className={styles.headerContainer}>
-          <span>{t(K.SETTINGS)}</span>
+  const content = useMemo(
+    () => (
+      <Menu>
+        <div className={styles.settingContainer}>
+          <div className={styles.headerContainer}>
+            <span>{t(K.SETTINGS)}</span>
+          </div>
+          <div className={styles.settingItem}>
+            <span>{t(K.SHOW_RELATED_NODES_BASED_ON_EVENTS_WHEN_HOVERING)}</span>
+            <Switch
+              size="small"
+              checked={showRelatedBricks}
+              onChange={handleShowRelatedBricksChange}
+            />
+          </div>
         </div>
-        <div className={styles.settingItem}>
-          <span>{t(K.SHOW_RELATED_NODES_BASED_ON_EVENTS_WHEN_HOVERING)}</span>
-          <Switch
-            size="small"
-            checked={showRelatedBricks}
-            onChange={handleShowRelatedBricksChange}
-          />
-        </div>
-      </div>
-    </Menu>
+      </Menu>
+    ),
+    [handleShowRelatedBricksChange, showRelatedBricks, t]
   );
 
   return (
@@ -63,7 +69,6 @@ export function SettingDropdown(): React.ReactElement {
       overlayClassName={shareStyles.customAnimation}
       trigger={["click"]}
       placement="bottomLeft"
-      visible={visible}
       onVisibleChange={handleVisibleChange}
     >
       <Tooltip

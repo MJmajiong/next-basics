@@ -10,7 +10,7 @@ export interface SearchComponentProps {
   inputStyle?: React.CSSProperties;
 }
 
-export function LeacySearchComponent(
+function LegacySearchComponent(
   { onSearch, placeholder, defaultValue, inputStyle }: SearchComponentProps,
   ref: React.Ref<any>
 ): React.ReactElement {
@@ -38,4 +38,4 @@ export function LeacySearchComponent(
   );
 }
 
-export const SearchComponent = forwardRef(LeacySearchComponent);
+export const SearchComponent = forwardRef(LegacySearchComponent);

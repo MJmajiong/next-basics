@@ -4,16 +4,17 @@ import React, {
   useState,
   useImperativeHandle,
 } from "react";
+import { useTranslation } from "react-i18next";
+import { Empty } from "antd";
+import { isEmpty, compact } from "lodash";
+import { useBuilderNode } from "@next-core/editor-bricks-helper";
 import { filterBricks } from "./filterBrick";
 import { BrickItem } from "../BrickLibrary/BrickItem";
 import { SearchComponent } from "../SearchComponent/SearchComponent";
-import { useTranslation } from "react-i18next";
 import { NS_NEXT_BUILDER, K } from "../../i18n/constants";
 import { useBuilderUIContext } from "../BuilderUIContext";
-import { useBuilderNode } from "@next-core/editor-bricks-helper";
-import { Empty } from "antd";
-import { isEmpty, compact } from "lodash";
 import { chartStory } from "../constants";
+
 import styles from "./AdvancedBrickLibrary.module.css";
 
 interface AdvancedBrickLibraryProps {
@@ -35,13 +36,11 @@ export function LegacyAdvancedBrickLibrary(
     setQ(value);
   };
 
-  const handleSearchWithGroup = (value: string, category: string) => {
-    searchRef.current?.handleSearch(value);
-    setCategory(category);
-  };
-
   useImperativeHandle(ref, () => ({
-    handleSearchWithGroup,
+    handleSearchWithGroup(value: string, category: string) {
+      searchRef.current?.handleSearch(value);
+      setCategory(category);
+    },
   }));
 
   const filteredBricks = React.useMemo(() => {
@@ -54,7 +53,7 @@ export function LegacyAdvancedBrickLibrary(
       appId,
       rootNode,
     });
-  }, [appId, brickList, q, category, storyList]);
+  }, [storyList, q, category, brickList, appId, rootNode]);
 
   return (
     <div>

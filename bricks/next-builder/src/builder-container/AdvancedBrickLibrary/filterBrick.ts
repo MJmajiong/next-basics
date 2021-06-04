@@ -1,16 +1,16 @@
-import {
-  brickSearchResultLimit,
-  LIB_ALL_CATEGORY,
-  frequentlyUsedBricks,
-} from "../constants";
 import i18next from "i18next";
-import { BrickOptionItem } from "../interfaces";
+import { isNil, uniqBy } from "lodash";
 import {
   Story,
   I18nString,
   BuilderRouteOrBrickNode,
 } from "@next-core/brick-types";
-import { isNil, uniqBy } from "lodash";
+import {
+  brickSearchResultLimit,
+  LIB_ALL_CATEGORY,
+  frequentlyUsedBricks,
+} from "../constants";
+import { BrickOptionItem } from "../interfaces";
 
 const lang = i18next.language
   ? (i18next.language.split("-")[0] as keyof I18nString)
@@ -32,8 +32,8 @@ export function filterBricks({
   limit?: number;
   appId: string;
   rootNode?: BuilderRouteOrBrickNode;
-}) {
-  const formatBirckList = processBricks(
+}): BrickOptionItem[] {
+  const formatBrickList = processBricks(
     rootNode?.type === "custom-template"
       ? brickList.filter((item) => item.name !== rootNode.templateId)
       : brickList,
@@ -44,11 +44,11 @@ export function filterBricks({
 
   const keywords = (q ?? "").toLowerCase().match(/\S+/g);
   if (!keywords) {
-    return formatBirckList.slice(0, limit);
+    return formatBrickList.slice(0, limit);
   }
 
   const bricks: BrickOptionItem[] = [];
-  for (const brick of formatBirckList) {
+  for (const brick of formatBrickList) {
     if (
       keywords.every(
         (keyword) =>
@@ -65,12 +65,12 @@ export function filterBricks({
   return bricks;
 }
 
-export function processBricks(
+function processBricks(
   brickList: BrickOptionItem[],
   storyList: Story[],
   appId: string,
   category: string = LIB_ALL_CATEGORY
-) {
+): BrickOptionItem[] {
   const sortedBricks =
     category === LIB_ALL_CATEGORY
       ? insertBricks(brickList, frequentlyUsedBricks)
@@ -80,7 +80,7 @@ export function processBricks(
     .map((item) => {
       const brick = {
         ...item,
-        shortName: getShortName(item, appId),
+        shortName: getShortName(item),
       };
       const find = storyList?.find((story) => story.storyId === item.name);
       if (find) {
@@ -104,7 +104,7 @@ export function processBricks(
     });
 }
 
-export function getShortName(brick: BrickOptionItem, appId: string): string {
+function getShortName(brick: BrickOptionItem): string {
   if (brick.type === "customTemplate" && !brick.name.includes(".")) {
     return brick.name;
   } else {
@@ -116,7 +116,7 @@ export function getShortName(brick: BrickOptionItem, appId: string): string {
 export function insertBricks(
   bricks: BrickOptionItem[],
   frequentlyUsedBricks: BrickOptionItem[]
-) {
+): BrickOptionItem[] {
   return uniqBy(
     frequentlyUsedBricks.concat(bricks),
     (item) => `${item.type}:${item.name}`

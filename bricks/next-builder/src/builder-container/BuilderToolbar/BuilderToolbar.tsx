@@ -8,7 +8,6 @@ import {
   BlockOutlined,
   FullscreenExitOutlined,
   FullscreenOutlined,
-  SettingOutlined,
   CloseOutlined,
 } from "@ant-design/icons";
 import {
@@ -16,13 +15,15 @@ import {
   BuilderCustomTemplateNode,
 } from "@next-core/brick-types";
 import { useBuilderNode } from "@next-core/editor-bricks-helper";
-import styles from "./BuilderToolbar.module.css";
 import { RootNodeSelect } from "../RootNodeSelect/RootNodeSelect";
 import { LibraryDropdown } from "../LibraryDropdown/LibraryDropdown";
 import { SettingDropdown } from "../SettingDropdown/SettingDropdown";
 import { useBuilderUIContext } from "../BuilderUIContext";
 import { BuilderDataType } from "../interfaces";
 import { NS_NEXT_BUILDER, K } from "../../i18n/constants";
+import { PresetsDropdown } from "../PresetsDropdown/PresetsDropdown";
+
+import styles from "./BuilderToolbar.module.css";
 import shareStyles from "../share.module.css";
 
 export function BuilderToolbar(): React.ReactElement {
@@ -41,19 +42,19 @@ export function BuilderToolbar(): React.ReactElement {
 
   const rootNode = useBuilderNode({ isRoot: true });
 
-  const handleRouteClick = () => {
+  const handleRouteClick = (): void => {
     onCurrentRouteClick?.(rootNode as BuilderRouteNode);
   };
 
-  const handleTemplateClick = () => {
+  const handleTemplateClick = (): void => {
     onCurrentTemplateClick?.(rootNode as BuilderCustomTemplateNode);
   };
 
-  const handlePreview = () => {
+  const handlePreview = (): void => {
     onPreview?.();
   };
 
-  const handleBuildAndPush = () => {
+  const handleBuildAndPush = (): void => {
     onBuildAndPush?.();
   };
 
@@ -61,7 +62,7 @@ export function BuilderToolbar(): React.ReactElement {
     setFullscreen((prev) => !prev);
   }, [setFullscreen]);
 
-  const handleClose = () => {
+  const handleClose = (): void => {
     onWorkbenchClose?.();
   };
 
@@ -94,6 +95,7 @@ export function BuilderToolbar(): React.ReactElement {
         <RootNodeSelect />
       </div>
       <div className={styles.toolbarRight}>
+        <PresetsDropdown />
         <LibraryDropdown />
         <Tooltip title={t(K.BUILD_AND_PUSH_TOOLTIP)} placement="bottomRight">
           <a

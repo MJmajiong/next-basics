@@ -32,7 +32,7 @@ export function LibraryDropdown(): React.ReactElement {
     }
   }, []);
 
-  const handleCategoryChange = (category: string) => {
+  const handleCategoryChange = (category: string): void => {
     libraryRef.current?.handleSearchWithGroup("", category);
   };
 
@@ -82,7 +82,7 @@ export function LibraryDropdown(): React.ReactElement {
           onClick={handleClick}
           type="primary"
           size="small"
-          style={{ marginRight: "10px" }}
+          style={{ marginLeft: "10px", marginRight: "10px" }}
           data-testid="trigger-btn"
         >
           <PlusOutlined />
