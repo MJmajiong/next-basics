@@ -1,5 +1,6 @@
 dist
 dist-editors
+dist-previews
 node_modules
 .coverage
 .vscode
