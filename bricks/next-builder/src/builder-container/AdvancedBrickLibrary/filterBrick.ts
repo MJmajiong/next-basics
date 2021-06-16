@@ -32,7 +32,7 @@ export function filterBricks({
   limit?: number;
   appId: string;
   rootNode?: BuilderRouteOrBrickNode;
-}) {
+}): BrickOptionItem[] {
   const formatBirckList = processBricks(
     rootNode?.type === "custom-template"
       ? brickList.filter((item) => item.name !== rootNode.templateId)
@@ -70,7 +70,7 @@ export function processBricks(
   storyList: Story[],
   appId: string,
   category: string = LIB_ALL_CATEGORY
-) {
+): BrickOptionItem[] {
   const sortedBricks =
     category === LIB_ALL_CATEGORY
       ? insertBricks(brickList, frequentlyUsedBricks)
@@ -104,7 +104,7 @@ export function processBricks(
     });
 }
 
-export function getShortName(brick: BrickOptionItem, appId: string): string {
+export function getShortName(brick: BrickOptionItem): string {
   if (brick.type === "customTemplate" && !brick.name.includes(".")) {
     return brick.name;
   } else {
@@ -116,7 +116,7 @@ export function getShortName(brick: BrickOptionItem, appId: string): string {
 export function insertBricks(
   bricks: BrickOptionItem[],
   frequentlyUsedBricks: BrickOptionItem[]
-) {
+): BrickOptionItem[] {
   return uniqBy(
     frequentlyUsedBricks.concat(bricks),
     (item) => `${item.type}:${item.name}`

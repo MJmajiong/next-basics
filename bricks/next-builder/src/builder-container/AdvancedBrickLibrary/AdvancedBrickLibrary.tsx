@@ -12,8 +12,7 @@ import { NS_NEXT_BUILDER, K } from "../../i18n/constants";
 import { useBuilderUIContext } from "../BuilderUIContext";
 import { useBuilderNode } from "@next-core/editor-bricks-helper";
 import { Empty } from "antd";
-import { isEmpty, compact } from "lodash";
-import { chartStory } from "../constants";
+import { isEmpty } from "lodash";
 import styles from "./AdvancedBrickLibrary.module.css";
 
 interface AdvancedBrickLibraryProps {
@@ -35,7 +34,7 @@ export function LegacyAdvancedBrickLibrary(
     setQ(value);
   };
 
-  const handleSearchWithGroup = (value: string, category: string) => {
+  const handleSearchWithGroup = (value: string, category: string): void => {
     searchRef.current?.handleSearch(value);
     setCategory(category);
   };
@@ -45,16 +44,15 @@ export function LegacyAdvancedBrickLibrary(
   }));
 
   const filteredBricks = React.useMemo(() => {
-    const mergedStroyList = compact(chartStory.concat(storyList));
     return filterBricks({
       q,
       category,
       brickList,
-      storyList: mergedStroyList,
+      storyList,
       appId,
       rootNode,
     });
-  }, [appId, brickList, q, category, storyList]);
+  }, [storyList, q, category, brickList, appId, rootNode]);
 
   return (
     <div>
