@@ -10,6 +10,7 @@ import { buildBricks } from "../shared/storyboard/buildStoryboard";
 export interface BrickLibraryItem {
   type: "brick" | "template" | "customTemplate" | "provider" | "snippet";
   name: string;
+  searchTextPool?: string[];
   isHostedSnippets?: boolean;
   bricks?: BrickConf[];
   category?: string;
@@ -85,11 +86,19 @@ export async function GetBrickLibrary({
       customTemplates.list.map<BrickLibraryItem>((item) => ({
         type: "customTemplate",
         name: item.templateId,
+        searchTextPool: [item.templateId.toLowerCase()],
         id: item.id,
       })),
       installedSnippets.list.map<BrickLibraryItem>((item) => ({
         type: "snippet",
         name: i18nText(item.text) || item.id,
+        searchTextPool: (item.text
+          ? (Object.values(item.text) as string[])
+          : []
+        )
+          .concat(item.id)
+          .map((text) => text.toLocaleLowerCase?.())
+          .filter(Boolean),
         category: item.category,
         thumbnail: item.thumbnail,
         bricks: item.bricks,
@@ -104,6 +113,13 @@ export async function GetBrickLibrary({
         .map<BrickLibraryItem>((item) => ({
           type: "snippet",
           name: i18nText(item.text) || item.snippetId,
+          searchTextPool: (item.text
+            ? (Object.values(item.text) as string[])
+            : []
+          )
+            .concat(item.snippetId)
+            .map((text) => text.toLocaleLowerCase?.())
+            .filter(Boolean),
           isHostedSnippets: true,
           category: item.category,
           thumbnail: item.thumbnail,
@@ -113,6 +129,7 @@ export async function GetBrickLibrary({
         pkg.templates.map((name) => ({
           type: "template",
           name,
+          searchTextPool: [name.toLowerCase()],
         }))
       )
     );

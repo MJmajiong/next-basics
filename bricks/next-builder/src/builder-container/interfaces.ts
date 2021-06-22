@@ -8,6 +8,7 @@ import { BuilderRuntimeNode } from "@next-core/editor-bricks-helper";
 export interface BrickOptionItem {
   type: "brick" | "template" | "customTemplate" | "provider" | "snippet";
   name: string;
+  searchTextPool?: string[];
   scopeName?: string;
   shortName?: string;
   category?: string;

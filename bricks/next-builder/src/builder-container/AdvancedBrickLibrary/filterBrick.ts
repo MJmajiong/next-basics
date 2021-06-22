@@ -42,10 +42,10 @@ export function filterBricks({
   const bricks: BrickOptionItem[] = [];
   for (const brick of formatBrickList) {
     if (
-      keywords.every(
-        (keyword) =>
-          brick.name.toLowerCase().includes(keyword) ||
-          brick.title?.toLowerCase()?.includes(keyword)
+      keywords.every((keyword) =>
+        (brick.searchTextPool ?? [brick.name.toLowerCase()]).some((text) =>
+          text.includes(keyword)
+        )
       )
     ) {
       bricks.push(brick);
@@ -82,6 +82,9 @@ export function processBricks(
           title: i18nText(find.text),
           description: i18nText(find.description),
           icon: find.icon,
+          searchTextPool: (brick.searchTextPool ?? []).concat(
+            find.text ? Object.values(find.text) : []
+          ),
         };
       }
 
