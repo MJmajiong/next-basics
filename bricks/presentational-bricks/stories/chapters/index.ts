@@ -58,6 +58,7 @@ import { StatisticCardStory } from "./statistic-card";
 import { TemplateBreadcrumbStory } from "./template-breadcrumb";
 import { BrickIllustrationStory } from "./brick-illustration";
 import { DynamicGridContainerStory } from "./dynamic-grid-container";
+import { DevopsCalendarStory } from "./devops-calendar";
 export const Chapters = [
   AgentStatusStory,
   BasicProgressStory,
@@ -96,6 +97,7 @@ export const Chapters = [
   CostTimeStory,
   CrontabDisplayStory,
   DatetimeSelectorStory,
+  DevopsCalendarStory,
   DropdownSelectStory,
   DynamicContentStory,
   EntryCardItemStory,

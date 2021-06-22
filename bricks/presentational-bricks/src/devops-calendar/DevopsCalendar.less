@@ -1,0 +1,319 @@
+@prefix-cls: devops-calendar;
+
+@background-color: #fff;
+@picker-arrow-size: 7px;
+@picker-hover-color: #1890ff;
+@picker-default-text-color: #000000d9;
+@picker-disabled-text-color: #00000040;
+
+.@{prefix-cls} {
+  display: inline-flex;
+
+  &-panel {
+    border: 1px solid #666;
+    background: @background-color;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  // ===================== Shared Panel =====================
+  &-decade-panel,
+  &-year-panel,
+  &-month-panel,
+  &-week-panel,
+  &-date-panel,
+  &-time-panel {
+    display: flex;
+    flex-direction: column;
+
+    .@{prefix-cls}-cell-in-view {
+      color: @picker-default-text-color;
+    }
+
+    table {
+      text-align: center;
+      border-collapse: collapse;
+    }
+  }
+
+  // Header
+  &-header {
+    display: flex;
+    padding: 0 8px;
+    color: @picker-default-text-color;
+    border-bottom: 1px solid #f0f0f0;
+    text-align: center;
+
+    button {
+      padding: 0;
+      color: @picker-disabled-text-color;
+      line-height: 40px;
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+      transition: color .3s;
+    }
+
+    >button {
+      min-width: 1.6em;
+      font-size: 14px;
+
+      &:hover {
+        color: @picker-default-text-color;
+      }
+    }
+
+    &-view {
+      flex: auto;
+      font-weight: 500;
+      line-height: 40px;
+
+      button {
+        color: inherit;
+        font-weight: inherit;
+
+        &:not(:first-child) {
+          margin-left: 8px;
+        }
+
+        &:hover {
+          color: @picker-hover-color;
+        }
+      }
+    }
+  }
+
+  // Arrow button
+  &-prev-icon,
+  &-next-icon,
+  &-super-prev-icon,
+  &-super-next-icon {
+    position: relative;
+    display: inline-block;
+    width: @picker-arrow-size;
+    height: @picker-arrow-size;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: inline-block;
+      width: @picker-arrow-size;
+      height: @picker-arrow-size;
+      border: 0 solid currentColor;
+      border-width: 1.5px 0 0 1.5px;
+      content: '';
+    }
+  }
+
+  &-super-prev-icon,
+  &-super-next-icon {
+    &::after {
+      position: absolute;
+      top: ceil((@picker-arrow-size / 2));
+      left: ceil((@picker-arrow-size / 2));
+      display: inline-block;
+      width: @picker-arrow-size;
+      height: @picker-arrow-size;
+      border: 0 solid currentColor;
+      border-width: 1.5px 0 0 1.5px;
+      content: '';
+    }
+  }
+
+  &-prev-icon,
+  &-super-prev-icon {
+    transform: rotate(-45deg);
+  }
+
+  &-next-icon,
+  &-super-next-icon {
+    transform: rotate(135deg);
+  }
+
+  // Content
+  &-body {
+    padding: 8px 12px;
+  }
+
+  &-content {
+    width: 100%;
+
+    th,
+    td {
+      position: relative;
+      min-width: 24px;
+      font-weight: 400;
+    }
+
+    thead th {
+      height: 30px;
+      color: @picker-default-text-color;
+    }
+
+    tbody td {
+      padding: 3px;
+      color: @picker-disabled-text-color;
+    }
+  }
+
+
+  // ================== Decade & Year & Month Panel ==================
+  &-decade-panel,
+  &-year-panel,
+  &-month-panel {
+    .@{prefix-cls}-cell {
+      padding: 0;
+
+      .@{prefix-cls}-cell-inner {
+        height: 30px;
+        line-height: 30px;
+        cursor: pointer;
+
+        &:hover {
+          color: @picker-hover-color;
+        }
+      }
+    }
+
+    .@{prefix-cls}-cell-in-view .@{prefix-cls}-cell-inner {}
+
+  }
+
+  // ================== Date Panel ==================
+  &-date-panel {
+
+    .@{prefix-cls}-cell {
+      &:not(.@{prefix-cls}-cell-in-view) {
+        // visibility: hidden;
+        pointer-events: none;
+      }
+
+      &:hover {
+        cursor: pointer;
+
+        .dateContainer {
+          border-color: #666;
+        }
+      }
+
+      .dateContainer {
+        &.today {
+          border-color: purple;
+        }
+
+        &.devOpsTaskType {
+          border-color: inherit;
+
+          .dateNumber {
+            color: #fff;
+          }
+
+          .dateText {
+            color: #000000cc;
+          }
+        }
+
+        height: 50px;
+        border-radius: 10%;
+        border: 1px solid #ccc;
+        position: relative;
+
+        .offDuty {
+          position: absolute;
+          left: 2px;
+          top: -1px;
+          font-size: 12px;
+          color: var(--theme-red-color);
+        }
+
+        .devOps {
+          position: absolute;
+          left: 3px;
+          bottom: 3px;
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+        }
+
+        .dateMain {
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          align-items: center;
+
+          .dateText {
+            font-size: 12px;
+            color: #666;
+          }
+        }
+      }
+    }
+  }
+
+  // Footer
+  &-footer {
+    .dateFooter {
+      padding: 10px 15px;
+
+      .dateInfo {
+        height: 30px;
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .typeItem {
+          color: #fff;
+          margin-right: 8px;
+          padding: 3px 4px;
+          border-radius: 10%;
+        }
+      }
+
+      .taskInfo {
+        .taskTitle {
+          text-align: center;
+          padding: 10px 0;
+        }
+
+        .taskList {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+
+          .taskItem {
+            position: relative;
+            display: flex;
+            align-items: center;
+            height: 26px;
+            line-height: 22px;
+
+            .taskItemColor {
+              position: absolute;
+              left: 0;
+              top: 0;
+              width: 5px;
+              height: 100%;
+            }
+
+            .taskItemTime {
+              background: #eee;
+              padding: 0 4px;
+              margin-left: 8px;
+            }
+
+            .taskItemText {
+              margin-left: 8px;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+            }
+          }
+        }
+      }
+    }
+  }
+}
