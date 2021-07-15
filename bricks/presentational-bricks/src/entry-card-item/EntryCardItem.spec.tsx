@@ -4,6 +4,7 @@ import { EntryCardItem } from "./EntryCardItem";
 
 describe("EntryCardItem", () => {
   it("should work", () => {
+    const handleClick = jest.fn();
     const wrapper = shallow(
       <EntryCardItem
         cardTitle="卡片标题"
@@ -16,6 +17,7 @@ describe("EntryCardItem", () => {
           icon: "host",
         }}
         url="/123"
+        handleClick={handleClick}
       />
     );
     expect(wrapper.find("Link").length).toBe(1);
@@ -26,5 +28,7 @@ describe("EntryCardItem", () => {
     });
     wrapper.update();
     expect(wrapper.find("Card").length).toBe(1);
+    wrapper.find("Card").invoke("onClick");
+    expect(handleClick).toBeTruthy();
   });
 });

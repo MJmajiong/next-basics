@@ -26,6 +26,7 @@ interface EntryCardItemProps {
   description?: string;
   cardStyle?: React.CSSProperties;
   hoverHighLight?: boolean;
+  handleClick?: () => void;
 }
 
 export function EntryCardItem(props: EntryCardItemProps): React.ReactElement {
@@ -45,7 +46,7 @@ export function EntryCardItem(props: EntryCardItemProps): React.ReactElement {
         styles.cardAvatar,
         props.iconColor && styles[props.iconColor]
       )}
-    ></Avatar>
+    />
   );
 
   const contentNode = (
@@ -68,6 +69,7 @@ export function EntryCardItem(props: EntryCardItemProps): React.ReactElement {
       className={styles.cardItem}
       bodyStyle={{ padding: 0 }}
       style={{ width: 126, ...cardStyle }}
+      onClick={props.handleClick}
     >
       {contentNode}
     </Card>

@@ -1,6 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrickWrapper, UpdatingElement, property } from "@next-core/brick-kit";
+import {
+  BrickWrapper,
+  UpdatingElement,
+  property,
+  event,
+  EventEmitter,
+} from "@next-core/brick-kit";
 import { EntryCardItem, Color } from "./EntryCardItem";
 import { MenuIcon } from "@next-core/brick-types";
 import { get, pick, forEach, set } from "lodash";
@@ -138,6 +144,14 @@ export class EntryCardItemElement extends UpdatingElement {
     attribute: false,
   })
   cardStyle: React.CSSProperties;
+  /**
+   * @detail `dataSource`为输出的数据，
+   * @description 点击卡片时候触发
+   */
+  @event({ type: "entry-card-item.click" }) changEvent: EventEmitter;
+  private _handleClick = (): void => {
+    this.changEvent.emit(this.dataSource);
+  };
 
   connectedCallback(): void {
     // istanbul ignore else
@@ -179,6 +193,7 @@ export class EntryCardItemElement extends UpdatingElement {
             description={this.description}
             cardStyle={this.cardStyle}
             hoverHighLight={this.hoverHighLight}
+            handleClick={this._handleClick}
           />
         </BrickWrapper>,
         this
