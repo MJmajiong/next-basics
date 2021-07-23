@@ -12772,10 +12772,10 @@ react-ace@^7.0.5:
     lodash.isequal "^4.5.0"
     prop-types "^15.7.2"
 
-react-avatar-editor@^11.1.0:
-  version "11.1.0"
-  resolved "https://registry.npmjs.org/react-avatar-editor/-/react-avatar-editor-11.1.0.tgz#0eaec7970b1fbbd90d42a1955be440ea27f598ea"
-  integrity sha1-Dq7Hlwsfu9kNQqGVW+RA6if1mOo=
+react-avatar-editor@^12.0.0:
+  version "12.0.0"
+  resolved "https://registry.npmjs.org/react-avatar-editor/-/react-avatar-editor-12.0.0.tgz#e6d2cbad3a82a468c60bd43a7d78eb889bcd7007"
+  integrity sha512-l7NrN8CXlUXbMhnbkuduAtR3+AlDz+DzYWlYBNr7q+rNeJMZlv26ap3Dk/D1WK/MPlnoS33iITlhLkuDsYQpug==
   dependencies:
     "@babel/plugin-transform-runtime" "^7.12.1"
     "@babel/runtime" "^7.12.5"
