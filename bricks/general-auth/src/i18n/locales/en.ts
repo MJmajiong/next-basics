@@ -19,6 +19,13 @@ const locale: Locale = {
   [K.PLEASE_COMPLETE_THE_SECURITY_VERIFICATION]:
     "Please complete the security verification",
   [K.DYNAMIC_CODE_VALIDATION_FAILED]: "Dynamic code validation failed",
+  [K.CLICK_TO_GET_SECURITY_CODE]: "Click to get security code",
+  [K.SECURITY_CODE]: "Security code",
+  [K.PLEASE_INPUT_USERNAME_PHRASE]: "Please input username and security code",
+  [K.PLEASE_INPUT_USERNAME_PASSWORD_PHRASE]:
+    "Please input username、password、security code",
+  [K.PLEASE_INPUT_PHRASE]: "Please input security code",
+  [K.PLEASE_INPUT_PASSWORD_PHRASE]: "Please input password and security code",
 };
 
 export default locale;

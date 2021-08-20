@@ -28,7 +28,8 @@ import styles from "./GeneralLogin.module.css";
 import loginPng from "../images/login.png";
 import { Link } from "@next-libs/basic-components";
 import { MFALogin } from "./MFALogin";
-
+import { AuthApi_getCaptcha } from "@next-sdk/api-gateway-sdk";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export interface LoginEvent {
   redirect: Location;
 }
@@ -58,6 +59,9 @@ interface GeneralLoginState {
   };
   MFALogin?: boolean;
   mfaInfo?: MFAInfoProps;
+  yzm?: any;
+  yzm_value?: any;
+  security_codeEnabled?: any;
 }
 
 export const getLoginByMethod = (): string => {
@@ -83,7 +87,25 @@ export class LegacyGeneralLogin extends React.Component<
     const featureFlags = getRuntime().getFeatureFlags();
     const esbLoginEnabled = featureFlags["esb-login"];
     const MFALoginEnabled = featureFlags["factors"];
+
     form.validateFields(async (err, values) => {
+      if (err !== undefined) {
+        if (
+          this.state.security_codeEnabled &&
+          (this.state.loginErrorMsg === t(K.PLEASE_INPUT_PASSWORD_PHRASE) ||
+            this.state.loginErrorMsg === t(K.PLEASE_INPUT_USERNAME_PHRASE) ||
+            this.state.loginErrorMsg === t(K.PLEASE_INPUT_PHRASE) ||
+            this.state.loginErrorMsg ===
+              t(K.PLEASE_INPUT_USERNAME_PASSWORD_PHRASE))
+        ) {
+          const localerr_to_reset_img = await AuthApi_getCaptcha();
+          const localerr_to_reset_img_reader = new FileReader();
+          localerr_to_reset_img_reader.readAsText(localerr_to_reset_img);
+          localerr_to_reset_img_reader.onload = (e) => {
+            this.setState({ yzm: e.target.result });
+          };
+        }
+      }
       if (!err) {
         try {
           this.setState({
@@ -95,8 +117,10 @@ export class LegacyGeneralLogin extends React.Component<
             params = { service: this.state.service };
           }
           const loginMethod = esbLoginEnabled ? esbLogin : AuthApi_loginV2;
-          const req = (values as unknown) as AuthApi_LoginV2RequestBody;
+          const req = values as unknown as AuthApi_LoginV2RequestBody;
           req.loginBy = getLoginByMethod();
+          // console.log(req);
+          const req1 = { username: req.username, password: req.password };
           const result = await loginMethod(req, {
             params,
             interceptorParams: {
@@ -110,6 +134,7 @@ export class LegacyGeneralLogin extends React.Component<
             const { isSet } = await MfaApi_verifyUserIsSetRule({
               username: result.username,
               org: result.org,
+              loginBy: getLoginByMethod(),
             });
             if (!result.loggedIn && isSet) {
               const mfaResult = await MfaApi_generateRandomTotpSecret({
@@ -151,6 +176,15 @@ export class LegacyGeneralLogin extends React.Component<
             loggingIn: false,
             loginErrorMsg: httpErrorToString(e),
           });
+          if (this.state.security_codeEnabled) {
+            const resetyzm = await AuthApi_getCaptcha();
+            const resetyzm_reader = new FileReader();
+            resetyzm_reader.readAsText(resetyzm);
+            resetyzm_reader.onload = (e) => {
+              //console.log(e.target.result);
+              this.setState({ yzm: e.target.result });
+            };
+          }
         }
       }
     });
@@ -188,7 +222,14 @@ export class LegacyGeneralLogin extends React.Component<
       MFALogin: false,
     });
   };
-
+  handleGetSecurityCodeAgain = async (): Promise<void> => {
+    const current_img = await AuthApi_getCaptcha();
+    const current_img_reader = new FileReader();
+    current_img_reader.readAsText(current_img);
+    current_img_reader.onload = (e) => {
+      this.setState({ yzm: e.target.result });
+    };
+  };
   constructor(props: GeneralLoginProps) {
     super(props);
     const history = getHistory();
@@ -199,6 +240,9 @@ export class LegacyGeneralLogin extends React.Component<
       service,
       imageHeight: window.innerHeight,
       loginErrorMsg: "",
+      yzm: "",
+      yzm_value: "",
+      security_codeEnabled: getRuntime().getFeatureFlags()["security-code"],
     };
     const featureFlags = getRuntime().getFeatureFlags();
     const misc = getRuntime().getMiscSettings();
@@ -221,7 +265,16 @@ export class LegacyGeneralLogin extends React.Component<
       leading: false,
     });
   }
+
   async componentDidMount() {
+    if (this.state.security_codeEnabled) {
+      const start_img = await AuthApi_getCaptcha();
+      const start_img_reader = new FileReader();
+      start_img_reader.readAsText(start_img);
+      start_img_reader.onload = (e) => {
+        this.setState({ yzm: e.target.result });
+      };
+    }
     window.addEventListener("resize", this.onWindowResized);
     if (this.state.wxQRCodeLogin) {
       try {
@@ -239,7 +292,8 @@ export class LegacyGeneralLogin extends React.Component<
       }
     }
   }
-  componentWillUnmount() {
+
+  async componentWillUnmount() {
     window.removeEventListener("resize", this.onWindowResized);
   }
   onWindowResized = () => {
@@ -252,15 +306,25 @@ export class LegacyGeneralLogin extends React.Component<
 
   render(): React.ReactNode {
     const { t, form } = this.props;
-    const { getFieldDecorator, getFieldsValue, isFieldTouched } = form;
+    const {
+      getFieldDecorator,
+      getFieldsValue,
+      isFieldTouched,
+      setFieldsValue,
+    } = form;
 
     const runtime = getRuntime();
     const enabledFeatures = runtime.getFeatureFlags();
     const brand = runtime.getBrandSettings();
     // eslint-disable-next-line @typescript-eslint/no-this-alias
     const self = this;
-    const notSetField = (fieldValue: string, fieldName: string): boolean =>
-      !fieldValue.length && isFieldTouched(fieldName);
+    const notSetField = (fieldValue: string, fieldName: string): boolean => {
+      if (fieldValue !== undefined) {
+        return !fieldValue.length && isFieldTouched(fieldName);
+      } else {
+        return false;
+      }
+    };
 
     const renderLoginForm = () => {
       return (
@@ -275,11 +339,30 @@ export class LegacyGeneralLogin extends React.Component<
               rules: [
                 {
                   validator(rule, value) {
-                    const { username, password } = getFieldsValue();
+                    const { username, password, phrase } = getFieldsValue();
                     if (!username.length) {
-                      if (notSetField(password, "password")) {
+                      if (
+                        notSetField(password, "password") &&
+                        notSetField(phrase, "phrase")
+                      ) {
+                        self.setState({
+                          loginErrorMsg: t(
+                            K.PLEASE_INPUT_USERNAME_PASSWORD_PHRASE
+                          ),
+                        });
+                      } else if (
+                        notSetField(password, "password") &&
+                        !notSetField(phrase, "phrase")
+                      ) {
                         self.setState({
                           loginErrorMsg: t(K.PLEASE_INPUT_USERNAME_PASSWORD),
+                        });
+                      } else if (
+                        !notSetField(password, "password") &&
+                        notSetField(phrase, "phrase")
+                      ) {
+                        self.setState({
+                          loginErrorMsg: t(K.PLEASE_INPUT_USERNAME_PHRASE),
                         });
                       } else {
                         self.setState({
@@ -288,9 +371,26 @@ export class LegacyGeneralLogin extends React.Component<
                       }
                       return Promise.reject("");
                     } else {
-                      if (notSetField(password, "password")) {
+                      if (
+                        notSetField(password, "password") &&
+                        notSetField(phrase, "phrase")
+                      ) {
+                        self.setState({
+                          loginErrorMsg: t(K.PLEASE_INPUT_PASSWORD_PHRASE),
+                        });
+                      } else if (
+                        notSetField(password, "password") &&
+                        !notSetField(phrase, "phrase")
+                      ) {
                         self.setState({
                           loginErrorMsg: t(K.PLEASE_INPUT_PASSWORD),
+                        });
+                      } else if (
+                        !notSetField(password, "password") &&
+                        notSetField(phrase, "phrase")
+                      ) {
+                        self.setState({
+                          loginErrorMsg: t(K.PLEASE_INPUT_PHRASE),
                         });
                       } else {
                         self.setState({
@@ -314,11 +414,30 @@ export class LegacyGeneralLogin extends React.Component<
               rules: [
                 {
                   validator(rule, value) {
-                    const { username, password } = getFieldsValue();
+                    const { username, password, phrase } = getFieldsValue();
                     if (!password.length) {
-                      if (notSetField(username, "username")) {
+                      if (
+                        notSetField(username, "username") &&
+                        notSetField(phrase, "phrase")
+                      ) {
+                        self.setState({
+                          loginErrorMsg: t(
+                            K.PLEASE_INPUT_USERNAME_PASSWORD_PHRASE
+                          ),
+                        });
+                      } else if (
+                        notSetField(username, "username") &&
+                        !notSetField(phrase, "phrase")
+                      ) {
                         self.setState({
                           loginErrorMsg: t(K.PLEASE_INPUT_USERNAME_PASSWORD),
+                        });
+                      } else if (
+                        !notSetField(username, "username") &&
+                        notSetField(phrase, "phrase")
+                      ) {
+                        self.setState({
+                          loginErrorMsg: t(K.PLEASE_INPUT_PASSWORD_PHRASE),
                         });
                       } else {
                         self.setState({
@@ -327,9 +446,26 @@ export class LegacyGeneralLogin extends React.Component<
                       }
                       return Promise.reject("");
                     } else {
-                      if (notSetField(username, "username")) {
+                      if (
+                        notSetField(username, "username") &&
+                        notSetField(phrase, "phrase")
+                      ) {
+                        self.setState({
+                          loginErrorMsg: t(K.PLEASE_INPUT_USERNAME_PHRASE),
+                        });
+                      } else if (
+                        notSetField(username, "username") &&
+                        !notSetField(phrase, "phrase")
+                      ) {
                         self.setState({
                           loginErrorMsg: t(K.PLEASE_INPUT_USERNAME),
+                        });
+                      } else if (
+                        !notSetField(username, "username") &&
+                        notSetField(phrase, "phrase")
+                      ) {
+                        self.setState({
+                          loginErrorMsg: t(K.PLEASE_INPUT_PHRASE),
                         });
                       } else {
                         self.setState({
@@ -349,12 +485,114 @@ export class LegacyGeneralLogin extends React.Component<
               />
             )}
           </Form.Item>
+          {this.state.security_codeEnabled && (
+            <Form.Item style={{ bottom: "61px", marginBottom: "24px" }}>
+              {getFieldDecorator("phrase", {
+                rules: [
+                  {
+                    validator(rule, value) {
+                      const { username, password, phrase } = getFieldsValue();
+                      if (!phrase.length) {
+                        if (
+                          notSetField(username, "username") &&
+                          notSetField(password, "password")
+                        ) {
+                          self.setState({
+                            loginErrorMsg: t(
+                              K.PLEASE_INPUT_USERNAME_PASSWORD_PHRASE
+                            ),
+                          });
+                        } else if (
+                          notSetField(username, "username") &&
+                          !notSetField(password, "password")
+                        ) {
+                          self.setState({
+                            loginErrorMsg: t(K.PLEASE_INPUT_USERNAME_PHRASE),
+                          });
+                        } else if (
+                          !notSetField(username, "username") &&
+                          notSetField(password, "password")
+                        ) {
+                          self.setState({
+                            loginErrorMsg: t(K.PLEASE_INPUT_PASSWORD_PHRASE),
+                          });
+                        } else {
+                          self.setState({
+                            loginErrorMsg: t(K.PLEASE_INPUT_PHRASE),
+                          });
+                        }
+                        return Promise.reject("");
+                      } else {
+                        if (
+                          notSetField(username, "username") &&
+                          notSetField(password, "password")
+                        ) {
+                          self.setState({
+                            loginErrorMsg: t(K.PLEASE_INPUT_USERNAME_PASSWORD),
+                          });
+                        } else if (
+                          !notSetField(username, "username") &&
+                          notSetField(password, "password")
+                        ) {
+                          self.setState({
+                            loginErrorMsg: t(K.PLEASE_INPUT_PASSWORD),
+                          });
+                        } else if (
+                          notSetField(username, "username") &&
+                          !notSetField(password, "password")
+                        ) {
+                          self.setState({
+                            loginErrorMsg: t(K.PLEASE_INPUT_USERNAME),
+                          });
+                        } else {
+                          self.setState({
+                            loginErrorMsg: "",
+                          });
+                        }
+                      }
+                      return Promise.resolve();
+                    },
+                  },
+                ],
+              })(
+                <Input
+                  //prefix={<LockOutlined style={{ color: "rgba(0,0,0,.25)" }} />}
+                  prefix={
+                    <FontAwesomeIcon
+                      icon="shield-alt"
+                      style={{ color: "rgba(0,0,0,.25)" }}
+                    />
+                  }
+                  style={{
+                    width: "145px",
+                    height: "42px",
+                    verticalAlign: "middle",
+                  }}
+                  placeholder={t(K.SECURITY_CODE)}
+                />
+              )}
+              <img
+                src={this.state.yzm}
+                style={{
+                  width: "115px",
+                  height: "42px",
+                  verticalAlign: "middle",
+                }}
+                alt=""
+                onClick={this.handleGetSecurityCodeAgain}
+              />
+            </Form.Item>
+          )}
           <Form.Item>
             <Spin spinning={this.state.loggingIn}>
               <Button
                 type="primary"
                 htmlType="submit"
-                style={{ width: "100%", height: 34 }}
+                style={{
+                  width: "100%",
+                  height: 34,
+                  bottom: this.state.security_codeEnabled ? "-45px" : "0",
+                }}
               >
                 {t(K.LOGIN)}
               </Button>
@@ -431,9 +669,8 @@ export class LegacyGeneralLogin extends React.Component<
   }
 }
 
-export const InnerGeneralLogin = withTranslation(NS_GENERAL_AUTH)(
-  LegacyGeneralLogin
-);
+export const InnerGeneralLogin =
+  withTranslation(NS_GENERAL_AUTH)(LegacyGeneralLogin);
 
 export const GeneralLogin = Form.create<GetProps<typeof InnerGeneralLogin>>({
   name: "general_login",

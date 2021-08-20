@@ -18,6 +18,12 @@ const locale: Locale = {
   [K.PLEASE_ENTER_DYNAMIC_CODE]: "请输入动态码",
   [K.PLEASE_COMPLETE_THE_SECURITY_VERIFICATION]: "请完成安全认证",
   [K.DYNAMIC_CODE_VALIDATION_FAILED]: "验证动态码失败",
+  [K.CLICK_TO_GET_SECURITY_CODE]: "点击获取验证码",
+  [K.SECURITY_CODE]: "验证码",
+  [K.PLEASE_INPUT_PASSWORD_PHRASE]: "请输入密码、验证码",
+  [K.PLEASE_INPUT_PHRASE]: "请输入验证码",
+  [K.PLEASE_INPUT_USERNAME_PASSWORD_PHRASE]: "请输入用户名、密码、验证码",
+  [K.PLEASE_INPUT_USERNAME_PHRASE]: "请输入用户名、验证码",
 };
 
 export default locale;
