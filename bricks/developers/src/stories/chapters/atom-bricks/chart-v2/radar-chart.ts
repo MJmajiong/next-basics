@@ -5,7 +5,7 @@ import { mergeCommon } from "./utils";
 const doc = mergeCommon(radarDoc);
 
 export const story: Story = {
-  storyId: "chart-v2.radar-chart",
+  id: "chart-v2.radar-chart",
   type: "brick",
   author: "momo",
   text: {
@@ -17,7 +17,7 @@ export const story: Story = {
     en: "display radar chart",
     zh: "雷达图",
   },
-  conf: [
+  examples: [
     {
       brick: "chart-v2.radar-chart",
       events: {

@@ -5,7 +5,7 @@ import { mergeCommon } from "./utils";
 const doc = mergeCommon(originDoc);
 
 export const story: Story = {
-  storyId: "chart-v2.area-chart",
+  id: "chart-v2.area-chart",
   type: "brick",
   author: "ice",
   text: {
@@ -15,10 +15,9 @@ export const story: Story = {
   icon: { lib: "fa", icon: "chart-area" },
   description: {
     en: "display area chart",
-    zh:
-      "又叫区域图。它是在折线图的基础之上形成的, 它将折线图中折线与自变量坐标轴之间的区域使用颜色或者纹理填充",
+    zh: "又叫区域图。它是在折线图的基础之上形成的, 它将折线图中折线与自变量坐标轴之间的区域使用颜色或者纹理填充",
   },
-  conf: [
+  examples: [
     {
       brick: "chart-v2.area-chart",
       properties: {

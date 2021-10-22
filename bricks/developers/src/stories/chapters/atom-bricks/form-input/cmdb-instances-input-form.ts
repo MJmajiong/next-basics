@@ -4,7 +4,7 @@ import docMD from "../../../docs/cmdb-instances/cmdb-instances-input-form.md";
 import { CMDB_HOST_INSTANCE_ID } from "../../../constants";
 
 export const story: Story = {
-  storyId: "cmdb-instances.cmdb-instances-input-form",
+  id: "cmdb-instances.cmdb-instances-input-form",
   type: "brick",
   author: "cyril",
   text: {
@@ -12,15 +12,14 @@ export const story: Story = {
     zh: "CMDB 实例输入表单项",
   },
   description: {
-    en:
-      "select instances by the instance list or pasting an attribute value list",
+    en: "select instances by the instance list or pasting an attribute value list",
     zh: "通过实例列表或粘贴某属性的值列表来选择实例",
   },
   icon: {
     lib: "fa",
     icon: "pen",
   },
-  conf: [
+  examples: [
     {
       brick: "forms.general-form",
       properties: {

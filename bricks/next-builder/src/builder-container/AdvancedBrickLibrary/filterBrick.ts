@@ -94,7 +94,7 @@ export function processBricks(
         };
         const find =
           !installedBricksEnabled &&
-          storyList?.find((story) => story.storyId === item.id);
+          storyList?.find((story) => story.id === item.id);
         if (find) {
           return {
             ...brick,

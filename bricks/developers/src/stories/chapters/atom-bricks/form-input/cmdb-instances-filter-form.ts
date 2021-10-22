@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import docMD from "../../../docs/cmdb-instances/cmdb-instances-filter-form.md";
 
 const story: Story = {
-  storyId: "cmdb-instances.cmdb-instances-filter-form",
+  id: "cmdb-instances.cmdb-instances-filter-form",
   type: "brick",
   author: "cyril",
   text: {
@@ -17,7 +17,7 @@ const story: Story = {
     lib: "fa",
     icon: "pen",
   },
-  conf: [
+  examples: [
     {
       brick: "div",
       slots: {

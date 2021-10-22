@@ -2,7 +2,7 @@ import doc from "../../../docs/forms/dynamic-form-item.md";
 import { Story } from "../../../interfaces";
 
 const story: Story = {
-  storyId: "forms.dynamic-form-item",
+  id: "forms.dynamic-form-item",
   type: "brick",
   author: "jo",
   text: {
@@ -10,15 +10,14 @@ const story: Story = {
     zh: "动态表单项",
   },
   description: {
-    en:
-      "Multi-column display, dynamically add or delete each row of form items, currently supports input and select types",
+    en: "Multi-column display, dynamically add or delete each row of form items, currently supports input and select types",
     zh: "多列显示可以动态增加或删除的表单项，目前支持 input 和 select 类型",
   },
   icon: {
     lib: "fa",
     icon: "columns",
   },
-  conf: [
+  examples: [
     {
       brick: "forms.general-form",
       properties: {

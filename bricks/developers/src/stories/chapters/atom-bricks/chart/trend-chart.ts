@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import docMD from "../../../docs/general-charts/trend-chart.md";
 
 export const story: Story = {
-  storyId: "general-charts.trend-chart",
+  id: "general-charts.trend-chart",
   type: "brick",
   author: "cyril",
   deprecated: true,
@@ -18,23 +18,14 @@ export const story: Story = {
     lib: "fa",
     icon: "dolly",
   },
-  conf: {
+  examples: {
     brick: "general-charts.trend-chart",
     properties: {
       data: {
         timeSeries: [
-          1571302512,
-          1571302994,
-          1571303054,
-          1571303653,
-          1571304014,
-          1571304493,
-          1571304794,
-          1571304852,
-          1571304912,
-          1571304972,
-          1571305032,
-          1571305093,
+          1571302512, 1571302994, 1571303054, 1571303653, 1571304014,
+          1571304493, 1571304794, 1571304852, 1571304912, 1571304972,
+          1571305032, 1571305093,
         ],
         legendList: ["进程占用内存 (192.168.100.162, 3306)"],
         trendDataList: [

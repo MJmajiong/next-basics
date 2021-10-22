@@ -70,7 +70,7 @@ const properties = [
 
 const stories = [
   {
-    storyId: "basic-bricks.general-card",
+    id: "basic-bricks.general-card",
     doc: {
       slots,
       properties,

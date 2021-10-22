@@ -5,7 +5,7 @@ import { mergeCommon } from "./utils";
 const doc = mergeCommon(originDoc);
 
 export const story: Story = {
-  storyId: "chart-v2.horizontal-bar-chart",
+  id: "chart-v2.horizontal-bar-chart",
   type: "brick",
   author: "ice",
   text: {
@@ -17,7 +17,7 @@ export const story: Story = {
     en: "display horizontal bar chart",
     zh: "相比于纵向柱状图，横向柱状图更适用于分类较多的场景",
   },
-  conf: [
+  examples: [
     {
       brick: "chart-v2.horizontal-bar-chart",
       properties: {

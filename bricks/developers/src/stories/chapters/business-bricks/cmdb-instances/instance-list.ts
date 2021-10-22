@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import docMD from "../../../docs/cmdb-instances/instance-list.md";
 
 export const story: Story = {
-  storyId: "cmdb-instances.instance-list",
+  id: "cmdb-instances.instance-list",
   type: "template",
   author: "cyril",
   text: {
@@ -17,7 +17,7 @@ export const story: Story = {
     lib: "fa",
     icon: "list",
   },
-  conf: {
+  examples: {
     template: "cmdb-instances.instance-list",
     params: {
       objectId: "HOST",

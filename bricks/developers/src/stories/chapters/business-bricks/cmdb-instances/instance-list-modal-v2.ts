@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import docMD from "../../../docs/cmdb-instances/instance-list-modal-v2.md";
 
 export const story: Story = {
-  storyId: "cmdb-instances.instance-list-modal-v2",
+  id: "cmdb-instances.instance-list-modal-v2",
   type: "brick",
   author: "ice",
   text: {
@@ -17,7 +17,7 @@ export const story: Story = {
     lib: "fa",
     icon: "list-alt",
   },
-  conf: [
+  examples: [
     {
       brick: "div",
       slots: {

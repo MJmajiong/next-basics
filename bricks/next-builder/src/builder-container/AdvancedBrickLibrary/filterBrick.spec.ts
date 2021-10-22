@@ -65,7 +65,7 @@ describe("processor", () => {
             icon: "pencil-alt",
             lib: "fa",
           },
-          storyId: "forms.general-input",
+          id: "forms.general-input",
           text: {
             en: "general input",
             zh: "普通输入框",
@@ -81,7 +81,7 @@ describe("processor", () => {
             icon: "chevron-down",
             lib: "fa",
           },
-          storyId: "basic-bricks.general-card",
+          id: "basic-bricks.general-card",
         },
       ] as Partial<Story>[] as Story[];
 

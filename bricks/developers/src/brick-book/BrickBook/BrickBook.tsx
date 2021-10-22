@@ -23,7 +23,7 @@ import cssStyle from "./style.module.css";
 export interface BrickBookProps {
   storyId: string;
   stories: Story[];
-  storyType: "brick" | "template";
+  storyType: "brick" | "template" | "atom-brick";
   titleLinkEnabled: boolean;
   titleLinkTarget?: string;
   notToSetPageTitle?: boolean;
@@ -43,9 +43,13 @@ export function BrickBook({
   notToSetPageTitle,
   renderDocLink,
 }: BrickBookProps): React.ReactElement {
-  const story = findStoryById(storyId, storyType, stories);
+  const story = findStoryById(
+    storyId,
+    storyType === "atom-brick" ? "brick" : storyType,
+    stories
+  );
   const actions = story ? story.actions : null;
-  const confList: BrickConf[] = [].concat(story?.conf).filter(Boolean);
+  const confList: BrickConf[] = [].concat(story?.examples).filter(Boolean);
   const developerStorage = storage.getItem(NS_DEVELOPERS) ?? {};
 
   const { t } = useTranslation(NS_DEVELOPERS);
@@ -77,7 +81,7 @@ export function BrickBook({
         <h1 style={{ fontSize: "16px", marginBottom: "10px" }}>
           {titleLinkEnabled ? (
             <Link
-              to={`/developers/brick-book/${story.type}/${story.storyId}`}
+              to={`/developers/brick-book/${story.type}/${story.id}`}
               {...(titleLinkTarget ? { target: titleLinkTarget } : {})}
             >
               {title} <FileSearchOutlined style={{ fontSize: "16px" }} />
@@ -99,7 +103,7 @@ export function BrickBook({
             {t(K.PREVIEW)} <AppstoreOutlined />
             <span className={cssStyle.subTitle}>
               {" "}
-              {story.category}:{story.type}:{story.storyId}
+              {story.category}:{story.type}:{story.id}
             </span>
           </div>
           <Radio.Group

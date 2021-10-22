@@ -5,7 +5,7 @@ import { mergeCommon } from "./utils";
 const doc = mergeCommon(timeBarDoc);
 
 export const story: Story = {
-  storyId: "chart-v2.time-bar-chart",
+  id: "chart-v2.time-bar-chart",
   type: "brick",
   author: "momo",
   text: {
@@ -17,7 +17,7 @@ export const story: Story = {
     en: "display time bar chart",
     zh: "时间条形图",
   },
-  conf: [
+  examples: [
     {
       brick: "chart-v2.time-bar-chart",
       properties: {

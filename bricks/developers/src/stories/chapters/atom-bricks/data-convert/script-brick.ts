@@ -3,7 +3,7 @@ import docMD from "../../../docs/basic-bricks/script-brick.md";
 import { CMDB_HOST_INSTANCE_ID } from "../../../constants";
 
 export const story: Story = {
-  storyId: "basic-bricks.script-brick",
+  id: "basic-bricks.script-brick",
   type: "brick",
   author: "alren",
   deprecated: true,
@@ -12,15 +12,14 @@ export const story: Story = {
     zh: "自定义数据转换函数",
   },
   description: {
-    en:
-      "you can define custom function to process data and pass precessed data to other bricks",
+    en: "you can define custom function to process data and pass precessed data to other bricks",
     zh: "可自定义函数来转换数据，并将处理后的数据给到其他构件",
   },
   icon: {
     lib: "fa",
     icon: "th",
   },
-  conf: [
+  examples: [
     {
       brick: "div",
       slots: {
@@ -83,8 +82,7 @@ export const story: Story = {
               brick: "basic-bricks.script-brick",
               properties: {
                 id: "example-2",
-                fun:
-                  "console.log('data', data);return {'hostname': '通过useResolve获得主机名：'+data.hostname};",
+                fun: "console.log('data', data);return {'hostname': '通过useResolve获得主机名：'+data.hostname};",
                 target: "#id-div-demo-2",
                 transform: {
                   textContent: "@{hostname}",

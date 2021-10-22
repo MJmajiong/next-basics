@@ -17,7 +17,7 @@ const colorMap = [
 ];
 
 export const story: Story = {
-  storyId: "general-charts.statistic-item",
+  id: "general-charts.statistic-item",
   type: "brick",
   author: "momo",
   text: {
@@ -32,7 +32,7 @@ export const story: Story = {
     lib: "fa",
     icon: "dolly",
   },
-  conf: [
+  examples: [
     {
       brick: "general-charts.statistic-item",
       properties: {

@@ -5,26 +5,26 @@ import {
   TOOL_VERSION_ID,
   CMDB_HOST_INSTANCE_ID,
   FLOW_ID,
-  JOB_ID2
+  JOB_ID2,
 } from "../../../constants";
 
 export const story: Story = {
-  storyId: "manual-execution.base-manual-execution",
+  id: "manual-execution.base-manual-execution",
   type: "template",
   author: "jo",
   text: {
     en: "Manual Execution Template",
-    zh: "手动配置参数执行基础模板"
+    zh: "手动配置参数执行基础模板",
   },
   description: {
     en: "Tool,flow or job execution",
-    zh: "可以搭建工具／流程／作业执行场景"
+    zh: "可以搭建工具／流程／作业执行场景",
   },
   icon: {
     lib: "fa",
-    icon: "running"
+    icon: "running",
   },
-  conf: [
+  examples: [
     // 工具
     {
       template: "manual-execution.base-manual-execution",
@@ -35,7 +35,7 @@ export const story: Story = {
         executeProvider: [
           {
             brick: "presentational-bricks.brick-utils",
-            bg: true
+            bg: true,
           },
           {
             brick: "providers-of-tool.execute-api-execute-tool",
@@ -45,25 +45,25 @@ export const story: Story = {
               args: [
                 {
                   toolId: TOOL_ID,
-                  vId: TOOL_VERSION_ID
-                }
-              ]
+                  vId: TOOL_VERSION_ID,
+                },
+              ],
             },
             events: {
               "response.success": [
                 {
                   target: "presentational-bricks\\.brick-utils",
                   method: "message",
-                  args: ["success", "工具执行中"]
+                  args: ["success", "工具执行中"],
                 },
-                { action: "history.push" }
+                { action: "history.push" },
               ],
               "response.error": {
                 target: "presentational-bricks\\.brick-utils",
-                method: "handleHttpError"
-              }
-            }
-          }
+                method: "handleHttpError",
+              },
+            },
+          },
         ],
         toolSteps: [
           {
@@ -77,9 +77,9 @@ export const story: Story = {
                 rules: [
                   {
                     required: true,
-                    message: "请输入执行用户"
-                  }
-                ]
+                    message: "请输入执行用户",
+                  },
+                ],
               },
               {
                 field: "ip",
@@ -90,9 +90,9 @@ export const story: Story = {
                 rules: [
                   {
                     required: true,
-                    message: "请输入执行目标"
-                  }
-                ]
+                    message: "请输入执行目标",
+                  },
+                ],
               },
               {
                 field: "instanceId",
@@ -103,17 +103,17 @@ export const story: Story = {
                 rules: [
                   {
                     required: true,
-                    message: "请输入执行目标id"
-                  }
-                ]
-              }
+                    message: "请输入执行目标id",
+                  },
+                ],
+              },
             ],
             events: {
               "brick.form.update": {
                 target: "providers-of-tool\\.execute-api-execute-tool",
-                method: "updateArgs"
-              }
-            }
+                method: "updateArgs",
+              },
+            },
           },
           {
             title: "更多参数",
@@ -127,9 +127,9 @@ export const story: Story = {
                 rules: [
                   {
                     required: true,
-                    message: "请输入时间范围"
-                  }
-                ]
+                    message: "请输入时间范围",
+                  },
+                ],
               },
               {
                 field: "index",
@@ -140,9 +140,9 @@ export const story: Story = {
                 rules: [
                   {
                     required: true,
-                    message: "请输入指标"
-                  }
-                ]
+                    message: "请输入指标",
+                  },
+                ],
               },
               {
                 field: "condition",
@@ -152,23 +152,23 @@ export const story: Story = {
                 rules: [
                   {
                     required: true,
-                    message: "请输入条件"
-                  }
+                    message: "请输入条件",
+                  },
                 ],
                 optionList: [
                   {
                     text: "大于",
-                    id: "大于"
+                    id: "大于",
                   },
                   {
                     text: "等于",
-                    id: "等于"
+                    id: "等于",
                   },
                   {
                     text: "小于",
-                    id: "小于"
-                  }
-                ]
+                    id: "小于",
+                  },
+                ],
               },
               {
                 field: "threshold",
@@ -178,17 +178,17 @@ export const story: Story = {
                 rules: [
                   {
                     required: true,
-                    message: "请输入阀值"
-                  }
-                ]
-              }
+                    message: "请输入阀值",
+                  },
+                ],
+              },
             ],
             events: {
               "brick.form.update": {
                 target: "providers-of-tool\\.execute-api-execute-tool",
-                method: "updateArgs"
-              }
-            }
+                method: "updateArgs",
+              },
+            },
           },
           {
             title: "分批策略",
@@ -199,21 +199,21 @@ export const story: Story = {
                 label: "分批执行",
                 component: "Switch",
                 valuePropName: "checked",
-                defaultValue: false
+                defaultValue: false,
               },
               {
                 field: "batchNum",
                 fieldPath: "[0].batchStrategy.batchNum",
                 label: "每批执行数量",
                 component: "InputNumber",
-                hideFromField: "enabled"
+                hideFromField: "enabled",
               },
               {
                 field: "batchInterval",
                 fieldPath: "[0].batchStrategy.batchInterval",
                 label: "每批间隔时间",
                 component: "InputNumber",
-                hideFromField: "enabled"
+                hideFromField: "enabled",
               },
               {
                 field: "failedStop",
@@ -222,18 +222,18 @@ export const story: Story = {
                 component: "Switch",
                 valuePropName: "checked",
                 defaultValue: false,
-                hideFromField: "enabled"
-              }
+                hideFromField: "enabled",
+              },
             ],
             events: {
               "brick.form.submit": {
                 target: "providers-of-tool\\.execute-api-execute-tool",
-                method: "updateArgsAndExecute"
-              }
-            }
-          }
-        ]
-      }
+                method: "updateArgsAndExecute",
+              },
+            },
+          },
+        ],
+      },
     },
     // 流程
     {
@@ -254,9 +254,9 @@ export const story: Story = {
                 rules: [
                   {
                     required: true,
-                    message: "请输入执行用户"
-                  }
-                ]
+                    message: "请输入执行用户",
+                  },
+                ],
               },
               {
                 field: "ip",
@@ -267,9 +267,9 @@ export const story: Story = {
                 rules: [
                   {
                     required: true,
-                    message: "请输入执行目标"
-                  }
-                ]
+                    message: "请输入执行目标",
+                  },
+                ],
               },
               {
                 field: "instanceId",
@@ -280,17 +280,17 @@ export const story: Story = {
                 rules: [
                   {
                     required: true,
-                    message: "请输入执行目标id"
-                  }
-                ]
-              }
+                    message: "请输入执行目标id",
+                  },
+                ],
+              },
             ],
             events: {
               "brick.form.update": {
                 target: "providers-of-flow\\.execute-api-execute-flow",
-                method: "updateArgs"
-              }
-            }
+                method: "updateArgs",
+              },
+            },
           },
           {
             title: "流程参数",
@@ -304,42 +304,42 @@ export const story: Story = {
                   resolveName: "appList",
                   path: "list",
                   useIdField: "name",
-                  useTextField: "name"
+                  useTextField: "name",
                 },
                 rules: [
                   {
                     required: true,
-                    message: "应用名称"
-                  }
-                ]
+                    message: "应用名称",
+                  },
+                ],
               },
               {
                 field: "ls",
                 fieldPath: "[0].flowInputs.ls",
                 label: "ls",
-                component: "Input"
-              }
+                component: "Input",
+              },
             ],
             lifeCycle: {
               useResolves: [
                 {
                   name: "appList",
-                  provider: "providers-of-cmdb\\.instance-api-post-search"
-                }
-              ]
+                  provider: "providers-of-cmdb\\.instance-api-post-search",
+                },
+              ],
             },
             events: {
               "brick.form.submit": {
                 target: "providers-of-flow\\.execute-api-execute-flow",
-                method: "updateArgsAndExecute"
-              }
-            }
-          }
+                method: "updateArgsAndExecute",
+              },
+            },
+          },
         ],
         executeProvider: [
           {
             brick: "presentational-bricks.brick-utils",
-            bg: true
+            bg: true,
           },
           {
             brick: "providers-of-cmdb.instance-api-post-search",
@@ -349,11 +349,11 @@ export const story: Story = {
                 "APP",
                 {
                   fields: {
-                    "*": true
-                  }
-                }
-              ]
-            }
+                    "*": true,
+                  },
+                },
+              ],
+            },
           },
           {
             brick: "providers-of-flow.execute-api-execute-flow",
@@ -362,27 +362,27 @@ export const story: Story = {
             properties: {
               args: [
                 {
-                  flowId: FLOW_ID
-                }
-              ]
+                  flowId: FLOW_ID,
+                },
+              ],
             },
             events: {
               "response.success": [
                 {
                   target: "presentational-bricks\\.brick-utils",
                   method: "message",
-                  args: ["success", "流程执行中"]
+                  args: ["success", "流程执行中"],
                 },
-                { action: "history.push" }
+                { action: "history.push" },
               ],
               "response.error": {
                 target: "presentational-bricks\\.brick-utils",
-                method: "handleHttpError"
-              }
-            }
-          }
-        ]
-      }
+                method: "handleHttpError",
+              },
+            },
+          },
+        ],
+      },
     },
     // 作业
     {
@@ -394,7 +394,7 @@ export const story: Story = {
         executeProvider: [
           {
             brick: "providers-of-ops-automation.jobs-api-get-jobs",
-            bg: true
+            bg: true,
           },
           {
             brick: "providers-of-ops-automation.jobs-api-create-jobs-excution",
@@ -404,11 +404,11 @@ export const story: Story = {
               args: [
                 {
                   jobId: JOB_ID2,
-                  trigger: "JOB_MANUAL_EXEC"
-                }
-              ]
-            }
-          }
+                  trigger: "JOB_MANUAL_EXEC",
+                },
+              ],
+            },
+          },
         ],
         toolSteps: [
           {
@@ -418,9 +418,9 @@ export const story: Story = {
                 {
                   name: "taskData",
                   provider: "providers-of-ops-automation\\.jobs-api-get-jobs",
-                  args: [JOB_ID2]
-                }
-              ]
+                  args: [JOB_ID2],
+                },
+              ],
             },
             fields: [
               {
@@ -431,23 +431,23 @@ export const story: Story = {
                 computeDefaultValue: {
                   target: "presentational-bricks\\.brick-form",
                   method: "get",
-                  args: ["taskData", "bindResource.defaultInputs.must_input"]
+                  args: ["taskData", "bindResource.defaultInputs.must_input"],
                 },
                 rules: [
                   {
                     required: true,
-                    message: "请输入必填参数"
-                  }
-                ]
-              }
+                    message: "请输入必填参数",
+                  },
+                ],
+              },
             ],
             events: {
               "brick.form.update": {
                 target:
                   "providers-of-ops-automation\\.jobs-api-create-jobs-excution",
-                method: "updateArgs"
-              }
-            }
+                method: "updateArgs",
+              },
+            },
           },
           {
             title: "执行目标",
@@ -460,14 +460,17 @@ export const story: Story = {
                 computeDefaultValue: {
                   target: "presentational-bricks\\.brick-form",
                   method: "get",
-                  args: ["taskData", "bindResource.defaultInputs.@agents[0].ip"]
+                  args: [
+                    "taskData",
+                    "bindResource.defaultInputs.@agents[0].ip",
+                  ],
                 },
                 rules: [
                   {
                     required: true,
-                    message: "请输入执行目标"
-                  }
-                ]
+                    message: "请输入执行目标",
+                  },
+                ],
               },
               {
                 field: "instanceId",
@@ -479,28 +482,28 @@ export const story: Story = {
                   method: "get",
                   args: [
                     "taskData",
-                    "bindResource.defaultInputs.@agents[0].instanceId"
-                  ]
+                    "bindResource.defaultInputs.@agents[0].instanceId",
+                  ],
                 },
                 rules: [
                   {
                     required: true,
-                    message: "请输入执行目标id"
-                  }
-                ]
-              }
+                    message: "请输入执行目标id",
+                  },
+                ],
+              },
             ],
             events: {
               "brick.form.update": {
                 target:
                   "providers-of-ops-automation\\.jobs-api-create-jobs-excution",
-                method: "updateArgsAndExecute"
-              }
-            }
-          }
-        ]
-      }
-    }
+                method: "updateArgsAndExecute",
+              },
+            },
+          },
+        ],
+      },
+    },
   ],
-  doc: docMD
+  doc: docMD,
 };

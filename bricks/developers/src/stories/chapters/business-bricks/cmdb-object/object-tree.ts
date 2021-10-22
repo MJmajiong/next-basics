@@ -2,22 +2,22 @@ import { Story } from "../../../interfaces";
 import doc from "../../../docs/cmdb-object/object-tree.md";
 
 export const story: Story = {
-  storyId: "cmdb-object.object-tree",
+  id: "cmdb-object.object-tree",
   type: "brick",
   author: "ice",
   text: {
     en: "CMDB Object Tree",
-    zh: "CMDB 模型对象树"
+    zh: "CMDB 模型对象树",
   },
   icon: { lib: "fa", icon: "tree" },
   description: {
     en: "display cmdb object as tree, by its category accordingly",
-    zh: "根据分类，使用树的方式来展示 CMDB 模型对象"
+    zh: "根据分类，使用树的方式来展示 CMDB 模型对象",
   },
-  conf: {
+  examples: {
     brick: "div",
     properties: {
-      backgroundColor: "white"
+      backgroundColor: "white",
     },
     slots: {
       content: {
@@ -25,7 +25,7 @@ export const story: Story = {
         bricks: [
           {
             brick: "providers-of-cmdb.cmdb-object-api-get-object-all",
-            bg: true
+            bg: true,
           },
           {
             brick: "cmdb-object.object-tree",
@@ -34,14 +34,15 @@ export const story: Story = {
                 {
                   name: "objectList",
                   field: "data",
-                  provider: "providers-of-cmdb\\.cmdb-object-api-get-object-all"
-                }
-              ]
-            }
-          }
-        ]
-      }
-    }
+                  provider:
+                    "providers-of-cmdb\\.cmdb-object-api-get-object-all",
+                },
+              ],
+            },
+          },
+        ],
+      },
+    },
   },
-  doc
+  doc,
 };

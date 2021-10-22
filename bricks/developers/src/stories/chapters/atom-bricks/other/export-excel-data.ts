@@ -2,22 +2,22 @@ import { Story } from "../../../interfaces";
 import docMD from "../../../docs/excel-utils/export-data.md";
 
 export const story: Story = {
-  storyId: "excel-utils.export-data",
+  id: "excel-utils.export-data",
   type: "brick",
   author: "jo",
   text: {
     en: "Export Excel",
-    zh: "导出 excel 文件"
+    zh: "导出 excel 文件",
   },
   description: {
     en: "Export The Data As An Excel File based on brick-table",
-    zh: "把 brick-table 数据导出为 Excel 文件"
+    zh: "把 brick-table 数据导出为 Excel 文件",
   },
   icon: {
     lib: "fa",
-    icon: "pencil-alt"
+    icon: "pencil-alt",
   },
-  conf: [
+  examples: [
     {
       brick: "div",
       slots: {
@@ -26,7 +26,7 @@ export const story: Story = {
           bricks: [
             {
               brick: "excel-utils.export-data",
-              bg: true
+              bg: true,
             },
             {
               brick: "basic-bricks.micro-view",
@@ -37,7 +37,7 @@ export const story: Story = {
                     {
                       brick: "basic-bricks.general-button",
                       properties: {
-                        buttonName: "导出"
+                        buttonName: "导出",
                       },
                       events: {
                         "general.button.click": {
@@ -45,14 +45,14 @@ export const story: Story = {
                           method: "exportToExcel",
                           args: [
                             {
-                              target: "#export-table"
+                              target: "#export-table",
                             },
-                            "导出示例"
-                          ]
-                        }
-                      }
-                    }
-                  ]
+                            "导出示例",
+                          ],
+                        },
+                      },
+                    },
+                  ],
                 },
                 content: {
                   type: "bricks",
@@ -62,33 +62,33 @@ export const story: Story = {
                       properties: {
                         id: "export-table",
                         fields: {
-                          rowKey: "id"
+                          rowKey: "id",
                         },
                         page: "${query.page=1|number}",
                         pageSize: "${query.pageSize=10|number}",
                         rowDisabledConfig: {
                           field: "name",
                           value: "John Brown",
-                          operator: "$eq"
+                          operator: "$eq",
                         },
                         configProps: {
-                          rowSelection: true
+                          rowSelection: true,
                         },
                         columns: [
                           {
                             title: "Name",
                             dataIndex: "name",
-                            key: "name"
+                            key: "name",
                           },
                           {
                             title: "Age",
                             dataIndex: "age",
-                            key: "age"
+                            key: "age",
                           },
                           {
                             title: "Address",
                             dataIndex: "address",
-                            key: "address"
+                            key: "address",
                           },
                           {
                             title: "Tags",
@@ -97,16 +97,16 @@ export const story: Story = {
                             useBrick: {
                               brick: "presentational-bricks.brick-tag",
                               transform: {
-                                tagList: "@{cellData}"
+                                tagList: "@{cellData}",
                               },
                               properties: {
                                 showCard: false,
                                 configProps: {
-                                  color: "#108ee9"
-                                }
-                              }
-                            }
-                          }
+                                  color: "#108ee9",
+                                },
+                              },
+                            },
+                          },
                         ],
                         dataSource: {
                           list: [
@@ -115,37 +115,37 @@ export const story: Story = {
                               name: "John Brown",
                               age: 32,
                               address: "New York No. 1 Lake Park",
-                              tags: ["nice", "good"]
+                              tags: ["nice", "good"],
                             },
                             {
                               id: "2",
                               name: "Jim Green",
                               age: 42,
                               address: "London No. 1 Lake Park",
-                              tags: ["loser", "bad"]
+                              tags: ["loser", "bad"],
                             },
                             {
                               id: "3",
                               name: "Joe Black",
                               age: 32,
                               address: "Sidney No. 1 Lake Park",
-                              tags: ["teacher", "lucky", "lay"]
-                            }
+                              tags: ["teacher", "lucky", "lay"],
+                            },
                           ],
                           page: 1,
                           pageSize: 10,
-                          total: 3
-                        }
-                      }
-                    }
-                  ]
-                }
-              }
-            }
-          ]
-        }
-      }
-    }
+                          total: 3,
+                        },
+                      },
+                    },
+                  ],
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
   ],
-  doc: docMD
+  doc: docMD,
 };

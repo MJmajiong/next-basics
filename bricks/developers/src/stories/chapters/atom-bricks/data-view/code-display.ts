@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import docMD from "../../../docs/code-bricks/code-display.md";
 
 export const story: Story = {
-  storyId: "code-bricks.code-display",
+  id: "code-bricks.code-display",
   type: "brick",
   author: "lynette",
   text: {
@@ -17,7 +17,7 @@ export const story: Story = {
     lib: "fa",
     icon: "file-code",
   },
-  conf: [
+  examples: [
     {
       brick: "code-bricks.code-display",
       properties: {

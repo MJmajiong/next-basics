@@ -5,7 +5,7 @@ import { mergeCommon } from "./utils";
 const doc = mergeCommon(originDoc);
 
 export const story: Story = {
-  storyId: "chart-v2.pie-chart",
+  id: "chart-v2.pie-chart",
   type: "brick",
   author: "ice",
   text: {
@@ -17,7 +17,7 @@ export const story: Story = {
     en: "display pie chart",
     zh: "用于表示不同分类的占比情况",
   },
-  conf: [
+  examples: [
     {
       brick: "chart-v2.pie-chart",
       events: {

@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import docMD from "../../../docs/agile/kanban-container.md";
 
 export const story: Story = {
-  storyId: "agile.kanban-container",
+  id: "agile.kanban-container",
   type: "brick",
   author: "lynette",
   text: {
@@ -18,7 +18,7 @@ export const story: Story = {
     icon: "grip-lines-vertical",
     prefix: "fas",
   },
-  conf: [
+  examples: [
     {
       brick: "basic-bricks.general-card",
       slots: {

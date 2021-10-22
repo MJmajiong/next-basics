@@ -1,6 +1,7 @@
 import {
   Story as LegacyStory,
   Chapter as StoryChapter,
+  StoryConf,
   I18nString,
 } from "@next-core/brick-types";
 

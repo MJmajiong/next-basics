@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import docMD from "../../../docs/cmdb-instances/cmdb-instances-import.md";
 
 export const story: Story = {
-  storyId: "cmdb-instances.cmdb-instances-import",
+  id: "cmdb-instances.cmdb-instances-import",
   type: "brick",
   author: "jimmyli",
   text: {
@@ -18,7 +18,7 @@ export const story: Story = {
     category: "default",
     icon: "import",
   },
-  conf: [
+  examples: [
     {
       brick: "cmdb-instances.cmdb-instances-import",
       properties: {

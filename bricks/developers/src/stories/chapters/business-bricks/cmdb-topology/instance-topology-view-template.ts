@@ -3,22 +3,22 @@ import docMD from "../../../docs/cmdb-topology/instance-topology-view.md";
 import { CMDB_HOST_INSTANCE_ID } from "../../../constants";
 
 export const story: Story = {
-  storyId: "topology.instance-topology-view",
+  id: "topology.instance-topology-view",
   type: "template",
   author: "ice",
   text: {
     en: "Instance Topology",
-    zh: "实例拓扑"
+    zh: "实例拓扑",
   },
   description: {
     en: "show instances relation by topology view",
-    zh: "用拓扑的方式来展示实例间关系"
+    zh: "用拓扑的方式来展示实例间关系",
   },
   icon: {
     lib: "fa",
-    icon: "fire-alt"
+    icon: "fire-alt",
   },
-  conf: {
+  examples: {
     template: "topology.instance-topology-view",
     params: {
       objectId: "HOST",
@@ -27,11 +27,11 @@ export const story: Story = {
         object_id: "HOST",
         child: [
           {
-            parentOut: "owner"
-          }
-        ]
-      }
-    }
+            parentOut: "owner",
+          },
+        ],
+      },
+    },
   },
-  doc: docMD
+  doc: docMD,
 };

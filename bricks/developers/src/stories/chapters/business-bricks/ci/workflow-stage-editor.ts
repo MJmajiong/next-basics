@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import docMD from "../../../docs/ci/workflow-stage-editor.md";
 
 export const story: Story = {
-  storyId: "ci.workflow-stage-editor",
+  id: "ci.workflow-stage-editor",
   type: "brick",
   text: {
     en: "Workflow Stage Editor",
@@ -17,7 +17,7 @@ export const story: Story = {
     icon: "grip-lines",
     prefix: "fas",
   },
-  conf: [
+  examples: [
     {
       brick: "ci.workflow-stage-editor",
       properties: {

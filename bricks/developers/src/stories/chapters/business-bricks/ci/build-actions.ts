@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import docMD from "../../../docs/ci/build-actions.md";
 
 export const story: Story = {
-  storyId: "ci.build-actions",
+  id: "ci.build-actions",
   type: "brick",
   text: {
     en: "Build Actions",
@@ -10,15 +10,14 @@ export const story: Story = {
   },
   description: {
     en: "",
-    zh:
-      "根据当前的流水线状态，显示可操作的按钮，流水线完成（重试），流水线执行中（终止）",
+    zh: "根据当前的流水线状态，显示可操作的按钮，流水线完成（重试），流水线执行中（终止）",
   },
   icon: {
     lib: "easyops",
     category: "default",
     icon: "config",
   },
-  conf: [
+  examples: [
     {
       brick: "ci.build-actions",
       properties: {

@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import docMD from "../../../docs/basic-bricks/fold-brick.md";
 
 export const story: Story = {
-  storyId: "basic-bricks.fold-brick",
+  id: "basic-bricks.fold-brick",
   type: "brick",
   author: "momo",
   text: {
@@ -18,7 +18,7 @@ export const story: Story = {
     lib: "fa",
     icon: "chevron-down",
   },
-  conf: {
+  examples: {
     brick: "basic-bricks.fold-brick",
     properties: {
       foldName: "查看",

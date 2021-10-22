@@ -7,7 +7,7 @@ import {
 } from "../../../constants";
 
 const story: Story = {
-  storyId: "forms.cmdb-instance-select",
+  id: "forms.cmdb-instance-select",
   type: "brick",
   author: "jo",
   text: {
@@ -22,7 +22,7 @@ const story: Story = {
     lib: "fa",
     icon: "pen",
   },
-  conf: [
+  examples: [
     {
       brick: "forms.cmdb-instance-select",
       properties: {

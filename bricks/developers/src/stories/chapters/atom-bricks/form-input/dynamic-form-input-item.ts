@@ -2,7 +2,7 @@ import doc from "../../../docs/forms/dynamic-form-input-item.md";
 import { Story } from "../../../interfaces";
 
 const story: Story = {
-  storyId: "forms.dynamic-form-input-item",
+  id: "forms.dynamic-form-input-item",
   deprecated: true,
   type: "brick",
   author: "jo",
@@ -11,15 +11,14 @@ const story: Story = {
     zh: "动态的输入表单项",
   },
   description: {
-    en:
-      "Form Item Data Is An Array, And Each Row Can Be Added Or Deleted Dynamically",
+    en: "Form Item Data Is An Array, And Each Row Can Be Added Or Deleted Dynamically",
     zh: "表单项是数组形式的结构，可以动态增加或删除每一行",
   },
   icon: {
     lib: "fa",
     icon: "columns",
   },
-  conf: [
+  examples: [
     {
       brick: "forms.general-form",
       properties: {

@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import docMD from "../../../docs/cmdb-instances/user-or-user-group-display.md";
 
 export const story: Story = {
-  storyId: "cmdb-instances.user-or-user-group-display",
+  id: "cmdb-instances.user-or-user-group-display",
   type: "brick",
   author: "lynette",
   text: {
@@ -17,7 +17,7 @@ export const story: Story = {
     lib: "fa",
     icon: "users",
   },
-  conf: [
+  examples: [
     {
       brick: "div",
       slots: {

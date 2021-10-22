@@ -2,7 +2,7 @@ import doc from "../../../docs/cmdb-instances/provider-query-adapter.md";
 import { Story } from "../../../interfaces";
 
 export const story: Story = {
-  storyId: "cmdb-instances.provider-query-adapter",
+  id: "cmdb-instances.provider-query-adapter",
   type: "brick",
   author: "lynette",
   text: {
@@ -17,7 +17,7 @@ export const story: Story = {
     lib: "fa",
     icon: "pen",
   },
-  conf: [
+  examples: [
     {
       brick: "div",
       slots: {

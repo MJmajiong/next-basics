@@ -5,7 +5,7 @@ import { mergeCommon } from "./utils";
 const doc = mergeCommon(timeSeriesDoc);
 
 export const story: Story = {
-  storyId: "chart-v2.time-series-chart",
+  id: "chart-v2.time-series-chart",
   type: "brick",
   author: "ice",
   text: {
@@ -17,7 +17,7 @@ export const story: Story = {
     en: "display time chart",
     zh: "用于展示时间序列数据",
   },
-  conf: [
+  examples: [
     {
       brick: "chart-v2.time-series-chart",
       events: {

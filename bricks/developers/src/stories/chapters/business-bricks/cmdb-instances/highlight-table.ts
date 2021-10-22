@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import docMD from "../../../docs/cmdb-instances/highlight-table.md";
 
 export const story: Story = {
-  storyId: "cmdb-instances.highlight-table",
+  id: "cmdb-instances.highlight-table",
   type: "template",
   author: "jo",
   text: {
@@ -17,7 +17,7 @@ export const story: Story = {
     lib: "fa",
     icon: "table",
   },
-  conf: [
+  examples: [
     {
       template: "cmdb-instances.highlight-table",
       params: {

@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import docMD from "../../../docs/general-charts/pie-chart.md";
 
 export const story: Story = {
-  storyId: "general-charts.pie-chart",
+  id: "general-charts.pie-chart",
   type: "brick",
   author: "cyril",
   text: {
@@ -18,7 +18,7 @@ export const story: Story = {
     lib: "antd",
     type: "pie-chart",
   },
-  conf: {
+  examples: {
     brick: "general-charts.pie-chart",
     properties: {
       data: {

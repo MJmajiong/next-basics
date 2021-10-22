@@ -4,7 +4,7 @@ import docMD from "../../../docs/cmdb-instances/instance-detail.md";
 import { CMDB_HOST_INSTANCE_ID } from "../../../constants";
 
 export const story: Story = {
-  storyId: "cmdb-instances.instance-detail",
+  id: "cmdb-instances.instance-detail",
   type: "brick",
   author: "lynette",
   text: {
@@ -19,7 +19,7 @@ export const story: Story = {
     lib: "fa",
     icon: "book",
   },
-  conf: {
+  examples: {
     brick: "cmdb-instances.instance-detail",
     properties: {
       instanceId: CMDB_HOST_INSTANCE_ID,

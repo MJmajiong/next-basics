@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import docMD from "../../../docs/ci/log-viewer.md";
 
 export const story: Story = {
-  storyId: "ci.log-viewer",
+  id: "ci.log-viewer",
   type: "brick",
   text: {
     en: "Log Viewer",
@@ -17,7 +17,7 @@ export const story: Story = {
     category: "model",
     icon: "logstash",
   },
-  conf: {
+  examples: {
     brick: "ci.log-viewer", // 输入定义：步骤Id 改成了输出步骤的detail包括步骤的log和yaml和stageName等信息
     properties: {
       step: {

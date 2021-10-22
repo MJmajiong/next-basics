@@ -8,13 +8,13 @@ export const atomBook: Chapter[] = [
     },
     stories: [
       {
-        storyId: "fake-story-of-correct",
+        id: "fake-story-of-correct",
         type: "brick",
         text: {
           en: "Fake Story of Correct En",
           zh: "Fake Story of Correct Zh",
         },
-        conf: {
+        examples: {
           brick: "fake-brick-of-correct",
           properties: {
             for: "good",
@@ -49,7 +49,7 @@ export const atomBook: Chapter[] = [
         ],
       },
       {
-        storyId: "fake-story-of-slots",
+        id: "fake-story-of-slots",
         type: "brick",
         text: {
           en: "Fake Story of Slots En",
@@ -59,7 +59,7 @@ export const atomBook: Chapter[] = [
           en: "",
           zh: "Fake description of Slots Zh",
         },
-        conf: {
+        examples: {
           brick: "fake-brick-of-slots",
           slots: {
             first: {
@@ -80,13 +80,13 @@ export const atomBook: Chapter[] = [
         },
       },
       {
-        storyId: "fake-story-of-slots-invalid",
+        id: "fake-story-of-slots-invalid",
         type: "brick",
         text: {
           en: "Fake Story of Slots Invalid En",
           zh: "Fake Story of Slots Invalid Zh",
         },
-        conf: {
+        examples: {
           brick: "fake-brick-of-slots",
           slots: {
             first: {
@@ -97,13 +97,13 @@ export const atomBook: Chapter[] = [
         },
       },
       {
-        storyId: "fake-story-of-empty",
+        id: "fake-story-of-empty",
         type: "brick",
         text: {
           en: "Fake Story of Empty En",
           zh: "Fake Story of Empty Zh",
         },
-        conf: [
+        examples: [
           {
             brick: "fake-brick-of-empty",
           },

@@ -4,20 +4,20 @@ import BrickCollectionInstanceExecutionMD from "../docs/presentational-bricks/br
 const chapter: Chapter = {
   title: {
     en: "Auto Collection",
-    zh: "自动采集"
+    zh: "自动采集",
   },
   stories: [
     {
-      storyId: "presentational-bricks.brick-collection-instance-execution",
+      id: "presentational-bricks.brick-collection-instance-execution",
       text: {
         en: "execute collection instance",
-        zh: "执行采集实例"
+        zh: "执行采集实例",
       },
-      conf: {
-        brick: "presentational-bricks.brick-collection-instance-execution"
+      examples: {
+        brick: "presentational-bricks.brick-collection-instance-execution",
       },
-      doc: BrickCollectionInstanceExecutionMD
-    }
-  ]
+      doc: BrickCollectionInstanceExecutionMD,
+    },
+  ],
 };
 export default chapter;

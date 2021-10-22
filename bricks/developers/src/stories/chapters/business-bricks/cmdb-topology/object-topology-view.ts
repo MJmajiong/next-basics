@@ -3,19 +3,19 @@ import { OBJECT_TOPOLOGY_VIEW_ID } from "../../../constants";
 import doc from "../../../docs/cmdb-topology/object-topology-view.md";
 
 export const story: Story = {
-  storyId: "topology.object-topology-view",
+  id: "topology.object-topology-view",
   type: "brick",
   author: "ice",
   text: {
     en: "Object Topology View",
-    zh: "模型视图"
+    zh: "模型视图",
   },
   icon: { lib: "fa", icon: "cube" },
   description: {
     en: "topology formed by CMDB object",
-    zh: "CMDB 模型节点组成的拓扑视图"
+    zh: "CMDB 模型节点组成的拓扑视图",
   },
-  conf: {
+  examples: {
     brick: "div",
     slots: {
       content: {
@@ -25,8 +25,8 @@ export const story: Story = {
             brick: "topology.providers-of-view-detail",
             bg: true,
             properties: {
-              args: ["_TOPO_VIEW", OBJECT_TOPOLOGY_VIEW_ID]
-            }
+              args: ["_TOPO_VIEW", OBJECT_TOPOLOGY_VIEW_ID],
+            },
           },
           {
             brick: "topology.object-topology-view",
@@ -34,9 +34,9 @@ export const story: Story = {
               useResolves: [
                 {
                   name: "viewDetail",
-                  provider: "topology\\.providers-of-view-detail"
-                }
-              ]
+                  provider: "topology\\.providers-of-view-detail",
+                },
+              ],
             },
             properties: {
               readonly: true,
@@ -47,12 +47,12 @@ export const story: Story = {
               autoCenter: true,
               nodeDraggable: true,
               hideLinks: false,
-              widthRatio: 1
-            }
-          }
-        ]
-      }
-    }
+              widthRatio: 1,
+            },
+          },
+        ],
+      },
+    },
   },
-  doc
+  doc,
 };

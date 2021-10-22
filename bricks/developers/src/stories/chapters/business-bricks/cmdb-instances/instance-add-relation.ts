@@ -3,44 +3,44 @@ import docMD from "../../../docs/cmdb-instances/instance-add-relation.md";
 import { CMDB_HOST_INSTANCE_ID } from "../../../constants";
 
 export const story: Story = {
-  storyId: "cmdb-instances.instance-add-relation",
+  id: "cmdb-instances.instance-add-relation",
   type: "brick",
   author: "jo",
   text: {
     en: "instance-add-relation",
-    zh: "添加实例关系"
+    zh: "添加实例关系",
   },
   description: {
     en: "cmdb instance add relation",
-    zh: "cmdb 添加实例关系"
+    zh: "cmdb 添加实例关系",
   },
   icon: {
     lib: "fa",
-    icon: "link"
+    icon: "link",
   },
-  conf: {
+  examples: {
     brick: "cmdb-instances.instance-add-relation",
     properties: {
       objectId: "HOST",
       instanceId: CMDB_HOST_INSTANCE_ID,
-      relationSideId: "owner"
+      relationSideId: "owner",
     },
     events: {
       "update.single.success": {
-        action: "console.log"
+        action: "console.log",
       },
       "update.single.failed": {
-        action: "console.warn"
-      }
-    }
+        action: "console.warn",
+      },
+    },
   },
   actions: [
     {
       text: "添加关系",
       method: "handleReadSelection",
       args: [{ detail: { selectedKeys: [CMDB_HOST_INSTANCE_ID] } }],
-      prompt: true
-    }
+      prompt: true,
+    },
   ],
-  doc: docMD
+  doc: docMD,
 };

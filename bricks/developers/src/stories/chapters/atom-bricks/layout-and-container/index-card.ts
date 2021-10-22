@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import docMD from "../../../docs/basic-bricks/index-card.md";
 
 export const story: Story = {
-  storyId: "basic-bricks.index-card",
+  id: "basic-bricks.index-card",
   type: "brick",
   author: "william",
   text: {
@@ -18,7 +18,7 @@ export const story: Story = {
     lib: "fa",
     icon: "bowling-ball",
   },
-  conf: {
+  examples: {
     brick: "basic-bricks.index-card",
     properties: {
       title: "Hello World",

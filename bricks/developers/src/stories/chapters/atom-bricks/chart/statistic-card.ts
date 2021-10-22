@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import docMD from "../../../docs/general-charts/statistic-card.md";
 
 export const story: Story = {
-  storyId: "general-charts.statistic-card",
+  id: "general-charts.statistic-card",
   type: "brick",
   author: "cyril",
   text: {
@@ -17,7 +17,7 @@ export const story: Story = {
     lib: "fa",
     icon: "dolly",
   },
-  conf: [
+  examples: [
     {
       description: {
         title: "基本用法1",

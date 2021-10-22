@@ -15,13 +15,13 @@ jest.mock("../stories/chapters/business-bricks");
 describe("providers-of-brick-story", () => {
   it("findStoryById should be ok", () => {
     const story = findStoryById("fake-story-of-correct", "brick", [
-      { storyId: "test-id", type: "test-type" },
+      { id: "test-id", type: "test-type" },
     ]);
-    expect(story.storyId).toBe("fake-story-of-correct");
-    expect(story.conf.brick).toBe("fake-brick-of-correct");
-    expect(
-      findStoryById("fake-story-of-business", "template", []).storyId
-    ).toBe("fake-story-of-business");
+    expect(story.id).toBe("fake-story-of-correct");
+    expect(story.examples.brick).toBe("fake-brick-of-correct");
+    expect(findStoryById("fake-story-of-business", "template", []).id).toBe(
+      "fake-story-of-business"
+    );
   });
 
   describe("listBrickStory", () => {
@@ -56,7 +56,7 @@ describe("providers-of-brick-story", () => {
     );
   });
 
-  it("listBrickStory support multiple conf", () => {
+  it("listBrickStory support multiple examples", () => {
     return listBrickStory("atom", "fake-template-of-empty").then((data) =>
       expect(data.total).toBe(0)
     );
@@ -824,7 +824,7 @@ describe("providers-of-brick-story", () => {
           en: "",
           zh: "",
         },
-        storyId: "presentational-bricks.general-list",
+        id: "presentational-bricks.general-list",
         doc: null,
         type: "brick",
       },
@@ -839,14 +839,14 @@ describe("providers-of-brick-story", () => {
           en: "",
           zh: "",
         },
-        storyId: "test.advance-setting",
+        id: "test.advance-setting",
         doc: null,
         type: "brick",
       },
       {
         author: "alex",
         category: "test",
-        conf: [
+        s: [
           {
             brick: "div",
             slots: {
@@ -1245,7 +1245,7 @@ describe("providers-of-brick-story", () => {
           icon: "pen",
           lib: "fa",
         },
-        storyId: "alex.advance-setting",
+        id: "alex.advance-setting",
         text: {
           en: "advance-setting",
           zh: "alex-test",

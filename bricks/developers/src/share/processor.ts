@@ -99,9 +99,7 @@ export const getAllStoryListV2 = (
   stories.forEach((story) => {
     const finder = books.find((book) => book.category === story.category);
     if (finder) {
-      const index = finder.stories.findIndex(
-        (v) => v.storyId === story.storyId
-      );
+      const index = finder.stories.findIndex((v) => v.id === story.id);
       if (index === -1) {
         finder.stories.push(story);
       } else {
@@ -112,7 +110,7 @@ export const getAllStoryListV2 = (
       console.warn(
         "Cannot match category  `%s` of `%s`  with any existed category. %o",
         story.category,
-        story.storyId,
+        story.id,
         story
       );
     }
@@ -129,7 +127,7 @@ export const getAllStoryListV2 = (
       const category = chapter.category;
       const author = story.author || "";
       if (
-        searchByQ(q, [description, title, author, story.storyId]) &&
+        searchByQ(q, [description, title, author, story.id]) &&
         searchByCategory(categories, category)
       ) {
         const tags = [chapter.title];
@@ -137,7 +135,7 @@ export const getAllStoryListV2 = (
           tags.push(...story.tags);
         }
         const item: BrickRecord = {
-          id: story.storyId,
+          id: story.id,
           type: story.type,
           title: getStoryTitle(story),
           subTitle: story.author,

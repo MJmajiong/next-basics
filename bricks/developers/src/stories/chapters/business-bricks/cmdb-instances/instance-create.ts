@@ -2,47 +2,47 @@ import { Story } from "../../../interfaces";
 import docMD from "../../../docs/cmdb-instances/instance-create.md";
 
 export const story: Story = {
-  storyId: "cmdb-instances.instance-create",
+  id: "cmdb-instances.instance-create",
   type: "brick",
   author: "cyril",
   text: {
     en: "Instance Create",
-    zh: "单实例创建"
+    zh: "单实例创建",
   },
   description: {
     en: "cmdb instance create",
-    zh: "cmdb 单实例创建"
+    zh: "cmdb 单实例创建",
   },
   icon: {
     lib: "fa",
-    icon: "plus"
+    icon: "plus",
   },
-  conf: {
+  examples: {
     brick: "cmdb-instances.instance-create",
     properties: {
       objectId: "HOST",
       fieldsByTag: [
         {
           name: "基本信息",
-          fields: ["hostname", "ip"]
+          fields: ["hostname", "ip"],
         },
         {
           name: "默认属性",
-          fields: ["_mac", "_agentStatus", "_agentHeartBeat", "APP"]
-        }
-      ]
+          fields: ["_mac", "_agentStatus", "_agentHeartBeat", "APP"],
+        },
+      ],
     },
     events: {
       "create.single.success": {
-        action: "console.log"
+        action: "console.log",
       },
       "create.single.failed": {
-        action: "console.warn"
+        action: "console.warn",
       },
       "create.single.cancel": {
-        action: "console.log"
-      }
-    }
+        action: "console.log",
+      },
+    },
   },
-  doc: docMD
+  doc: docMD,
 };

@@ -4,7 +4,7 @@ import docMD from "../../../docs/cmdb-instances/delete-confirm.md";
 import { CMDB_APP_INSTANCE_ID } from "../../../constants";
 
 export const story: Story = {
-  storyId: "cmdb-instances.delete-confirm",
+  id: "cmdb-instances.delete-confirm",
   type: "template",
   deprecated: true,
   author: "jo",
@@ -20,7 +20,7 @@ export const story: Story = {
     lib: "fa",
     icon: "trash",
   },
-  conf: {
+  examples: {
     brick: "div",
     slots: {
       "": {

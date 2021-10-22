@@ -2,27 +2,27 @@ import { Story } from "../../../interfaces";
 import docMD from "../../../docs/cmdb-instances/instance-change-history.md";
 
 export const story: Story = {
-  storyId: "cmdb-instances.instance-change-history",
+  id: "cmdb-instances.instance-change-history",
   type: "brick",
   author: "lynette",
   text: {
     en: "instance-change-history",
-    zh: "实例变更详情"
+    zh: "实例变更详情",
   },
   description: {
     en: "cmdb instance change history detail",
-    zh: "cmdb 实例变更详情"
+    zh: "cmdb 实例变更详情",
   },
   icon: {
     lib: "fa",
-    icon: "file-alt"
+    icon: "file-alt",
   },
-  conf: {
+  examples: {
     brick: "cmdb-instances.instance-change-history",
     properties: {
       showCard: true,
       detailUrlTemplates: {
-        default: "/search/detail/#{objectId}/#{instanceId}"
+        default: "/search/detail/#{objectId}/#{instanceId}",
       },
       dataSource: {
         detail: {
@@ -47,18 +47,18 @@ export const story: Story = {
             diff_data: {
               array: {
                 new: ["sd"],
-                old: null
+                old: null,
               },
               ip: {
                 new: "192.168.100.12",
-                old: "192.168.100.1"
-              }
+                old: "192.168.100.1",
+              },
             },
             instance_id: "5932fea4fa078",
             instance_name: "lynette-test",
             object_id: "HOST",
             object_name: "主机",
-            object_version: 140
+            object_version: 140,
           },
           notifiers: [],
           trigger: "",
@@ -78,60 +78,60 @@ export const story: Story = {
           mtime: 1571038857,
           ctime: 1571038857,
           msg: {
-            category: "编辑实例"
+            category: "编辑实例",
           },
           month: "2019-10",
           date: {
             month: "10",
             date: "14",
-            time: "15:40:57"
-          }
+            time: "15:40:57",
+          },
         },
         changelogTable: {
           headers: [
             {
               title: "变更对象",
               dataIndex: "changeObject",
-              key: "changeObject"
+              key: "changeObject",
             },
             {
               title: "内容（变更前）",
               dataIndex: "contentBefore",
-              key: "contentBefore"
+              key: "contentBefore",
             },
             {
               title: "内容（变更后）",
               dataIndex: "contentAfter",
-              key: "contentAfter"
-            }
+              key: "contentAfter",
+            },
           ],
           content: [
             [
               {
-                value: "数组"
+                value: "数组",
               },
               {
-                value: ""
+                value: "",
               },
               {
-                value: "sd"
-              }
+                value: "sd",
+              },
             ],
             [
               {
-                value: "IP"
+                value: "IP",
               },
               {
-                value: "192.168.100.1"
+                value: "192.168.100.1",
               },
               {
-                value: "192.168.100.12"
-              }
-            ]
-          ]
-        }
-      }
-    }
+                value: "192.168.100.12",
+              },
+            ],
+          ],
+        },
+      },
+    },
   },
-  doc: docMD
+  doc: docMD,
 };

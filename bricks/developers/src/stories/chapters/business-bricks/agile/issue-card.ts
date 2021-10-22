@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import docMD from "../../../docs/agile/issue-card.md";
 
 export const story: Story = {
-  storyId: "agile.issue-card",
+  id: "agile.issue-card",
   type: "brick",
   author: "lynette",
   text: {
@@ -18,7 +18,7 @@ export const story: Story = {
     icon: "grip-lines-vertical",
     prefix: "fas",
   },
-  conf: [
+  examples: [
     {
       brick: "agile.issue-card",
       properties: {

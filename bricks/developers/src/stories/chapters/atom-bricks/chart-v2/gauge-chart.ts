@@ -5,7 +5,7 @@ import { mergeCommon } from "./utils";
 const doc = mergeCommon(originDoc);
 
 export const story: Story = {
-  storyId: "chart-v2.gauge-chart",
+  id: "chart-v2.gauge-chart",
   type: "brick",
   author: "ice",
   text: {
@@ -15,10 +15,9 @@ export const story: Story = {
   icon: { lib: "easyops", category: "app", icon: "monitor-dashboard" },
   description: {
     en: "display gauge chart",
-    zh:
-      "目前很多的管理报表或报告上都是用这种图表，以直观的表现出某个指标的进度或实际情况",
+    zh: "目前很多的管理报表或报告上都是用这种图表，以直观的表现出某个指标的进度或实际情况",
   },
-  conf: [
+  examples: [
     {
       brick: "chart-v2.gauge-chart",
       events: {

@@ -5,7 +5,7 @@ import { mergeCommon } from "./utils";
 const doc = mergeCommon(originDoc);
 
 export const story: Story = {
-  storyId: "chart-v2.bar-chart",
+  id: "chart-v2.bar-chart",
   type: "brick",
   author: "ice",
   text: {
@@ -17,7 +17,7 @@ export const story: Story = {
     en: "display bar chart",
     zh: "描述的是分类数据，回答的是每一个分类中『有多少？』这个问题",
   },
-  conf: [
+  examples: [
     {
       brick: "chart-v2.bar-chart",
       properties: {

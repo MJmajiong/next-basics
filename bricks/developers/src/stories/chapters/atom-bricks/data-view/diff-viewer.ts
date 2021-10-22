@@ -2,22 +2,22 @@ import { Story } from "../../../interfaces";
 import docMD from "../../../docs/diff-viewer/diff-viewer.md";
 
 export const story: Story = {
-  storyId: "diff-viewer.diff-viewer",
+  id: "diff-viewer.diff-viewer",
   type: "brick",
   author: "jo",
   text: {
     en: "diff-viewer",
-    zh: "代码对比工具"
+    zh: "代码对比工具",
   },
   description: {
     en: "text diff viewer component.",
-    zh: "代码对比工具，高亮显示前后代码的差异"
+    zh: "代码对比工具，高亮显示前后代码的差异",
   },
   icon: {
     lib: "fa",
-    icon: "code"
+    icon: "code",
   },
-  conf: {
+  examples: {
     brick: "diff-viewer.diff-viewer",
     properties: {
       oldValue:
@@ -46,8 +46,8 @@ export const story: Story = {
         '    "webpack-cli": "^3.1.1",\n' +
         '    "webpack-dev-server": "^3.1.9"\n' +
         "  },\n" +
-        "}"
-    }
+        "}",
+    },
   },
-  doc: docMD
+  doc: docMD,
 };

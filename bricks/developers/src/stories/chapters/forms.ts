@@ -6,22 +6,22 @@ import generalSelectMD from "../docs/forms/general-select.md";
 const chapter: Chapter = {
   title: {
     en: "Form Bricks",
-    zh: "表单构件"
+    zh: "表单构件",
   },
   stories: [
     {
-      storyId: "general-form",
+      id: "general-form",
       text: {
         en: "General Form",
-        zh: "普通表单"
+        zh: "普通表单",
       },
-      conf: {
+      examples: {
         brick: "forms.general-form",
         properties: {
           values: {
             username: "easyops",
-            nickname: "lucy"
-          }
+            nickname: "lucy",
+          },
         },
         slots: {
           items: {
@@ -32,8 +32,8 @@ const chapter: Chapter = {
                 properties: {
                   name: "username",
                   label: "用户名",
-                  placeholder: "请输入用户名"
-                }
+                  placeholder: "请输入用户名",
+                },
               },
               {
                 brick: "forms.general-input",
@@ -41,8 +41,8 @@ const chapter: Chapter = {
                   name: "password",
                   type: "password",
                   label: "密码",
-                  placeholder: "请输入密码"
-                }
+                  placeholder: "请输入密码",
+                },
               },
               {
                 brick: "forms.general-select",
@@ -50,40 +50,40 @@ const chapter: Chapter = {
                   name: "nickname",
                   label: "昵称",
                   placeholder: "请输入密码",
-                  options: ["jack", "lucy"]
-                }
-              }
-            ]
-          }
-        }
+                  options: ["jack", "lucy"],
+                },
+              },
+            ],
+          },
+        },
       },
-      doc: generalFormMD
+      doc: generalFormMD,
     },
     {
-      storyId: "general-input",
+      id: "general-input",
       text: {
         en: "General Input",
-        zh: "普通输入框"
+        zh: "普通输入框",
       },
-      conf: {
+      examples: {
         brick: "forms.general-input",
         properties: {
           name: "username",
           type: "email",
           label: "邮箱",
           value: "test",
-          placeholder: "请输入邮箱地址"
-        }
+          placeholder: "请输入邮箱地址",
+        },
       },
-      doc: generalInputMD
+      doc: generalInputMD,
     },
     {
-      storyId: "general-select",
+      id: "general-select",
       text: {
         en: "General Select",
-        zh: "普通下拉选择框"
+        zh: "普通下拉选择框",
       },
-      conf: {
+      examples: {
         brick: "forms.general-select",
         properties: {
           name: "gender",
@@ -93,18 +93,18 @@ const chapter: Chapter = {
           options: [
             {
               label: "男",
-              value: "male"
+              value: "male",
             },
             {
               label: "女",
-              value: "female"
-            }
-          ]
-        }
+              value: "female",
+            },
+          ],
+        },
       },
-      doc: generalSelectMD
-    }
-  ]
+      doc: generalSelectMD,
+    },
+  ],
 };
 
 export default chapter;

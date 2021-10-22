@@ -2,36 +2,36 @@ import { Story } from "../../../interfaces";
 import doc from "../../../docs/cmdb-instances/relation-path-tree.md";
 
 export const story: Story = {
-  storyId: "cmdb-instances.relation-path-tree",
+  id: "cmdb-instances.relation-path-tree",
   type: "brick",
   author: "ice",
   text: {
     en: "Relation Path Tree",
-    zh: "关系路径实例树"
+    zh: "关系路径实例树",
   },
   description: {
     en: "instance tree based on relation path",
-    zh: "基于关系路径的实例树"
+    zh: "基于关系路径的实例树",
   },
   icon: {
     lib: "fa",
-    icon: "tree"
+    icon: "tree",
   },
-  conf: [
+  examples: [
     {
       brick: "cmdb-instances.relation-path-tree",
       events: {
         "cmdb-instances.relation-path-tree.click": {
-          action: "console.log"
+          action: "console.log",
         },
         "cmdb-instances.relation-path-tree.check": {
-          action: "console.log"
-        }
+          action: "console.log",
+        },
       },
       properties: {
         style: {
           maxHeight: "500px",
-          overflowY: "auto"
+          overflowY: "auto",
         },
         treeRequest: {
           tree: {
@@ -48,20 +48,20 @@ export const story: Story = {
                         relation_field_id: "clusters",
                         child: [
                           {
-                            relation_field_id: "deviceList"
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          }
-        }
-      }
-    }
+                            relation_field_id: "deviceList",
+                          },
+                        ],
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          },
+        },
+      },
+    },
   ],
   previewColumns: 2,
-  doc
+  doc,
 };

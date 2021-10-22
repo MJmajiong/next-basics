@@ -163,8 +163,7 @@ const forceDataWithoutRoot = {
     {
       type: "node",
       __comment__: "Make a random node from 'G' to 'Z'",
-      id:
-        "<% `Random ${String.fromCharCode(Math.floor(Math.random() * Math.floor(20)) + 71)}` %>",
+      id: "<% `Random ${String.fromCharCode(Math.floor(Math.random() * Math.floor(20)) + 71)}` %>",
     },
   ],
   edges: [
@@ -502,7 +501,7 @@ const dataForHighlight = {
 };
 
 export const story: Story = {
-  storyId: "graph.general-graph",
+  id: "graph.general-graph",
   type: "brick",
   author: "steve",
   text: {
@@ -515,12 +514,10 @@ export const story: Story = {
     prefix: "fab",
   },
   description: {
-    en:
-      "Support the definition of different layouts based on edgeType and the definition of different node bricks based on nodeType",
-    zh:
-      "支持根据边类型配置不同布局(force/tree/grid/link/dagre/manual)和节点构件的混合拓扑视图构件",
+    en: "Support the definition of different layouts based on edgeType and the definition of different node bricks based on nodeType",
+    zh: "支持根据边类型配置不同布局(force/tree/grid/link/dagre/manual)和节点构件的混合拓扑视图构件",
   },
-  conf: [
+  examples: [
     {
       description: {
         title: "在 Manual 布局中使用 Force 作为初始布局",
@@ -553,8 +550,7 @@ export const story: Story = {
                       strokeColor:
                         "<% DATA.edge.target === 'B' ? 'red': 'green' %>",
                       strokeWidth: "<% DATA.edge.target === 'B' ? 3 : 1 %>",
-                      text:
-                        "<% DATA.edge.target === 'B' ? { content: `50%\n200 ms`, style: { color: 'orange' } } : undefined %>",
+                      text: "<% DATA.edge.target === 'B' ? { content: `50%\n200 ms`, style: { color: 'orange' } } : undefined %>",
                     },
                   },
                 ],
@@ -1345,12 +1341,10 @@ export const story: Story = {
                   defaultBgColor: "#D6E8FB",
                 },
                 transform: {
-                  text:
-                    '<% DATA.node.label.length > 20 ? (DATA.node.label.substr(0, 17) + "...") : DATA.node.label %>',
+                  text: '<% DATA.node.label.length > 20 ? (DATA.node.label.substr(0, 17) + "...") : DATA.node.label %>',
                   icon: {
                     lib: "antd",
-                    icon:
-                      '<% DATA.node.type === "instance-group" ? "gateway" : "environment" %>',
+                    icon: '<% DATA.node.type === "instance-group" ? "gateway" : "environment" %>',
                   },
                   tagText: "<% DATA.node.alert_count > 0 ? 1 : 0 %>",
                   tagColor: '<% DATA.node.alert_count > 0 ? "red" : "green" %>',
@@ -1398,8 +1392,7 @@ export const story: Story = {
             {
               type: "node",
               __comment__: "Make a random node from 'G' to 'Z'",
-              id:
-                "<% `Random ${String.fromCharCode(Math.floor(Math.random() * Math.floor(20)) + 71)}` %>",
+              id: "<% `Random ${String.fromCharCode(Math.floor(Math.random() * Math.floor(20)) + 71)}` %>",
             },
           ],
           edges: [

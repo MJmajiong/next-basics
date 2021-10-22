@@ -64,7 +64,7 @@ describe("getAllStoryListV2", () => {
           en: "",
           zh: "",
         },
-        storyId: "presentational-bricks.general-list",
+        id: "presentational-bricks.general-list",
         doc: null,
         type: "brick",
       },
@@ -88,7 +88,7 @@ describe("getAllStoryListV2", () => {
       {
         author: "alex",
         category: "test",
-        conf: [
+        examples: [
           {
             brick: "div",
             slots: {
@@ -148,7 +148,7 @@ describe("getAllStoryListV2", () => {
           icon: "pen",
           lib: "fa",
         },
-        storyId: "alex.advance-setting",
+        id: "alex.advance-setting",
         text: {
           en: "advance-setting",
           zh: "alex-test",

@@ -17,7 +17,7 @@ export function getBrickConfig(
   events: StoryDocEvent[];
   methods: StoryDocMethod[];
 } {
-  const story = find(data, ["storyId", storyId]);
+  const story = find(data, ["id", storyId]);
   return {
     slots: get(story, "doc.slots") ?? [],
     properties: get(story, "doc.properties") ?? [],

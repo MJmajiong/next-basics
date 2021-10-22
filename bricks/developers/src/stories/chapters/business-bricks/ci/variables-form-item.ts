@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import docMD from "../../../docs/ci/variables-form-item.md";
 
 export const story: Story = {
-  storyId: "ci.variables-form-item",
+  id: "ci.variables-form-item",
   type: "brick",
   text: {
     en: "CI Variables Editor ",
@@ -17,7 +17,7 @@ export const story: Story = {
     icon: "list-ul",
     prefix: "fas",
   },
-  conf: {
+  examples: {
     brick: "ci.variables-form-item",
     properties: {
       value: [
