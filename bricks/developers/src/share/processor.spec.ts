@@ -163,6 +163,9 @@ describe("getAllStoryListV2", () => {
         title: "Fake Story of Correct Zh",
         description: "Fake description of Correct Zh",
         tags: ["Fake Chapter zh 1", "zh"],
+        category: undefined,
+        icon: undefined,
+        subTitle: undefined,
       },
       {
         id: "fake-story-of-slots",
@@ -170,6 +173,9 @@ describe("getAllStoryListV2", () => {
         title: "Fake Story of Slots Zh",
         description: "Fake description of Slots Zh",
         tags: ["Fake Chapter zh 1"],
+        category: undefined,
+        icon: undefined,
+        subTitle: undefined,
       },
       {
         id: "fake-story-of-slots-invalid",
@@ -177,6 +183,9 @@ describe("getAllStoryListV2", () => {
         title: "Fake Story of Slots Invalid Zh",
         description: "~",
         tags: ["Fake Chapter zh 1"],
+        category: undefined,
+        icon: undefined,
+        subTitle: undefined,
       },
       {
         id: "fake-story-of-empty",
@@ -184,6 +193,19 @@ describe("getAllStoryListV2", () => {
         title: "Fake Story of Empty Zh",
         description: "~",
         tags: ["Fake Chapter zh 1"],
+        category: undefined,
+        icon: undefined,
+        subTitle: undefined,
+      },
+      {
+        category: undefined,
+        description: "~",
+        icon: undefined,
+        id: "topology-v2.general-topology",
+        subTitle: undefined,
+        tags: ["Fake Chapter zh 1"],
+        title: undefined,
+        type: "brick",
       },
       {
         id: "presentational-bricks.general-list",
@@ -193,6 +215,7 @@ describe("getAllStoryListV2", () => {
         description: "~",
         tags: ["测试ALEX"],
         category: "test",
+        icon: undefined,
       },
       {
         id: "alex.advance-setting",
@@ -213,6 +236,9 @@ describe("getAllStoryListV2", () => {
         title: "Fake Story of Correct Zh",
         description: "~",
         tags: ["Fake Chapter 1"],
+        category: undefined,
+        icon: undefined,
+        subTitle: undefined,
       },
     ]);
 
