@@ -9,6 +9,7 @@ interface installInfo {
 export async function getStoriesJSON(info?: installInfo) {
   const stories = StoriesCache.getInstance();
   if (info) {
+    // 加载拓展信息
     await stories.install({
       list: info.list,
       fields: info.fields || ["*"],
@@ -16,7 +17,18 @@ export async function getStoriesJSON(info?: installInfo) {
   } else {
     const list = stories.getStoryList();
     if (list.length === 0) {
-      await stories.install({});
+      // 加载基础信息
+      await stories.install({
+        fields: [
+          "id",
+          "category",
+          "subCategory",
+          "description",
+          "text",
+          "layerType",
+          "type",
+        ],
+      });
     }
   }
   return stories.getStoryList();

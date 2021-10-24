@@ -43,7 +43,14 @@ export function findStoryById(
       (story) => !stories.find((s) => s.id === story.id && s.doc !== null)
     )
     .concat(stories)
-    .find((story) => story.id === id && story.type === storyType);
+    .find((story) => {
+      return (
+        story.id === id &&
+        (storyType === "brick"
+          ? ["atom-brick", "brick"].includes(story.type)
+          : story.type === storyType)
+      );
+    });
   return story;
 }
 

@@ -23,7 +23,7 @@ import cssStyle from "./style.module.css";
 export interface BrickBookProps {
   storyId: string;
   stories: Story[];
-  storyType: "brick" | "template" | "atom-brick";
+  storyType: "brick" | "template";
   titleLinkEnabled: boolean;
   titleLinkTarget?: string;
   notToSetPageTitle?: boolean;
@@ -43,11 +43,7 @@ export function BrickBook({
   notToSetPageTitle,
   renderDocLink,
 }: BrickBookProps): React.ReactElement {
-  const story = findStoryById(
-    storyId,
-    storyType === "atom-brick" ? "brick" : storyType,
-    stories
-  );
+  const story = findStoryById(storyId, storyType, stories);
   const actions = story ? story.actions : null;
   const confList: BrickConf[] = [].concat(story?.examples).filter(Boolean);
   const developerStorage = storage.getItem(NS_DEVELOPERS) ?? {};

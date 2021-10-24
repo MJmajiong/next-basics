@@ -112,6 +112,11 @@ export const atomBook: Chapter[] = [
           },
         ],
       },
+      {
+        id: "topology-v2.general-topology",
+        type: "brick",
+        examples: [{ a: 1 }],
+      },
     ],
   },
 ];

@@ -24,9 +24,26 @@ describe("providers-of-brick-story", () => {
     );
   });
 
+  it("stories examples is null, findStoryById should use the local stories", () => {
+    const story = findStoryById("topology-v2.general-topology", "brick", [
+      // @ts-ignore
+      { id: "topology-v2.general-topology", type: "brick", doc: null },
+    ]);
+    expect(story.id).toBe("topology-v2.general-topology");
+    expect(story.examples).toEqual([{ a: 1 }]);
+  });
+
+  it("findStoryById the atom-brick", () => {
+    const story = findStoryById("atom.brick", "brick", [
+      // @ts-ignore
+      { id: "atom.brick", type: "atom-brick", doc: null },
+    ]);
+    expect(story.id).toBe("atom.brick");
+  });
+
   describe("listBrickStory", () => {
     it("atom", () => {
-      return listBrickStory("atom").then((data) => expect(data.total).toBe(4));
+      return listBrickStory("atom").then((data) => expect(data.total).toBe(5));
     });
 
     it("business", () => {
@@ -36,7 +53,7 @@ describe("providers-of-brick-story", () => {
     });
 
     it("xxxxx", () => {
-      return listBrickStory("xxxxx").then((data) => expect(data.total).toBe(5));
+      return listBrickStory("xxxxx").then((data) => expect(data.total).toBe(6));
     });
   });
 
@@ -65,13 +82,13 @@ describe("providers-of-brick-story", () => {
   it("listBrickStory search by category", async () => {
     i18next.language = "zh";
     const data = await listBrickStory("atom", undefined, "Fake Chapter zh 1");
-    expect(data.total).toBe(4);
+    expect(data.total).toBe(5);
 
     const data2 = await listBrickStory("atom", undefined, [
       "Fake Chapter zh 1",
       "xxx",
     ]);
-    expect(data2.total).toBe(4);
+    expect(data2.total).toBe(5);
   });
 
   it("i18next should be ok", async () => {
@@ -1270,6 +1287,19 @@ describe("providers-of-brick-story", () => {
           tags: ["Fake Chapter zh 1"],
           title: "Fake Story of Empty Zh",
           type: "brick",
+          subTitle: undefined,
+          category: undefined,
+          icon: undefined,
+        },
+        {
+          category: undefined,
+          description: "~",
+          icon: undefined,
+          id: "topology-v2.general-topology",
+          subTitle: undefined,
+          tags: ["Fake Chapter zh 1"],
+          title: undefined,
+          type: "brick",
         },
         {
           description: "~",
@@ -1278,24 +1308,13 @@ describe("providers-of-brick-story", () => {
           tags: ["Fake Chapter zh 1"],
           title: "alex-test",
           type: "brick",
-        },
-        {
-          category: "test",
-          description: "~",
-          icon: {
-            icon: "pen",
-            lib: "fa",
-          },
-          id: "alex.advance-setting",
-          subTitle: "alex",
-          tags: ["测试ALEX"],
-          title: "alex-test",
-          type: "brick",
+          category: undefined,
+          icon: undefined,
         },
       ],
       page: 2,
       pageSize: 3,
-      total: 8,
+      total: 9,
     });
 
     const data2 = await listBrickStoryV2(
@@ -1339,6 +1358,17 @@ describe("providers-of-brick-story", () => {
           id: "fake-story-of-empty",
           tags: ["Fake Chapter zh 1"],
           title: "Fake Story of Empty Zh",
+          type: "brick",
+        },
+        {
+          category: undefined,
+          description: "~",
+          doc: undefined,
+          icon: undefined,
+          id: "topology-v2.general-topology",
+          subTitle: undefined,
+          tags: ["Fake Chapter zh 1"],
+          title: undefined,
           type: "brick",
         },
         {
@@ -1467,7 +1497,7 @@ describe("providers-of-brick-story", () => {
       ],
       page: 1,
       pageSize: 20,
-      total: 8,
+      total: 9,
     });
   });
 
