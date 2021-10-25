@@ -1267,7 +1267,7 @@ describe("providers-of-brick-story", () => {
           icon: "pen",
           lib: "fa",
         },
-        id: "alex.advance-setting",
+        storyId: "alex.advance-setting",
         text: {
           en: "advance-setting",
           zh: "alex-test",

@@ -19,4 +19,7 @@ export const story: Story = {
   conf: {
     brick: "topology.topology-graph-index",
   },
+  conf: {
+    brick: "topology.topology-graph-index",
+  },
 };
