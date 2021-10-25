@@ -4,7 +4,7 @@ import docMD from "../../../docs/ci/flow-chart.md";
 import { CI_FLOW_ID } from "../../../constants";
 
 export const story: Story = {
-  id: "ci.flow-chart",
+  storyId: "ci.flow-chart",
   type: "brick",
   text: {
     en: "Flow Chart",
@@ -19,7 +19,7 @@ export const story: Story = {
     category: "app",
     icon: "flow",
   },
-  examples: {
+  conf: {
     brick: "ci.flow-chart",
     properties: {
       build: {

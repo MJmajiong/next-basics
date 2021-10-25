@@ -1,7 +1,7 @@
 import { Story } from "../../../interfaces";
 
 export const story: Story = {
-  id: "rich-editor.easy-editor",
+  storyId: "rich-editor.easy-editor",
   type: "brick",
   author: "jo",
   text: {
@@ -16,7 +16,7 @@ export const story: Story = {
     lib: "antd",
     type: "code",
   },
-  examples: [
+  conf: [
     {
       brick: "rich-editor.easy-editor",
       properties: {

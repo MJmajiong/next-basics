@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import docMD from "../../../docs/agile/issue-list.md";
 
 export const story: Story = {
-  id: "agile.issue-list",
+  storyId: "agile.issue-list",
   type: "template",
   text: {
     en: "Issue list",
@@ -14,7 +14,7 @@ export const story: Story = {
     en: "show issue list",
     zh: "标准的issue表格显示模板",
   },
-  examples: {
+  conf: {
     template: "agile.issue-list",
     params: {
       showSelectBox: true,

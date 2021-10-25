@@ -3,7 +3,7 @@ import docMD from "../../../docs/cmdb-instances/instance-relation-management-tem
 import { CMDB_HOST_INSTANCE_ID } from "../../../constants";
 
 export const story: Story = {
-  id: "cmdb-instances.instance-relation",
+  storyId: "cmdb-instances.instance-relation",
   type: "template",
   author: "jo",
   text: {
@@ -18,7 +18,7 @@ export const story: Story = {
     lib: "fa",
     icon: "praying-hands",
   },
-  examples: {
+  conf: {
     template: "cmdb-instances.instance-relation",
     params: {
       instanceId: CMDB_HOST_INSTANCE_ID,

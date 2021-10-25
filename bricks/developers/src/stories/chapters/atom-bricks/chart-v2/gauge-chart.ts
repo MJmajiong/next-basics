@@ -5,7 +5,7 @@ import { mergeCommon } from "./utils";
 const doc = mergeCommon(originDoc);
 
 export const story: Story = {
-  id: "chart-v2.gauge-chart",
+  storyId: "chart-v2.gauge-chart",
   type: "brick",
   author: "ice",
   text: {
@@ -17,7 +17,7 @@ export const story: Story = {
     en: "display gauge chart",
     zh: "目前很多的管理报表或报告上都是用这种图表，以直观的表现出某个指标的进度或实际情况",
   },
-  examples: [
+  conf: [
     {
       brick: "chart-v2.gauge-chart",
       events: {

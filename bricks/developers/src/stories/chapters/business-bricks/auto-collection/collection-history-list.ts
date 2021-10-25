@@ -4,7 +4,7 @@ import docMD from "../../../docs/auto-collection/collection-history-list-templat
 import { CMDB_AUTO_COLLECTION_CONFIG_ID } from "../../../constants";
 
 export const story: Story = {
-  id: "cmdb-auto-collection.collection-history-list",
+  storyId: "cmdb-auto-collection.collection-history-list",
   type: "template",
   author: "cyril",
   text: {
@@ -19,7 +19,7 @@ export const story: Story = {
     lib: "fa",
     icon: "box",
   },
-  examples: {
+  conf: {
     template: "cmdb-auto-collection.collection-history-list",
     params: {
       collectionConfigId: CMDB_AUTO_COLLECTION_CONFIG_ID,

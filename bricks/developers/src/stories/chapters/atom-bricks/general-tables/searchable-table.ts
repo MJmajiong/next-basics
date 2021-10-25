@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import docMD from "../../../docs/general-tables/searchable-table.md";
 
 export const story: Story = {
-  id: "general-tables.searchable-table",
+  storyId: "general-tables.searchable-table",
   type: "template",
   author: "lynette",
   text: {
@@ -17,7 +17,7 @@ export const story: Story = {
     lib: "fa",
     icon: "table",
   },
-  examples: {
+  conf: {
     brick: "div",
     slots: {
       "": {

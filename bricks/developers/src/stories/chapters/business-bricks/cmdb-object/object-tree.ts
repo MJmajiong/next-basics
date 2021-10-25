@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import doc from "../../../docs/cmdb-object/object-tree.md";
 
 export const story: Story = {
-  id: "cmdb-object.object-tree",
+  storyId: "cmdb-object.object-tree",
   type: "brick",
   author: "ice",
   text: {
@@ -14,7 +14,7 @@ export const story: Story = {
     en: "display cmdb object as tree, by its category accordingly",
     zh: "根据分类，使用树的方式来展示 CMDB 模型对象",
   },
-  examples: {
+  conf: {
     brick: "div",
     properties: {
       backgroundColor: "white",

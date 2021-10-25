@@ -3,7 +3,7 @@ import docMD from "../../../docs/cmdb-instances/instance-delete.md";
 import { CMDB_APP_DELETE_ID } from "../../../constants";
 
 export const story: Story = {
-  id: "cmdb-instances.instance-delete",
+  storyId: "cmdb-instances.instance-delete",
   type: "brick",
   author: "jo",
   text: {
@@ -18,7 +18,7 @@ export const story: Story = {
     lib: "fa",
     icon: "trash-alt",
   },
-  examples: {
+  conf: {
     brick: "cmdb-instances.instance-delete",
     properties: {
       selectedKeys: [CMDB_APP_DELETE_ID],

@@ -3,7 +3,7 @@ import docMD from "../../../docs/presentational-bricks/general-carousel-template
 import { CMDB_APP_INSTANCE_ID } from "../../../constants";
 
 export const story: Story = {
-  id: "general-carousel.general-carousel",
+  storyId: "general-carousel.general-carousel",
   type: "template",
   author: "jo",
   text: {
@@ -18,7 +18,7 @@ export const story: Story = {
     lib: "fa",
     icon: "stream",
   },
-  examples: [
+  conf: [
     {
       brick: "basic-bricks.general-card",
       slots: {

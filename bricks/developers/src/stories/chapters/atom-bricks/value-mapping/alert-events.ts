@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import docMD from "../../../docs/monitor-alert/monitor-alert.md";
 
 export const story: Story = {
-  id: "monitor-alert.alert-events",
+  storyId: "monitor-alert.alert-events",
   type: "template",
   author: "ice",
   text: {
@@ -17,7 +17,7 @@ export const story: Story = {
     lib: "fa",
     icon: "table",
   },
-  examples: {
+  conf: {
     template: "monitor-alert.alert-events",
   },
   doc: docMD,

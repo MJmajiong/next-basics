@@ -5,7 +5,7 @@ import {
 } from "../../../constants";
 
 export const story: Story = {
-  id: "topology.topology-graph",
+  storyId: "topology.topology-graph",
   type: "brick",
   author: "ice",
   text: {
@@ -17,7 +17,7 @@ export const story: Story = {
     en: "",
     zh: "应用架构拓扑展示应用的分层架构拓扑，分别为应用层、服务节点、主机、集群；业务架构拓扑通过应用间关系来汇聚业务的访问关系，展示某业务的上下游系统",
   },
-  examples: [
+  conf: [
     {
       brick: "topology.topology-graph",
       properties: {

@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import { graphic } from "echarts";
 
 export const story: Story = {
-  id: "graph.graph-icon",
+  storyId: "graph.graph-icon",
   type: "brick",
   author: "astrid",
   text: {
@@ -18,7 +18,7 @@ export const story: Story = {
     en: "",
     zh: "纯图标+文字的构件，不需要外层包圈，以便于用于一些拟人化的拓扑展示（如网络拓扑等）",
   },
-  examples: [
+  conf: [
     {
       brick: "graph.graph-icon",
       properties: {

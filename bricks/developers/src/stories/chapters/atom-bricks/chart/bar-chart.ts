@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import docMD from "../../../docs/general-charts/bar-chart.md";
 
 export const story: Story = {
-  id: "general-charts.bar-chart",
+  storyId: "general-charts.bar-chart",
   type: "brick",
   author: "cyril",
   text: {
@@ -18,7 +18,7 @@ export const story: Story = {
     lib: "antd",
     type: "bar-chart",
   },
-  examples: {
+  conf: {
     brick: "general-charts.bar-chart",
     properties: {
       title: "主机数量",

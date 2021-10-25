@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import docMD from "../../../docs/monitor-log/keywords-statistics.md";
 
 export const story: Story = {
-  id: "monitor-log.keywords-statistics",
+  storyId: "monitor-log.keywords-statistics",
   type: "brick",
   author: "jo",
   text: {
@@ -17,7 +17,7 @@ export const story: Story = {
     lib: "fa",
     icon: "search",
   },
-  examples: [
+  conf: [
     {
       brick: "monitor-log.keywords-statistics",
       properties: {

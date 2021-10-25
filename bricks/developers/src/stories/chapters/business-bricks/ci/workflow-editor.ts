@@ -23,7 +23,7 @@ export const pluginVersion = {
 };
 
 export const story: Story = {
-  id: "ci.workflow-editor",
+  storyId: "ci.workflow-editor",
   type: "brick",
   text: {
     en: "Workflow Editor",
@@ -38,7 +38,7 @@ export const story: Story = {
     icon: "layer-group",
     prefix: "fas",
   },
-  examples: [
+  conf: [
     {
       brick: "ci.workflow-editor",
       properties: {

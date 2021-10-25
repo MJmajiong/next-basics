@@ -3,7 +3,7 @@ import docMD from "../../../docs/monitor-log/search-template.md";
 import { CMDB_HOST_INSTANCE_ID } from "../../../constants";
 
 export const story: Story = {
-  id: "monitor-log.search",
+  storyId: "monitor-log.search",
   type: "template",
   author: "jo",
   text: {
@@ -18,7 +18,7 @@ export const story: Story = {
     lib: "fa",
     icon: "search",
   },
-  examples: [
+  conf: [
     {
       template: "monitor-log.search",
       params: {

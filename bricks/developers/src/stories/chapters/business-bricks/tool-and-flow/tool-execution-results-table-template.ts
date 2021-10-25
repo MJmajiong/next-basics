@@ -6,7 +6,7 @@ import {
 } from "../../../constants";
 
 export const story: Story = {
-  id: "tools.tool-execution-results-table",
+  storyId: "tools.tool-execution-results-table",
   type: "template",
   author: "lynette",
   text: {
@@ -21,7 +21,7 @@ export const story: Story = {
     lib: "fa",
     icon: "table",
   },
-  examples: {
+  conf: {
     brick: "div",
     slots: {
       "": {

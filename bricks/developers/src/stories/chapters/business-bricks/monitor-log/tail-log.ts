@@ -6,7 +6,7 @@ import {
 } from "../../../constants";
 
 export const story: Story = {
-  id: "monitor-log.tail-log",
+  storyId: "monitor-log.tail-log",
   type: "template",
   author: "lynette",
   text: {
@@ -21,7 +21,7 @@ export const story: Story = {
     lib: "antd",
     type: "number",
   },
-  examples: {
+  conf: {
     template: "monitor-log.tail-log",
     params: {
       targets: [

@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import docMD from "../../../docs/deploy-history/deploy-history.md";
 
 export const story: Story = {
-  id: "deploy-history.list",
+  storyId: "deploy-history.list",
   type: "template",
   author: "jo",
   text: {
@@ -17,7 +17,7 @@ export const story: Story = {
     lib: "fa",
     icon: "history",
   },
-  examples: {
+  conf: {
     template: "deploy-history.list",
     params: {
       cardProps: {

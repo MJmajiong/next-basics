@@ -501,7 +501,7 @@ const dataForHighlight = {
 };
 
 export const story: Story = {
-  id: "graph.general-graph",
+  storyId: "graph.general-graph",
   type: "brick",
   author: "steve",
   text: {
@@ -517,7 +517,7 @@ export const story: Story = {
     en: "Support the definition of different layouts based on edgeType and the definition of different node bricks based on nodeType",
     zh: "支持根据边类型配置不同布局(force/tree/grid/link/dagre/manual)和节点构件的混合拓扑视图构件",
   },
-  examples: [
+  conf: [
     {
       description: {
         title: "在 Manual 布局中使用 Force 作为初始布局",

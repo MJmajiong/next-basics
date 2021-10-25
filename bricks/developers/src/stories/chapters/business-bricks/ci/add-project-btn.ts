@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import docMD from "../../../docs/ci/add-project-btn.md";
 
 export const story: Story = {
-  id: "ci.add-project-btn",
+  storyId: "ci.add-project-btn",
   type: "brick",
   text: {
     en: "Add CI Project",
@@ -17,7 +17,7 @@ export const story: Story = {
     icon: "folder-add",
     theme: "filled",
   },
-  examples: {
+  conf: {
     brick: "ci.add-project-btn",
     properties: {
       icon: "plus",

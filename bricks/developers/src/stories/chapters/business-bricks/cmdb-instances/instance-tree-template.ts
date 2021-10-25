@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import docMD from "../../../docs/cmdb-instances/instance-tree-template.md";
 
 export const story: Story = {
-  id: "cmdb-instances.instance-tree",
+  storyId: "cmdb-instances.instance-tree",
   type: "template",
   author: "jo",
   text: {
@@ -17,7 +17,7 @@ export const story: Story = {
     lib: "fa",
     icon: "stream",
   },
-  examples: {
+  conf: {
     brick: "basic-bricks.multiple-columns-card",
     properties: {
       gridColumns: ["350px", 1],

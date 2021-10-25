@@ -7,12 +7,12 @@ const chapter: Chapter = {
   },
   stories: [
     {
-      id: "general-login",
+      storyId: "general-login",
       text: {
         en: "General Login",
         zh: "普通登录",
       },
-      examples: {
+      conf: {
         brick: "general-auth.general-login",
         events: {
           "login.success": {
@@ -28,12 +28,12 @@ const chapter: Chapter = {
       ],
     },
     {
-      id: "general-logout",
+      storyId: "general-logout",
       text: {
         en: "General Logout",
         zh: "普通登出",
       },
-      examples: {
+      conf: {
         brick: "general-auth.general-logout",
         events: {
           "logout.success": {

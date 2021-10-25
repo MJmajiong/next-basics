@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import docMD from "../../../docs/general-charts/trend-chart.md";
 
 export const story: Story = {
-  id: "general-charts.trend-chart",
+  storyId: "general-charts.trend-chart",
   type: "brick",
   author: "cyril",
   deprecated: true,
@@ -18,7 +18,7 @@ export const story: Story = {
     lib: "fa",
     icon: "dolly",
   },
-  examples: {
+  conf: {
     brick: "general-charts.trend-chart",
     properties: {
       data: {

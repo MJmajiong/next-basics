@@ -6,7 +6,7 @@ import {
 } from "../../../constants";
 
 export const story: Story = {
-  id: "cmdb-instances.instance-remove-relation-wrapper",
+  storyId: "cmdb-instances.instance-remove-relation-wrapper",
   type: "template",
   author: "cyril",
   text: {
@@ -21,7 +21,7 @@ export const story: Story = {
     lib: "fa",
     icon: "unlink",
   },
-  examples: {
+  conf: {
     template: "cmdb-instances.instance-remove-relation-wrapper",
     params: {
       description: "从当前主机中移除该备份负责人",

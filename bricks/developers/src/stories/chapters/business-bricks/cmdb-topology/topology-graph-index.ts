@@ -1,7 +1,7 @@
 import { Story } from "../../../interfaces";
 
 export const story: Story = {
-  id: "topology.topology-graph-index",
+  storyId: "topology.topology-graph-index",
   type: "brick",
   author: "ice",
   text: {
@@ -16,7 +16,7 @@ export const story: Story = {
     lib: "fa",
     icon: "sitemap",
   },
-  examples: {
+  conf: {
     brick: "topology.topology-graph-index",
   },
 };

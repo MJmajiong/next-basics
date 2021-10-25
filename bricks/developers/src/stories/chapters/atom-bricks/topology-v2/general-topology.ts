@@ -419,7 +419,7 @@ const data = {
 };
 
 export const story: Story = {
-  id: "topology-v2.general-topology",
+  storyId: "topology-v2.general-topology",
   type: "brick",
   author: "ice",
   text: {
@@ -431,7 +431,7 @@ export const story: Story = {
     en: "",
     zh: "根据节点，边，及布局类型，展示拓扑图",
   },
-  examples: [
+  conf: [
     {
       brick: "basic-bricks.grid-layout",
       slots: {

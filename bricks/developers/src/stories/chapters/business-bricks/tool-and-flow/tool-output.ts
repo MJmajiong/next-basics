@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import docMD from "../../../docs/tools/tool-output.md";
 
 export const story: Story = {
-  id: "tools.tool-output",
+  storyId: "tools.tool-output",
   type: "template",
   author: "jo",
   text: {
@@ -17,7 +17,7 @@ export const story: Story = {
     lib: "fa",
     icon: "tools",
   },
-  examples: {
+  conf: {
     template: "tools.tool-output",
     params: {
       execId: "201912_task15dd8a076c97b622279c",

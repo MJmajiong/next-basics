@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import docMD from "../../../docs/cmdb-instances/resource-chart-viewer.md";
 
 export const story: Story = {
-  id: "cmdb-instances.resource-chart-viewer",
+  storyId: "cmdb-instances.resource-chart-viewer",
   type: "template",
   author: "jo",
   text: {
@@ -17,7 +17,7 @@ export const story: Story = {
     lib: "fa",
     icon: "chart-area",
   },
-  examples: [
+  conf: [
     {
       template: "cmdb-instances.resource-chart-viewer",
       params: {

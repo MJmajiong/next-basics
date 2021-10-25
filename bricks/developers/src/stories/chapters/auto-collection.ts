@@ -8,12 +8,12 @@ const chapter: Chapter = {
   },
   stories: [
     {
-      id: "presentational-bricks.brick-collection-instance-execution",
+      storyId: "presentational-bricks.brick-collection-instance-execution",
       text: {
         en: "execute collection instance",
         zh: "执行采集实例",
       },
-      examples: {
+      conf: {
         brick: "presentational-bricks.brick-collection-instance-execution",
       },
       doc: BrickCollectionInstanceExecutionMD,

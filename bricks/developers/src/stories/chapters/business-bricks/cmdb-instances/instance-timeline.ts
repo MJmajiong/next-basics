@@ -3,7 +3,7 @@ import docMD from "../../../docs/cmdb-instances/instance-timeline.md";
 import { CMDB_HOST_INSTANCE_ID } from "../../../constants";
 
 export const story: Story = {
-  id: "cmdb-instances.instance-timeline",
+  storyId: "cmdb-instances.instance-timeline",
   type: "brick",
   author: "lynette",
   text: {
@@ -18,7 +18,7 @@ export const story: Story = {
     lib: "fa",
     icon: "stream",
   },
-  examples: {
+  conf: {
     brick: "cmdb-instances.instance-timeline",
     properties: {
       objectId: "HOST",

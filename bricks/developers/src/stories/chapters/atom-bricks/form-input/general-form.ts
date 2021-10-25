@@ -2,7 +2,7 @@ import doc from "../../../docs/forms/general-form.md";
 import { Story } from "../../../interfaces";
 
 const story: Story = {
-  id: "forms.general-form",
+  storyId: "forms.general-form",
   type: "brick",
   author: "steve",
   text: {
@@ -17,7 +17,7 @@ const story: Story = {
     lib: "fa",
     icon: "pen",
   },
-  examples: [
+  conf: [
     {
       brick: "div",
       slots: {

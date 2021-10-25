@@ -3,7 +3,7 @@ import docMD from "../../../docs/tool-and-flow/job-execution-form.md";
 import { JOB_ID2 } from "../../../constants";
 
 export const story: Story = {
-  id: "tools.job-execution-form",
+  storyId: "tools.job-execution-form",
   type: "template",
   author: "jo",
   text: {
@@ -18,7 +18,7 @@ export const story: Story = {
     lib: "fa",
     icon: "running",
   },
-  examples: {
+  conf: {
     brick: "div",
     slots: {
       "": {

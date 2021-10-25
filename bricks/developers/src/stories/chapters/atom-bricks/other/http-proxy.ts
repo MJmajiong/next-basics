@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import docMD from "../../../docs/basic-providers/http-proxy.md";
 
 export const story: Story = {
-  id: "basic-providers.provider-http-proxy",
+  storyId: "basic-providers.provider-http-proxy",
   type: "brick",
   author: "dophi",
   text: {
@@ -17,7 +17,7 @@ export const story: Story = {
     lib: "antd",
     type: "dribbble-circle",
   },
-  examples: [
+  conf: [
     {
       description: {
         title: "通过api_gateway转发http请求",

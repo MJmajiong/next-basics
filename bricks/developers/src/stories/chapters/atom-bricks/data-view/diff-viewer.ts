@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import docMD from "../../../docs/diff-viewer/diff-viewer.md";
 
 export const story: Story = {
-  id: "diff-viewer.diff-viewer",
+  storyId: "diff-viewer.diff-viewer",
   type: "brick",
   author: "jo",
   text: {
@@ -17,7 +17,7 @@ export const story: Story = {
     lib: "fa",
     icon: "code",
   },
-  examples: {
+  conf: {
     brick: "diff-viewer.diff-viewer",
     properties: {
       oldValue:

@@ -5,7 +5,7 @@ import { mergeCommon } from "./utils";
 const doc = mergeCommon(originDoc);
 
 export const story: Story = {
-  id: "chart-v2.donut-chart",
+  storyId: "chart-v2.donut-chart",
   type: "brick",
   author: "ice",
   text: {
@@ -17,7 +17,7 @@ export const story: Story = {
     en: "display donut chart",
     zh: "其本质是饼图将中间区域挖空；能相对简单的对比不同的环图",
   },
-  examples: [
+  conf: [
     {
       brick: "chart-v2.donut-chart",
       properties: {

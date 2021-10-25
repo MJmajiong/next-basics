@@ -3,7 +3,7 @@ import docMD from "../../../docs/cmdb-instances/instance-add-relation.md";
 import { CMDB_HOST_INSTANCE_ID } from "../../../constants";
 
 export const story: Story = {
-  id: "cmdb-instances.instance-add-relation",
+  storyId: "cmdb-instances.instance-add-relation",
   type: "brick",
   author: "jo",
   text: {
@@ -18,7 +18,7 @@ export const story: Story = {
     lib: "fa",
     icon: "link",
   },
-  examples: {
+  conf: {
     brick: "cmdb-instances.instance-add-relation",
     properties: {
       objectId: "HOST",

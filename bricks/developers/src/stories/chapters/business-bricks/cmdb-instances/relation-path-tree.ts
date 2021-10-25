@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import doc from "../../../docs/cmdb-instances/relation-path-tree.md";
 
 export const story: Story = {
-  id: "cmdb-instances.relation-path-tree",
+  storyId: "cmdb-instances.relation-path-tree",
   type: "brick",
   author: "ice",
   text: {
@@ -17,7 +17,7 @@ export const story: Story = {
     lib: "fa",
     icon: "tree",
   },
-  examples: [
+  conf: [
     {
       brick: "cmdb-instances.relation-path-tree",
       events: {

@@ -3,7 +3,7 @@ import docMD from "../../../docs/agile/tpl-issue-detail-drawer.md";
 import { ISSUE_NAME } from "../../../constants";
 
 export const story: Story = {
-  id: "agile.tpl-issue-detail-drawer",
+  storyId: "agile.tpl-issue-detail-drawer",
   type: "brick",
   author: "alren",
   text: {
@@ -19,7 +19,7 @@ export const story: Story = {
     en: "issue detail drawer",
     zh: "显示issue的详情内容及一些常用操作",
   },
-  examples: [
+  conf: [
     {
       brick: "div",
       slots: {

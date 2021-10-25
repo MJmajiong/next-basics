@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import docMD from "../../../docs/forms/tpl-cmdb-object-attr-add.md";
 
 export const story: Story = {
-  id: "cmdb-object.tpl-cmdb-object-attr-add",
+  storyId: "cmdb-object.tpl-cmdb-object-attr-add",
   type: "brick",
   author: "dophi",
   text: {
@@ -18,7 +18,7 @@ export const story: Story = {
     en: "add a new CMDB object attribute",
     zh: "添加cmdb模型属性",
   },
-  examples: [
+  conf: [
     {
       brick: "div",
       slots: {

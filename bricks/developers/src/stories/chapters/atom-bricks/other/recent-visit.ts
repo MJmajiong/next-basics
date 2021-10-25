@@ -2,7 +2,7 @@ import doc from "../../../docs/visit-history/recent-visit.md";
 import { Story } from "../../../interfaces";
 
 export const story: Story = {
-  id: "visit-history.recent-visit",
+  storyId: "visit-history.recent-visit",
   type: "brick",
   author: "lynette",
   text: {
@@ -17,7 +17,7 @@ export const story: Story = {
     lib: "fa",
     icon: "eye",
   },
-  examples: [
+  conf: [
     {
       brick: "div",
       slots: {

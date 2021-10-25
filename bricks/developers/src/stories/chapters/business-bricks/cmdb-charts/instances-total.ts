@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import docMD from "../../../docs/cmdb-charts/instances-total.md";
 
 export const story: Story = {
-  id: "cmdb-charts.instances-total",
+  storyId: "cmdb-charts.instances-total",
   type: "template",
   author: "cyril",
   text: {
@@ -17,7 +17,7 @@ export const story: Story = {
     lib: "antd",
     type: "number",
   },
-  examples: [
+  conf: [
     {
       template: "monitor-charts.instances-total",
       params: {

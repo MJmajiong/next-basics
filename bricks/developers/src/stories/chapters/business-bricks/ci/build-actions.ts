@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import docMD from "../../../docs/ci/build-actions.md";
 
 export const story: Story = {
-  id: "ci.build-actions",
+  storyId: "ci.build-actions",
   type: "brick",
   text: {
     en: "Build Actions",
@@ -17,7 +17,7 @@ export const story: Story = {
     category: "default",
     icon: "config",
   },
-  examples: [
+  conf: [
     {
       brick: "ci.build-actions",
       properties: {

@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import { CMDB_APP_INSTANCE_ID } from "../../../constants";
 
 export const story: Story = {
-  id: "cmdb-brick.app-cluster-list",
+  storyId: "cmdb-brick.app-cluster-list",
   type: "brick",
   author: "lynette",
   text: {
@@ -17,7 +17,7 @@ export const story: Story = {
     lib: "fa",
     icon: "list",
   },
-  examples: {
+  conf: {
     brick: "cmdb-brick.app-cluster-list",
     properties: {
       instanceId: CMDB_APP_INSTANCE_ID,

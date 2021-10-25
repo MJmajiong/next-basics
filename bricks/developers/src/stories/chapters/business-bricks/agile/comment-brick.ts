@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import docMD from "../../../docs/agile/comment-brick.md";
 
 export const story: Story = {
-  id: "agile.comment-brick",
+  storyId: "agile.comment-brick",
   type: "brick",
   author: "lynette",
   text: {
@@ -18,7 +18,7 @@ export const story: Story = {
     en: "comment brick",
     zh: "包括评论列表和发表评论",
   },
-  examples: [
+  conf: [
     {
       brick: "container-brick.tabs-container",
       properties: {

@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import docMD from "../../../docs/ci/build-list-event.md";
 
 export const story: Story = {
-  id: "ci.build-list-event",
+  storyId: "ci.build-list-event",
   type: "brick",
   text: {
     en: "Git Event",
@@ -17,7 +17,7 @@ export const story: Story = {
     category: "ci",
     icon: "gitlab",
   },
-  examples: [
+  conf: [
     {
       brick: "ci.build-list-event",
       properties: {

@@ -3,7 +3,7 @@ import docMD from "../../../docs/monitor-log/files-table-template.md";
 import { CMDB_HOST_INSTANCE_ID } from "../../../constants";
 
 export const story: Story = {
-  id: "monitor-log.files-table",
+  storyId: "monitor-log.files-table",
   type: "template",
   author: "jo",
   text: {
@@ -18,7 +18,7 @@ export const story: Story = {
     lib: "fa",
     icon: "table",
   },
-  examples: [
+  conf: [
     {
       template: "monitor-log.files-table",
       params: {

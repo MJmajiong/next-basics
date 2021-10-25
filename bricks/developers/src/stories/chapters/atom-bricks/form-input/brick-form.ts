@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import docMD from "../../../docs/presentational-bricks/brick-form.md";
 
 export const story: Story = {
-  id: "presentational-bricks.brick-form",
+  storyId: "presentational-bricks.brick-form",
   type: "brick",
   author: "jo",
   text: {
@@ -18,7 +18,7 @@ export const story: Story = {
     lib: "fa",
     icon: "pen",
   },
-  examples: {
+  conf: {
     brick: "presentational-bricks.brick-form",
     properties: {
       layout: "horizontal",

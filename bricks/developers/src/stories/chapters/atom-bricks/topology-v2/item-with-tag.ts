@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import doc from "../../../docs/graph/item-with-tag.md";
 
 export const story: Story = {
-  id: "graph.item-with-tag",
+  storyId: "graph.item-with-tag",
   type: "brick",
   author: "lynette",
   text: {
@@ -18,7 +18,7 @@ export const story: Story = {
     en: "",
     zh: "可以配置标签/icon/text的item构件，常用于general-graph构件的子构件",
   },
-  examples: [
+  conf: [
     {
       brick: "graph.item-with-tag",
       properties: {

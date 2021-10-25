@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import docMD from "../../../docs/excel-utils/export-data.md";
 
 export const story: Story = {
-  id: "excel-utils.export-data",
+  storyId: "excel-utils.export-data",
   type: "brick",
   author: "jo",
   text: {
@@ -17,7 +17,7 @@ export const story: Story = {
     lib: "fa",
     icon: "pencil-alt",
   },
-  examples: [
+  conf: [
     {
       brick: "div",
       slots: {

@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import docMD from "../../../docs/permission/roles-members-setting-modal.md";
 
 export const story: Story = {
-  id: "permission.roles-members-setting-modal",
+  storyId: "permission.roles-members-setting-modal",
   type: "template",
   author: "cyril",
   text: {
@@ -17,7 +17,7 @@ export const story: Story = {
     lib: "fa",
     icon: "user",
   },
-  examples: [
+  conf: [
     {
       brick: "div",
       slots: {

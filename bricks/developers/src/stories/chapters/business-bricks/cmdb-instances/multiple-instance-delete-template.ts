@@ -3,7 +3,7 @@ import docMD from "../../../docs/cmdb-instances/multiple-instance-delete-templat
 import { CMDB_APP_INSTANCE_ID } from "../../../constants";
 
 export const story: Story = {
-  id: "cmdb-instances.multiple-instance-delete",
+  storyId: "cmdb-instances.multiple-instance-delete",
   type: "template",
   author: "jo",
   text: {
@@ -18,7 +18,7 @@ export const story: Story = {
     lib: "fa",
     icon: "trash-alt",
   },
-  examples: {
+  conf: {
     template: "cmdb-instances.multiple-instance-delete",
     params: {
       btnName: "删除",

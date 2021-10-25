@@ -4,7 +4,7 @@ import docMD from "../../../docs/cmdb-instances/cmdb-instances-input-form.md";
 import { CMDB_HOST_INSTANCE_ID } from "../../../constants";
 
 export const story: Story = {
-  id: "cmdb-instances.cmdb-instances-input-form",
+  storyId: "cmdb-instances.cmdb-instances-input-form",
   type: "brick",
   author: "cyril",
   text: {
@@ -19,7 +19,7 @@ export const story: Story = {
     lib: "fa",
     icon: "pen",
   },
-  examples: [
+  conf: [
     {
       brick: "forms.general-form",
       properties: {

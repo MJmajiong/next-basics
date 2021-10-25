@@ -3,7 +3,7 @@ import docMD from "../../../docs/real-time-monitor/top-process.md";
 import { CMDB_HOST_INSTANCE_ID } from "../../../constants";
 
 export const story: Story = {
-  id: "real-time-monitor.top-process",
+  storyId: "real-time-monitor.top-process",
   type: "template",
   author: "lynette",
   text: {
@@ -18,7 +18,7 @@ export const story: Story = {
     lib: "antd",
     type: "number",
   },
-  examples: {
+  conf: {
     template: "real-time-monitor.top-process",
     params: {
       instanceId: CMDB_HOST_INSTANCE_ID,

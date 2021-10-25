@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import doc from "../../../docs/chart-v2/general-chart.md";
 
 export const story: Story = {
-  id: "chart-v2.general-chart",
+  storyId: "chart-v2.general-chart",
   type: "brick",
   author: "ice",
   text: {
@@ -14,7 +14,7 @@ export const story: Story = {
     en: "display line, pie, or area chart as you like",
     zh: "根据需要自由定制图表",
   },
-  examples: [
+  conf: [
     {
       brick: "chart-v2.general-chart",
       properties: {

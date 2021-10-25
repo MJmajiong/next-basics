@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import doc from "../../../docs/cmdb-object/model-icon-combination-modal.md";
 
 export const story: Story = {
-  id: "cmdb-object.model-icon-combination-modal",
+  storyId: "cmdb-object.model-icon-combination-modal",
   type: "brick",
   author: "ice",
   text: {
@@ -14,7 +14,7 @@ export const story: Story = {
     en: "select icon and color to combine into a new color-icon",
     zh: "可以选择图标和颜色来给合成新的图标",
   },
-  examples: {
+  conf: {
     brick: "div",
     slots: {
       content: {

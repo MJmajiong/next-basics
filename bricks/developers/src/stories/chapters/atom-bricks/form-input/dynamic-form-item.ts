@@ -2,7 +2,7 @@ import doc from "../../../docs/forms/dynamic-form-item.md";
 import { Story } from "../../../interfaces";
 
 const story: Story = {
-  id: "forms.dynamic-form-item",
+  storyId: "forms.dynamic-form-item",
   type: "brick",
   author: "jo",
   text: {
@@ -17,7 +17,7 @@ const story: Story = {
     lib: "fa",
     icon: "columns",
   },
-  examples: [
+  conf: [
     {
       brick: "forms.general-form",
       properties: {

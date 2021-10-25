@@ -3,7 +3,7 @@ import { OBJECT_TOPOLOGY_VIEW_ID } from "../../../constants";
 import doc from "../../../docs/cmdb-topology/object-topology-view.md";
 
 export const story: Story = {
-  id: "topology.object-topology-view",
+  storyId: "topology.object-topology-view",
   type: "brick",
   author: "ice",
   text: {
@@ -15,7 +15,7 @@ export const story: Story = {
     en: "topology formed by CMDB object",
     zh: "CMDB 模型节点组成的拓扑视图",
   },
-  examples: {
+  conf: {
     brick: "div",
     slots: {
       content: {

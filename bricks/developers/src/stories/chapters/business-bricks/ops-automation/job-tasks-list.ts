@@ -3,7 +3,7 @@ import docMD from "../../../docs/ops-automation/job-tasks-list.md";
 import { JOB_ID } from "../../../constants";
 
 export const story: Story = {
-  id: "ops-automation.job-tasks-list",
+  storyId: "ops-automation.job-tasks-list",
   type: "template",
   author: "jo",
   text: {
@@ -18,7 +18,7 @@ export const story: Story = {
     lib: "fa",
     icon: "box",
   },
-  examples: {
+  conf: {
     template: "ops-automation.job-tasks-list",
     params: {
       jobId: JOB_ID,

@@ -4,7 +4,7 @@ import docMD from "../../../docs/cmdb-instances/cmdb-instances-filter-display.md
 import { CMDB_HOST_INSTANCE_ID } from "../../../constants";
 
 const story: Story = {
-  id: "cmdb-instances.cmdb-instances-filter-display",
+  storyId: "cmdb-instances.cmdb-instances-filter-display",
   type: "template",
   author: "cyril",
   text: {
@@ -19,7 +19,7 @@ const story: Story = {
     lib: "fa",
     icon: "info",
   },
-  examples: [
+  conf: [
     {
       template: "cmdb-instances.cmdb-instances-filter-display",
       params: {

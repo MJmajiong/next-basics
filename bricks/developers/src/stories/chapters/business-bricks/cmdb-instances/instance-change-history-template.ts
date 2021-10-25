@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import docMD from "../../../docs/cmdb-instances/instance-change-history-template.md";
 
 export const story: Story = {
-  id: "cmdb-instances.instance-change-history",
+  storyId: "cmdb-instances.instance-change-history",
   type: "template",
   author: "lynette",
   text: {
@@ -17,7 +17,7 @@ export const story: Story = {
     lib: "fa",
     icon: "stream",
   },
-  examples: {
+  conf: {
     template: "cmdb-instances.instance-change-history",
     params: {
       event_id: "eb34dbeb83fdffff1186ed8c3ad8ca2ab3a68fc1",

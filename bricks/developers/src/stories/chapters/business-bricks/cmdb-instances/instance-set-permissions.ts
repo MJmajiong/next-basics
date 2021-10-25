@@ -3,7 +3,7 @@ import { CMDB_HOST_INSTANCE_ID } from "../../../constants";
 // import docMD from "../../../docs/cmdb-instances/instance-set-permissions.md";
 
 export const story: Story = {
-  id: "cmdb-instances.instance-set-permissions",
+  storyId: "cmdb-instances.instance-set-permissions",
   type: "brick",
   author: "lynette",
   text: {
@@ -18,7 +18,7 @@ export const story: Story = {
     lib: "fa",
     icon: "cog",
   },
-  examples: {
+  conf: {
     brick: "cmdb-instances.instance-set-permissions",
     properties: {
       objectId: "HOST",

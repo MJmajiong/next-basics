@@ -10,12 +10,12 @@ const chapter: Chapter = {
   },
   stories: [
     {
-      id: "general-form",
+      storyId: "general-form",
       text: {
         en: "General Form",
         zh: "普通表单",
       },
-      examples: {
+      conf: {
         brick: "forms.general-form",
         properties: {
           values: {
@@ -60,12 +60,12 @@ const chapter: Chapter = {
       doc: generalFormMD,
     },
     {
-      id: "general-input",
+      storyId: "general-input",
       text: {
         en: "General Input",
         zh: "普通输入框",
       },
-      examples: {
+      conf: {
         brick: "forms.general-input",
         properties: {
           name: "username",
@@ -78,12 +78,12 @@ const chapter: Chapter = {
       doc: generalInputMD,
     },
     {
-      id: "general-select",
+      storyId: "general-select",
       text: {
         en: "General Select",
         zh: "普通下拉选择框",
       },
-      examples: {
+      conf: {
         brick: "forms.general-select",
         properties: {
           name: "gender",

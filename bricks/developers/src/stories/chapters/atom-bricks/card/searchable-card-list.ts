@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import docMD from "../../../docs/general-list/searchable-card-list.md";
 
 export const story: Story = {
-  id: "general-list.searchable-card-list",
+  storyId: "general-list.searchable-card-list",
   type: "template",
   author: "lynette",
   text: {
@@ -17,7 +17,7 @@ export const story: Story = {
     lib: "fa",
     icon: "list",
   },
-  examples: [
+  conf: [
     {
       template: "general-list.searchable-card-list",
       params: {

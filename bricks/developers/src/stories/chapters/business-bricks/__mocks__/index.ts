@@ -8,13 +8,13 @@ export const businessBook: Chapter[] = [
     },
     stories: [
       {
-        id: "fake-story-of-business",
+        storyId: "fake-story-of-business",
         type: "template",
         text: {
           en: "Fake Story of Correct En",
           zh: "Fake Story of Correct Zh",
         },
-        examples: {
+        conf: {
           template: "fake-brick-of-business",
           properties: {
             for: "good",

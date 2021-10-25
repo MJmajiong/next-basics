@@ -80,7 +80,7 @@ const mockProps = {
 };
 
 export const story: Story = {
-  id: "basic-bricks.advance-list-container",
+  storyId: "basic-bricks.advance-list-container",
   type: "brick",
   author: "momo",
   deprecated: true,
@@ -96,7 +96,7 @@ export const story: Story = {
     lib: "fa",
     icon: "th",
   },
-  examples: [
+  conf: [
     {
       brick: "basic-bricks.advance-list-container",
       properties: mockProps,

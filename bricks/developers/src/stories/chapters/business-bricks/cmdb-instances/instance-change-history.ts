@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import docMD from "../../../docs/cmdb-instances/instance-change-history.md";
 
 export const story: Story = {
-  id: "cmdb-instances.instance-change-history",
+  storyId: "cmdb-instances.instance-change-history",
   type: "brick",
   author: "lynette",
   text: {
@@ -17,7 +17,7 @@ export const story: Story = {
     lib: "fa",
     icon: "file-alt",
   },
-  examples: {
+  conf: {
     brick: "cmdb-instances.instance-change-history",
     properties: {
       showCard: true,

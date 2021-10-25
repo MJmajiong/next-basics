@@ -6,7 +6,7 @@ import {
 } from "../../../constants";
 
 export const story: Story = {
-  id: "cmdb-instances.instance-remove-relation",
+  storyId: "cmdb-instances.instance-remove-relation",
   type: "brick",
   author: "lynette",
   text: {
@@ -21,7 +21,7 @@ export const story: Story = {
     lib: "fa",
     icon: "unlink",
   },
-  examples: {
+  conf: {
     brick: "cmdb-instances.instance-remove-relation",
     properties: {
       objectId: "HOST",

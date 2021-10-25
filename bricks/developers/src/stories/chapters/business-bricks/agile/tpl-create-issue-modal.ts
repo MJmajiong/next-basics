@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import docMD from "../../../docs/agile/tpl-create-issue-modal.md";
 
 export const story: Story = {
-  id: "agile.tpl-create-issue-modal",
+  storyId: "agile.tpl-create-issue-modal",
   type: "brick",
   author: "alren",
   text: {
@@ -18,7 +18,7 @@ export const story: Story = {
     en: "issue create modal",
     zh: "封装了标准issue新建的弹框",
   },
-  examples: [
+  conf: [
     {
       brick: "div",
       slots: {

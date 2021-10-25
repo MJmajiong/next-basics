@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import docMD from "../../../docs/code-bricks/code-editor.md";
 
 export const story: Story = {
-  id: "code-bricks.code-editor",
+  storyId: "code-bricks.code-editor",
   type: "brick",
   author: "lynette",
   text: {
@@ -17,7 +17,7 @@ export const story: Story = {
     lib: "antd",
     type: "code",
   },
-  examples: [
+  conf: [
     {
       brick: "code-bricks.code-editor",
       properties: {

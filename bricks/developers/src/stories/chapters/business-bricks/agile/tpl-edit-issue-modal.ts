@@ -3,7 +3,7 @@ import docMD from "../../../docs/agile/tpl-edit-issue-modal.md";
 import { ISSUE_NAME } from "../../../constants";
 
 export const story: Story = {
-  id: "agile.tpl-edit-issue-modal",
+  storyId: "agile.tpl-edit-issue-modal",
   type: "brick",
   author: "alren",
   text: {
@@ -19,7 +19,7 @@ export const story: Story = {
     en: "issue edit modal",
     zh: "封装了标准issue编辑的弹框",
   },
-  examples: [
+  conf: [
     {
       brick: "div",
       slots: {

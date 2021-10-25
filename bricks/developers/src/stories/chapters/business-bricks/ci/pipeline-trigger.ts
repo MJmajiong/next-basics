@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import docMD from "../../../docs/ci/pipeline-trigger.md";
 
 export const story: Story = {
-  id: "ci.pipeline-trigger",
+  storyId: "ci.pipeline-trigger",
   type: "brick",
   text: {
     en: "Pipeline Event Trigger",
@@ -17,7 +17,7 @@ export const story: Story = {
     icon: "hubspot",
     prefix: "fab",
   },
-  examples: {
+  conf: {
     brick: "ci.pipeline-trigger",
     properties: {
       projectId: "5921d23ec7a05",

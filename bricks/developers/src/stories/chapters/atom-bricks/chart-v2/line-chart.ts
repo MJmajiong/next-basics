@@ -5,7 +5,7 @@ import { Story } from "@next-core/brick-types";
 const doc = mergeCommon(lineDoc);
 
 export const story: Story = {
-  id: "chart-v2.line-chart",
+  storyId: "chart-v2.line-chart",
   type: "brick",
   author: "ice",
   text: {
@@ -17,7 +17,7 @@ export const story: Story = {
     en: "display line chart",
     zh: "用于显示数据在一个连续的时间间隔或者时间跨度上的变化",
   },
-  examples: [
+  conf: [
     {
       brick: "div",
       slots: {

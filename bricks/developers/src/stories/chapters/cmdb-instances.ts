@@ -295,24 +295,24 @@ const chapter: Chapter = {
   },
   stories: [
     {
-      id: "instance-list",
+      storyId: "instance-list",
       text: {
         en: "Instance List",
         zh: "实例列表",
       },
-      examples: {
+      conf: {
         brick: "cmdb-instances.instance-list",
         properties: instanceListProperties,
       },
       doc: InstanceListMD,
     },
     {
-      id: "instance-list-modal",
+      storyId: "instance-list-modal",
       text: {
         en: "Instance List Modal",
         zh: "实例列表模态框",
       },
-      examples: {
+      conf: {
         brick: "cmdb-instances.instance-list-modal",
         properties: {
           ...instanceListProperties,
@@ -344,12 +344,12 @@ const chapter: Chapter = {
       doc: InstanceListModalMD,
     },
     {
-      id: "instance-card-list",
+      storyId: "instance-card-list",
       text: {
         en: "Instance Card List",
         zh: "实例卡片列表",
       },
-      examples: {
+      conf: {
         brick: "cmdb-instances.instance-card-list",
         properties: {
           objectId: "APP",
@@ -400,12 +400,12 @@ const chapter: Chapter = {
       doc: instanceCardListMD,
     },
     {
-      id: "instance-detail",
+      storyId: "instance-detail",
       text: {
         en: "Instance Detail",
         zh: "实例详情",
       },
-      examples: {
+      conf: {
         brick: "cmdb-instances.instance-detail",
         properties: {
           instanceId: "5932fea4fa078",
@@ -440,12 +440,12 @@ const chapter: Chapter = {
       doc: instanceDetailMD,
     },
     {
-      id: "instance-single-delete",
+      storyId: "instance-single-delete",
       text: {
         en: "Instance Single Delete",
         zh: "单实例删除",
       },
-      examples: {
+      conf: {
         brick: "cmdb-instances.instance-single-delete",
         properties: {
           instanceId: "584e75fd61d82",
@@ -455,12 +455,12 @@ const chapter: Chapter = {
       doc: InstanceSingleDeleteMD,
     },
     {
-      id: "instance-multi-delete",
+      storyId: "instance-multi-delete",
       text: {
         en: "Instance Multi Delete",
         zh: "多实例删除",
       },
-      examples: {
+      conf: {
         brick: "cmdb-instances.instance-delete",
         properties: {
           selectedKeys: ["585289a3c77d0", "5865023100a3d"],
@@ -482,12 +482,12 @@ const chapter: Chapter = {
       doc: InstanceDeleteMD,
     },
     {
-      id: "instance-edit",
+      storyId: "instance-edit",
       text: {
         en: "Instance Edit",
         zh: "单实例多属性编辑",
       },
-      examples: {
+      conf: {
         brick: "cmdb-instances.instance-edit",
         properties: {
           instanceId: "583db4de28a07",
@@ -498,12 +498,12 @@ const chapter: Chapter = {
       doc: InstanceEditMD,
     },
     {
-      id: "instance-multi-edit",
+      storyId: "instance-multi-edit",
       text: {
         en: "Instance Multi Edit",
         zh: "多实例单属性编辑",
       },
-      examples: {
+      conf: {
         brick: "cmdb-instances.instance-multi-edit",
         properties: {
           selectedKeys: ["5865157839b8a"],
@@ -525,12 +525,12 @@ const chapter: Chapter = {
       doc: InstanceMultiEditMD,
     },
     {
-      id: "instance-create",
+      storyId: "instance-create",
       text: {
         en: "Instance Create",
         zh: "单一表单创建",
       },
-      examples: {
+      conf: {
         brick: "cmdb-instances.instance-create",
         properties: {
           objectId: "HOST",
@@ -557,12 +557,12 @@ const chapter: Chapter = {
       doc: instanceCreateMD,
     },
     {
-      id: "instance-batch-set-permissions",
+      storyId: "instance-batch-set-permissions",
       text: {
         en: "instance-batch-set-permissions",
         zh: "批量设置权限",
       },
-      examples: {
+      conf: {
         brick: "cmdb-instances.instance-batch-set-permissions",
         properties: {
           objectId: "APP",
@@ -571,12 +571,12 @@ const chapter: Chapter = {
       },
     },
     {
-      id: "instance-set-permissions",
+      storyId: "instance-set-permissions",
       text: {
         en: "instance-set-permissions",
         zh: "设置权限",
       },
-      examples: {
+      conf: {
         brick: "cmdb-instances.instance-set-permissions",
         properties: {
           objectId: "APP",
@@ -590,12 +590,12 @@ const chapter: Chapter = {
       },
     },
     {
-      id: "instance-version-list",
+      storyId: "instance-version-list",
       text: {
         en: "instance-version-list",
         zh: "时间线卡片列表",
       },
-      examples: {
+      conf: {
         brick: "cmdb-instances.instance-version-list",
         properties: {
           objectId: "TOOL_HISTORY_VERSION",
@@ -608,12 +608,12 @@ const chapter: Chapter = {
       doc: InstanceVersionListMD,
     },
     {
-      id: "instance-create-modal",
+      storyId: "instance-create-modal",
       text: {
         en: "instance-create-modal",
         zh: "单一表单创建容器-模态框",
       },
-      examples: {
+      conf: {
         brick: "cmdb-instances.instance-create-modal",
         properties: {
           objectId: "_PROVIDER",
@@ -638,12 +638,12 @@ const chapter: Chapter = {
       ],
     },
     {
-      id: "instance-timeline",
+      storyId: "instance-timeline",
       text: {
         en: "instance-timeline",
         zh: "时间线事件列表",
       },
-      examples: {
+      conf: {
         brick: "cmdb-instances.instance-timeline",
         properties: {
           objectId: "PROGRESS_LOG",
@@ -654,12 +654,12 @@ const chapter: Chapter = {
       doc: InstanceTimelineMD,
     },
     {
-      id: "instance-change-history",
+      storyId: "instance-change-history",
       text: {
         en: "instance-change-history",
         zh: "实例变更详情",
       },
-      examples: {
+      conf: {
         brick: "cmdb-instances.instance-change-history",
         properties: {
           showCard: true,
@@ -778,12 +778,12 @@ const chapter: Chapter = {
       doc: InstanceChangeHistoryMD,
     },
     {
-      id: "instance-add-relation",
+      storyId: "instance-add-relation",
       text: {
         en: "instance-add-relation",
         zh: "添加实例关系",
       },
-      examples: {
+      conf: {
         brick: "cmdb-instances.instance-add-relation",
         properties: {
           objectId: "HOST",
@@ -811,12 +811,12 @@ const chapter: Chapter = {
       doc: InstanceAddRelationMD,
     },
     {
-      id: "instance-multi-create",
+      storyId: "instance-multi-create",
       text: {
         en: "instance-multi-create",
         zh: "多实例创建",
       },
-      examples: {
+      conf: {
         brick: "cmdb-instances.instance-multi-create",
         properties: {
           objectId: "_PROVIDER",
@@ -837,12 +837,12 @@ const chapter: Chapter = {
       doc: instanceMultiCreateMD,
     },
     {
-      id: "instance-name",
+      storyId: "instance-name",
       text: {
         en: "instance-name",
         zh: "实例名称",
       },
-      examples: {
+      conf: {
         brick: "cmdb-instances.instance-name",
         properties: {
           objectId: "APP",
@@ -852,12 +852,12 @@ const chapter: Chapter = {
       doc: InstanceNameMD,
     },
     {
-      id: "instance-remove-relation",
+      storyId: "instance-remove-relation",
       text: {
         en: "instance-remove-relation",
         zh: "移除实例关系",
       },
-      examples: {
+      conf: {
         brick: "cmdb-instances.instance-remove-relation",
         properties: {
           objectId: "HOST",
@@ -877,12 +877,12 @@ const chapter: Chapter = {
       doc: InstanceRemoveRelationMD,
     },
     {
-      id: "cmdb-instances-import",
+      storyId: "cmdb-instances-import",
       text: {
         en: "Cmdb Instances Import",
         zh: "实例导入构件",
       },
-      examples: [
+      conf: [
         {
           brick: "cmdb-instances.cmdb-instances-import",
           properties: {
@@ -954,12 +954,12 @@ const chapter: Chapter = {
       doc: CmdbInstancesImportMD,
     },
     {
-      id: "cmdb-instances-export",
+      storyId: "cmdb-instances-export",
       text: {
         en: "Cmdb Instances Export",
         zh: "实例导出构件",
       },
-      examples: [
+      conf: [
         {
           brick: "cmdb-instances.cmdb-instances-export",
           properties: {

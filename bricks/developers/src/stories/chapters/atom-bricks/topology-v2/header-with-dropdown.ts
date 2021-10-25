@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import doc from "../../../docs/graph/header-with-dropdown.md";
 
 export const story: Story = {
-  id: "graph.header-with-dropdown",
+  storyId: "graph.header-with-dropdown",
   type: "brick",
   author: "lynette",
   text: {
@@ -18,7 +18,7 @@ export const story: Story = {
     en: "",
     zh: "可以配置dropdown的header构件，常用于general-graph构件的子构件",
   },
-  examples: [
+  conf: [
     {
       brick: "graph.header-with-dropdown",
       properties: {

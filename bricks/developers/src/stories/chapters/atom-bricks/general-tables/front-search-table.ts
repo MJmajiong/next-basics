@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import docMD from "../../../docs/general-tables/front-search-table.md";
 
 export const story: Story = {
-  id: "general-tables.front-search-table",
+  storyId: "general-tables.front-search-table",
   type: "template",
   author: "lynette",
   text: {
@@ -17,7 +17,7 @@ export const story: Story = {
     lib: "fa",
     icon: "table",
   },
-  examples: [
+  conf: [
     {
       template: "general-tables.front-search-table",
       params: {

@@ -3,7 +3,7 @@ import docMD from "../../../docs/cmdb-topology/instance-topology-view.md";
 import { CMDB_HOST_INSTANCE_ID } from "../../../constants";
 
 export const story: Story = {
-  id: "topology.instance-topology-view",
+  storyId: "topology.instance-topology-view",
   type: "template",
   author: "ice",
   text: {
@@ -18,7 +18,7 @@ export const story: Story = {
     lib: "fa",
     icon: "fire-alt",
   },
-  examples: {
+  conf: {
     template: "topology.instance-topology-view",
     params: {
       objectId: "HOST",

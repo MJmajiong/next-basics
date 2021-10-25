@@ -3,7 +3,7 @@ import docMD from "../../../docs/cmdb-instances/instance-multi-edit.md";
 import { CMDB_APP_INSTANCE_ID } from "../../../constants";
 
 export const story: Story = {
-  id: "cmdb-instances.instance-multi-edit",
+  storyId: "cmdb-instances.instance-multi-edit",
   type: "brick",
   author: "lynette",
   text: {
@@ -18,7 +18,7 @@ export const story: Story = {
     lib: "fa",
     icon: "edit",
   },
-  examples: {
+  conf: {
     brick: "cmdb-instances.instance-multi-edit",
     properties: {
       selectedKeys: [CMDB_APP_INSTANCE_ID],

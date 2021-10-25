@@ -3,7 +3,7 @@ import docMD from "../../../docs/cmdb-instances/instance-single-delete-btn.md";
 import { CMDB_APP_DELETE_ID } from "../../../constants";
 
 export const story: Story = {
-  id: "cmdb-instances.cmdb-instance-delete",
+  storyId: "cmdb-instances.cmdb-instance-delete",
   type: "template",
   author: "jo",
   text: {
@@ -18,7 +18,7 @@ export const story: Story = {
     lib: "fa",
     icon: "trash",
   },
-  examples: {
+  conf: {
     template: "cmdb-instances.cmdb-instance-delete",
     params: {
       objectId: "APP",

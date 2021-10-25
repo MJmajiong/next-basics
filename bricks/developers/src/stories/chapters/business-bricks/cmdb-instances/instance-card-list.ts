@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import docMD from "../../../docs/cmdb-instances/instance-card-list.md";
 
 export const story: Story = {
-  id: "cmdb-instances.instance-card-list",
+  storyId: "cmdb-instances.instance-card-list",
   type: "brick",
   author: "lynette",
   text: {
@@ -17,7 +17,7 @@ export const story: Story = {
     lib: "fa",
     icon: "clone",
   },
-  examples: {
+  conf: {
     brick: "cmdb-instances.instance-card-list",
     properties: {
       objectId: "APP",

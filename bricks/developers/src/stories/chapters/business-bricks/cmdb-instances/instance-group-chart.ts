@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import docMD from "../../../docs/cmdb-instances/cmdb-instance-chart.md";
 
 export const story: Story = {
-  id: "cmdb-instances.group-chart",
+  storyId: "cmdb-instances.group-chart",
   type: "template",
   author: "jo",
   text: {
@@ -17,7 +17,7 @@ export const story: Story = {
     lib: "fa",
     icon: "chart-area",
   },
-  examples: [
+  conf: [
     {
       template: "cmdb-instances.group-chart",
       params: {

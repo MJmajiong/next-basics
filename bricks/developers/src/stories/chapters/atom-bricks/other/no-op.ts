@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import docMD from "../../../docs/basic-providers/no-op.md";
 
 export const story: Story = {
-  id: "basic-providers.provider-no-op",
+  storyId: "basic-providers.provider-no-op",
   type: "brick",
   author: "steve",
   text: {
@@ -13,7 +13,7 @@ export const story: Story = {
     en: "A provider which does no operations.",
     zh: "一个不做任何操作的 provider 构件。",
   },
-  examples: [
+  conf: [
     {
       description: {
         title: "使用已定义好的 context 数据",

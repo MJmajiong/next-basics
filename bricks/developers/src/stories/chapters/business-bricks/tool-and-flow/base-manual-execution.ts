@@ -9,7 +9,7 @@ import {
 } from "../../../constants";
 
 export const story: Story = {
-  id: "manual-execution.base-manual-execution",
+  storyId: "manual-execution.base-manual-execution",
   type: "template",
   author: "jo",
   text: {
@@ -24,7 +24,7 @@ export const story: Story = {
     lib: "fa",
     icon: "running",
   },
-  examples: [
+  conf: [
     // 工具
     {
       template: "manual-execution.base-manual-execution",

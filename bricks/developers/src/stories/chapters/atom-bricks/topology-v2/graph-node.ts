@@ -1,7 +1,7 @@
 import { Story } from "../../../interfaces";
 
 export const story: Story = {
-  id: "graph.graph-node",
+  storyId: "graph.graph-node",
   type: "brick",
   author: "lynette",
   text: {
@@ -17,7 +17,7 @@ export const story: Story = {
     en: "",
     zh: "可以显示百分比/图标/数据的拓扑节点构件，常用于general-graph构件的子构件",
   },
-  examples: [
+  conf: [
     {
       brick: "graph.graph-node",
       properties: {

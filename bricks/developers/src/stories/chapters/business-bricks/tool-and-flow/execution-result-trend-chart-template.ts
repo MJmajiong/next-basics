@@ -3,7 +3,7 @@ import docMD from "../../../docs/tools/execution-result-trend-chart.md";
 import { TOOL_EXECUTE_TASK_ID2 } from "../../../constants";
 
 export const story: Story = {
-  id: "tools.execution-result-trend-chart",
+  storyId: "tools.execution-result-trend-chart",
   type: "template",
   author: "ice",
   text: {
@@ -18,7 +18,7 @@ export const story: Story = {
     lib: "fa",
     icon: "chart-line",
   },
-  examples: {
+  conf: {
     template: "tools.execution-result-trend-chart",
     params: {
       execId: TOOL_EXECUTE_TASK_ID2,

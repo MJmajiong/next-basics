@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import docMD from "../../../docs/basic-bricks/micro-app.md";
 
 export const story: Story = {
-  id: "basic-bricks.micro-app",
+  storyId: "basic-bricks.micro-app",
   type: "brick",
   author: "steve",
   deprecated: true,
@@ -18,7 +18,7 @@ export const story: Story = {
     lib: "fa",
     icon: "box",
   },
-  examples: {
+  conf: {
     brick: "basic-bricks.micro-app",
     slots: {
       titleBar: {

@@ -6,7 +6,7 @@ import {
 } from "../../../constants";
 
 export const story: Story = {
-  id: "real-time-monitor.process-monitor",
+  storyId: "real-time-monitor.process-monitor",
   type: "template",
   author: "lynette",
   text: {
@@ -21,7 +21,7 @@ export const story: Story = {
     lib: "antd",
     type: "number",
   },
-  examples: {
+  conf: {
     template: "real-time-monitor.process-monitor",
     params: {
       targets: [

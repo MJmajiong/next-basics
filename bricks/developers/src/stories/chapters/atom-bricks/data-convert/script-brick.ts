@@ -3,7 +3,7 @@ import docMD from "../../../docs/basic-bricks/script-brick.md";
 import { CMDB_HOST_INSTANCE_ID } from "../../../constants";
 
 export const story: Story = {
-  id: "basic-bricks.script-brick",
+  storyId: "basic-bricks.script-brick",
   type: "brick",
   author: "alren",
   deprecated: true,
@@ -19,7 +19,7 @@ export const story: Story = {
     lib: "fa",
     icon: "th",
   },
-  examples: [
+  conf: [
     {
       brick: "div",
       slots: {
