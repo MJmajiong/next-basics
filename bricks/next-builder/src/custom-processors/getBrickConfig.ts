@@ -1,5 +1,5 @@
 import { getRuntime } from "@next-core/brick-kit";
-import { find, get } from "lodash";
+import { get } from "lodash";
 import {
   Story,
   StoryDocSlot,
@@ -17,7 +17,13 @@ export function getBrickConfig(
   events: StoryDocEvent[];
   methods: StoryDocMethod[];
 } {
-  const story = find(data, ["id", storyId]);
+  const story = data.find((item) => {
+    if (item.storyId) {
+      return storyId === item.storyId;
+    } else if (item.id) {
+      return storyId === item.id;
+    }
+  });
   return {
     slots: get(story, "doc.slots") ?? [],
     properties: get(story, "doc.properties") ?? [],

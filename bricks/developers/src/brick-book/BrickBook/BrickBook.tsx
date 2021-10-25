@@ -45,7 +45,9 @@ export function BrickBook({
 }: BrickBookProps): React.ReactElement {
   const story = findStoryById(storyId, storyType, stories);
   const actions = story ? story.actions : null;
-  const confList: BrickConf[] = [].concat(story?.examples).filter(Boolean);
+  const confList: BrickConf[] = []
+    .concat(story?.conf || story?.examples)
+    .filter(Boolean);
   const developerStorage = storage.getItem(NS_DEVELOPERS) ?? {};
 
   const { t } = useTranslation(NS_DEVELOPERS);
@@ -77,7 +79,9 @@ export function BrickBook({
         <h1 style={{ fontSize: "16px", marginBottom: "10px" }}>
           {titleLinkEnabled ? (
             <Link
-              to={`/developers/brick-book/${story.type}/${story.id}`}
+              to={`/developers/brick-book/${story.type}/${
+                story.storyId || story.id
+              }`}
               {...(titleLinkTarget ? { target: titleLinkTarget } : {})}
             >
               {title} <FileSearchOutlined style={{ fontSize: "16px" }} />
@@ -99,7 +103,7 @@ export function BrickBook({
             {t(K.PREVIEW)} <AppstoreOutlined />
             <span className={cssStyle.subTitle}>
               {" "}
-              {story.category}:{story.type}:{story.id}
+              {story.category}:{story.type}:{story.storyId || story.id}
             </span>
           </div>
           <Radio.Group

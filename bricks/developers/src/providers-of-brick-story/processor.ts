@@ -38,14 +38,20 @@ export function findStoryById(
     (acc, chapter) => acc.concat(chapter.stories),
     []
   )
-    // 后台返回的数据存在doc为空的场景, 即会出现空文档的情况, 因此需要判断是否存在文档
     .filter(
-      (story) => !stories.find((s) => s.id === story.id && s.doc !== null)
+      (story) =>
+        !stories.find((s) => {
+          if (s.storyId && story.storyId) {
+            return s.storyId === story.storyId && s.doc !== null;
+          } else if (s.id && story.id) {
+            return s.id === story.id && s.doc !== null;
+          }
+        })
     )
     .concat(stories)
     .find((story) => {
       return (
-        story.id === id &&
+        (story.storyId === id || story.id === id) &&
         (storyType === "brick"
           ? ["atom-brick", "brick"].includes(story.type)
           : story.type === storyType)
@@ -120,7 +126,7 @@ export const listBrickStory = (
       const category = i18nText(chapter.title);
       const author = story.author || "";
       if (
-        searchByQ(q, [description, title, author, story.id]) &&
+        searchByQ(q, [description, title, author, story.storyId || story.id]) &&
         searchByCategory(categories, category)
       ) {
         const tags = [chapter.title];
@@ -128,7 +134,7 @@ export const listBrickStory = (
           tags.push(...story.tags);
         }
         const item: BrickRecord = {
-          id: story.id,
+          id: story.storyId || story.id,
           type: story.type,
           title: title,
           subTitle: story.author,
@@ -246,7 +252,9 @@ export const getBrickDocs = (): Promise<{
   ALL_BOOKS.reduce<Story[]>(
     (acc, chapter) => acc.concat(chapter.stories),
     []
-  ).forEach((story) => (docs[story.id as string] = story.doc));
+  ).forEach(
+    (story) => (docs[(story.storyId || story.id) as string] = story.doc)
+  );
 
   return Promise.resolve(docs);
 };

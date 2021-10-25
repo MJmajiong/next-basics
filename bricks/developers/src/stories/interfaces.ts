@@ -1,8 +1,6 @@
 import {
   Story as LegacyStory,
   Chapter as StoryChapter,
-  StoryConf,
-  I18nString,
 } from "@next-core/brick-types";
 
 // 由于在stories中有很多构建story引用了下面的类型，所以先暂不处理

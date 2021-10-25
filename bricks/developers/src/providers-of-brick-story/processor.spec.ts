@@ -15,13 +15,18 @@ jest.mock("../stories/chapters/business-bricks");
 describe("providers-of-brick-story", () => {
   it("findStoryById should be ok", () => {
     const story = findStoryById("fake-story-of-correct", "brick", [
-      { id: "test-id", type: "test-type" },
+      { storyId: "test-id", type: "test-type" },
     ]);
-    expect(story.id).toBe("fake-story-of-correct");
-    expect(story.examples.brick).toBe("fake-brick-of-correct");
-    expect(findStoryById("fake-story-of-business", "template", []).id).toBe(
-      "fake-story-of-business"
-    );
+    expect(story.storyId).toBe("fake-story-of-correct");
+    expect(story.conf.brick).toBe("fake-brick-of-correct");
+    expect(
+      findStoryById("fake-story-of-business", "template", []).storyId
+    ).toBe("fake-story-of-business");
+
+    const story2 = findStoryById("test-id", "brick", [
+      { id: "test-id", type: "brick" },
+    ]);
+    expect(story2.id).toBe("test-id");
   });
 
   it("stories examples is null, findStoryById should use the local stories", () => {
@@ -73,7 +78,7 @@ describe("providers-of-brick-story", () => {
     );
   });
 
-  it("listBrickStory support multiple examples", () => {
+  it("listBrickStory support multiple conf", () => {
     return listBrickStory("atom", "fake-template-of-empty").then((data) =>
       expect(data.total).toBe(0)
     );
@@ -841,7 +846,7 @@ describe("providers-of-brick-story", () => {
           en: "",
           zh: "",
         },
-        id: "presentational-bricks.general-list",
+        storyId: "presentational-bricks.general-list",
         doc: null,
         type: "brick",
       },
@@ -856,14 +861,14 @@ describe("providers-of-brick-story", () => {
           en: "",
           zh: "",
         },
-        id: "test.advance-setting",
+        storyId: "test.advance-setting",
         doc: null,
         type: "brick",
       },
       {
         author: "alex",
         category: "test",
-        s: [
+        conf: [
           {
             brick: "div",
             slots: {

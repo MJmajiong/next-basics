@@ -70,7 +70,17 @@ const properties = [
 
 const stories = [
   {
-    id: "basic-bricks.general-card",
+    storyId: "basic-bricks.general-card",
+    doc: {
+      slots,
+      properties,
+    },
+  },
+];
+
+const stories2 = [
+  {
+    id: "basic-bricks.general-card-with-id",
     doc: {
       slots,
       properties,
@@ -81,6 +91,15 @@ const stories = [
 describe("getBrickConfig", () => {
   it("should work", () => {
     expect(getBrickConfig(stories, "basic-bricks.general-card")).toEqual({
+      slots,
+      properties,
+      events: [],
+      methods: [],
+    });
+
+    expect(
+      getBrickConfig(stories2, "basic-bricks.general-card-with-id")
+    ).toEqual({
       slots,
       properties,
       events: [],
