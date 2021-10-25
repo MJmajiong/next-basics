@@ -9,21 +9,21 @@ export const story: Story = {
   author: "cyril",
   text: {
     en: "Collection History List",
-    zh: "采集历史列表",
+    zh: "采集历史列表"
   },
   description: {
     en: "",
-    zh: "展示自动采集历史列表",
+    zh: "展示自动采集历史列表"
   },
   icon: {
     lib: "fa",
-    icon: "box",
+    icon: "box"
   },
   conf: {
     template: "cmdb-auto-collection.collection-history-list",
     params: {
-      collectionConfigId: CMDB_AUTO_COLLECTION_CONFIG_ID,
-    },
+      collectionConfigId: CMDB_AUTO_COLLECTION_CONFIG_ID
+    }
   },
-  doc: docMD,
+  doc: docMD
 };

@@ -8,23 +8,23 @@ export const story: Story = {
   author: "jo",
   text: {
     en: "Monitor log Search",
-    zh: "监控日志查询",
+    zh: "监控日志查询"
   },
   description: {
     en: "Search Monitor Log",
-    zh: "搜索监控相关日志",
+    zh: "搜索监控相关日志"
   },
   icon: {
     lib: "fa",
-    icon: "search",
+    icon: "search"
   },
   conf: [
     {
       template: "monitor-log.search",
       params: {
-        hosts: [{ instanceId: CMDB_HOST_INSTANCE_ID }],
-      },
-    },
+        hosts: [{ instanceId: CMDB_HOST_INSTANCE_ID }]
+      }
+    }
   ],
-  doc: docMD,
+  doc: docMD
 };

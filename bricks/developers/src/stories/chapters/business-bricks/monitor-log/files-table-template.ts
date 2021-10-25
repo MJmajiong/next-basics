@@ -8,15 +8,15 @@ export const story: Story = {
   author: "jo",
   text: {
     en: "File List Presentation",
-    zh: "文件列表展示",
+    zh: "文件列表展示"
   },
   description: {
     en: "Show Files In A directory",
-    zh: "显示一个目录下问文件列表",
+    zh: "显示一个目录下问文件列表"
   },
   icon: {
     lib: "fa",
-    icon: "table",
+    icon: "table"
   },
   conf: [
     {
@@ -24,9 +24,9 @@ export const story: Story = {
       params: {
         fPath: ".",
         targets: [{ instanceId: CMDB_HOST_INSTANCE_ID }],
-        detailUrlTemplate: "path/#{filename}",
-      },
-    },
+        detailUrlTemplate: "path/#{filename}"
+      }
+    }
   ],
-  doc: docMD,
+  doc: docMD
 };

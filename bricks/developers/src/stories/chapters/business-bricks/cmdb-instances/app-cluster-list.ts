@@ -7,15 +7,15 @@ export const story: Story = {
   author: "lynette",
   text: {
     en: "Cluster - Ip Topology List",
-    zh: "集群-主机拓扑列表",
+    zh: "集群-主机拓扑列表"
   },
   description: {
     en: "Cluster - Ip Topology List",
-    zh: "同时展示单应用的集群主机信息",
+    zh: "同时展示单应用的集群主机信息"
   },
   icon: {
     lib: "fa",
-    icon: "list",
+    icon: "list"
   },
   conf: {
     brick: "cmdb-brick.app-cluster-list",
@@ -24,9 +24,9 @@ export const story: Story = {
       options: {
         withSearch: true,
         withTag: {
-          category: "type",
-        },
-      },
-    },
-  },
+          category: "type"
+        }
+      }
+    }
+  }
 };

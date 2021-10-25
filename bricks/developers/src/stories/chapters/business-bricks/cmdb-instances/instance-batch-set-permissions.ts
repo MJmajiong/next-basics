@@ -9,22 +9,22 @@ export const story: Story = {
   author: "lynette",
   text: {
     en: "instance-batch-set-permissions",
-    zh: "批量设置权限",
+    zh: "批量设置权限"
   },
   description: {
     en: "cmdb batch set permissions",
-    zh: "cmdb 批量设置权限",
+    zh: "cmdb 批量设置权限"
   },
   icon: {
     lib: "fa",
-    icon: "cogs",
+    icon: "cogs"
   },
   conf: {
     brick: "cmdb-instances.instance-batch-set-permissions",
     properties: {
       objectId: "APP",
-      selectedKeys: [CMDB_APP_INSTANCE_ID],
-    },
-  },
+      selectedKeys: [CMDB_APP_INSTANCE_ID]
+    }
+  }
   // doc: docMD
 };

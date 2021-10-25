@@ -8,27 +8,27 @@ export const story: Story = {
   author: "lynette",
   text: {
     en: "instance-set-permissions",
-    zh: "设置权限",
+    zh: "设置权限"
   },
   description: {
     en: "cmdb set permission",
-    zh: "cmdb 设置权限",
+    zh: "cmdb 设置权限"
   },
   icon: {
     lib: "fa",
-    icon: "cog",
+    icon: "cog"
   },
   conf: {
     brick: "cmdb-instances.instance-set-permissions",
     properties: {
       objectId: "HOST",
-      instanceId: CMDB_HOST_INSTANCE_ID,
+      instanceId: CMDB_HOST_INSTANCE_ID
     },
     events: {
       "update.single.select": {
-        action: "console.info",
-      },
-    },
-  },
+        action: "console.info"
+      }
+    }
+  }
   // doc: docMD
 };

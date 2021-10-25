@@ -8,22 +8,22 @@ export const story: Story = {
   author: "jo",
   text: {
     en: "Job tasks list",
-    zh: "作业任务列表",
+    zh: "作业任务列表"
   },
   description: {
     en: "Operation and maintenance automation job task list",
-    zh: "运维自动化作业任务列表",
+    zh: "运维自动化作业任务列表"
   },
   icon: {
     lib: "fa",
-    icon: "box",
+    icon: "box"
   },
   conf: {
     template: "ops-automation.job-tasks-list",
     params: {
       jobId: JOB_ID,
-      urlTemplate: "/",
-    },
+      urlTemplate: "/"
+    }
   },
-  doc: docMD,
+  doc: docMD
 };

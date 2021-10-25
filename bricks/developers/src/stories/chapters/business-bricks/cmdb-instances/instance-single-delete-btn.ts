@@ -8,15 +8,15 @@ export const story: Story = {
   author: "jo",
   text: {
     en: "Instance Single Delete button",
-    zh: "单实例删除按钮",
+    zh: "单实例删除按钮"
   },
   description: {
     en: "cmdb single instance delete",
-    zh: "cmdb 单实例删除（单个按钮形式删除）",
+    zh: "cmdb 单实例删除（单个按钮形式删除）"
   },
   icon: {
     lib: "fa",
-    icon: "trash",
+    icon: "trash"
   },
   conf: {
     template: "cmdb-instances.cmdb-instance-delete",
@@ -26,9 +26,9 @@ export const story: Story = {
       redirectUrl: "/xxxxx",
       btnName: "删除",
       events: {
-        action: "history.goBack",
-      },
-    },
+        action: "history.goBack"
+      }
+    }
   },
-  doc: docMD,
+  doc: docMD
 };

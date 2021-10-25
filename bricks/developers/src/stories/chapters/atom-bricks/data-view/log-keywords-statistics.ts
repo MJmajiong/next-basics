@@ -7,15 +7,15 @@ export const story: Story = {
   author: "jo",
   text: {
     en: "Log Keywords Statistics",
-    zh: "日志关键字统计",
+    zh: "日志关键字统计"
   },
   description: {
     en: "Log Statistics Presentation",
-    zh: "日志关键字统计",
+    zh: "日志关键字统计"
   },
   icon: {
     lib: "fa",
-    icon: "search",
+    icon: "search"
   },
   conf: [
     {
@@ -23,24 +23,24 @@ export const story: Story = {
       properties: {
         textConfig: {
           ERROR: 50,
-          INFO: 20,
-        },
-      },
+          INFO: 20
+        }
+      }
     },
     {
       brick: "monitor-log.keywords-statistics",
       properties: {
         dataSource: {
           errorValue: 20,
-          warnValue: 100,
+          warnValue: 100
         },
         textConfig: {
           ERROR: "errorValue",
-          WARN: "warnValue",
-        },
-      },
-    },
+          WARN: "warnValue"
+        }
+      }
+    }
   ],
   previewColumns: 2,
-  doc: docMD,
+  doc: docMD
 };

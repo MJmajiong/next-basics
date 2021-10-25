@@ -7,18 +7,18 @@ export const story: Story = {
   author: "ice",
   text: {
     en: "Alert Events Table Template",
-    zh: "告警事件列表模板",
+    zh: "告警事件列表模板"
   },
   description: {
     en: "table of alert events",
-    zh: "告警事件列表模板",
+    zh: "告警事件列表模板"
   },
   icon: {
     lib: "fa",
-    icon: "table",
+    icon: "table"
   },
   conf: {
     template: "monitor-alert.alert-events",
   },
-  doc: docMD,
+  doc: docMD
 };

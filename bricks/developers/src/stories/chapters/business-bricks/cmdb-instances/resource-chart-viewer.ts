@@ -7,15 +7,15 @@ export const story: Story = {
   author: "jo",
   text: {
     en: "Resource Chart Viewer",
-    zh: "资源图形展示",
+    zh: "资源图形展示"
   },
   description: {
     en: "Show Resource Chart Base on Model Instance Data",
-    zh: "基于模型实例数据展示资源图形",
+    zh: "基于模型实例数据展示资源图形"
   },
   icon: {
     lib: "fa",
-    icon: "chart-area",
+    icon: "chart-area"
   },
   conf: [
     {
@@ -24,8 +24,8 @@ export const story: Story = {
         type: "pie",
         objectId: "ISSUE_STAT",
         xAxisField: "name",
-        yAxisField: ["bug"],
-      },
+        yAxisField: ["bug"]
+      }
     },
     {
       template: "cmdb-instances.resource-chart-viewer",
@@ -33,8 +33,8 @@ export const story: Story = {
         type: "doughnut",
         objectId: "ISSUE_STAT",
         xAxisField: "name",
-        yAxisField: ["bug"],
-      },
+        yAxisField: ["bug"]
+      }
     },
     {
       template: "cmdb-instances.resource-chart-viewer",
@@ -42,8 +42,8 @@ export const story: Story = {
         type: "line",
         objectId: "ISSUE_STAT",
         xAxisField: "time",
-        yAxisField: ["bug", "issue"],
-      },
+        yAxisField: ["bug", "issue"]
+      }
     },
     {
       template: "cmdb-instances.resource-chart-viewer",
@@ -51,9 +51,9 @@ export const story: Story = {
         type: "bar",
         objectId: "ISSUE_STAT",
         xAxisField: "name",
-        yAxisField: ["bug", "issue"],
-      },
-    },
+        yAxisField: ["bug", "issue"]
+      }
+    }
   ],
-  doc: docMD,
+  doc: docMD
 };

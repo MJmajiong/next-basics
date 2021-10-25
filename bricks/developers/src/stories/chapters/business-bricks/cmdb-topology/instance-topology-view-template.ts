@@ -8,15 +8,15 @@ export const story: Story = {
   author: "ice",
   text: {
     en: "Instance Topology",
-    zh: "实例拓扑",
+    zh: "实例拓扑"
   },
   description: {
     en: "show instances relation by topology view",
-    zh: "用拓扑的方式来展示实例间关系",
+    zh: "用拓扑的方式来展示实例间关系"
   },
   icon: {
     lib: "fa",
-    icon: "fire-alt",
+    icon: "fire-alt"
   },
   conf: {
     template: "topology.instance-topology-view",
@@ -27,11 +27,11 @@ export const story: Story = {
         object_id: "HOST",
         child: [
           {
-            parentOut: "owner",
-          },
-        ],
-      },
-    },
+            parentOut: "owner"
+          }
+        ]
+      }
+    }
   },
-  doc: docMD,
+  doc: docMD
 };

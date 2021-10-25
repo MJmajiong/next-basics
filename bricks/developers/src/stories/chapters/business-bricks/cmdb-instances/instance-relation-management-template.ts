@@ -8,15 +8,15 @@ export const story: Story = {
   author: "jo",
   text: {
     en: "Instance Relation Management",
-    zh: "通用实例关系管理",
+    zh: "通用实例关系管理"
   },
   description: {
     en: "Instance Relation Management template",
-    zh: "通过模板搭建的通用实例场景",
+    zh: "通过模板搭建的通用实例场景"
   },
   icon: {
     lib: "fa",
-    icon: "praying-hands",
+    icon: "praying-hands"
   },
   conf: {
     template: "cmdb-instances.instance-relation",
@@ -24,8 +24,8 @@ export const story: Story = {
       instanceId: CMDB_HOST_INSTANCE_ID,
       objectId: "HOST",
       relationSideId: "owner",
-      cardTitle: "负责人",
-    },
+      cardTitle: "负责人"
+    }
   },
-  doc: docMD,
+  doc: docMD
 };

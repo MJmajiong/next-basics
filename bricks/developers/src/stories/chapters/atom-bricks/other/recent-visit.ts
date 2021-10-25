@@ -7,15 +7,15 @@ export const story: Story = {
   author: "lynette",
   text: {
     en: "Recent visit",
-    zh: "最近访问",
+    zh: "最近访问"
   },
   description: {
     en: "Recent visit",
-    zh: "可以配置最近n条记录的最近访问构件",
+    zh: "可以配置最近n条记录的最近访问构件"
   },
   icon: {
     lib: "fa",
-    icon: "eye",
+    icon: "eye"
   },
   conf: [
     {
@@ -32,9 +32,9 @@ export const story: Story = {
                 property: "id",
                 data: {
                   id: "1",
-                  name: "history",
-                },
-              },
+                  name: "history"
+                }
+              }
             },
             {
               brick: "visit-history.recent-visit",
@@ -42,21 +42,21 @@ export const story: Story = {
                 namespace: "recent-visit-demo",
                 property: "id",
                 fields: {
-                  label: "name",
+                  label: "name"
                 },
                 detailUrlTemplate: "/developers/brick-book/atom/recent-visit",
-                visitCountLimit: 10,
+                visitCountLimit: 10
               },
               events: {
                 "recent.visit.click": {
-                  action: "console.log",
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
+                  action: "console.log"
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
   ],
-  doc,
+  doc
 };

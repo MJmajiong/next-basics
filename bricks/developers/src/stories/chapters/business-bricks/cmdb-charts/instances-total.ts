@@ -7,15 +7,15 @@ export const story: Story = {
   author: "cyril",
   text: {
     en: "instance total",
-    zh: "实例总数",
+    zh: "实例总数"
   },
   description: {
     en: "show the total of cmdb instances",
-    zh: "展示 CMDB 实例总数",
+    zh: "展示 CMDB 实例总数"
   },
   icon: {
     lib: "antd",
-    type: "number",
+    type: "number"
   },
   conf: [
     {
@@ -23,20 +23,20 @@ export const story: Story = {
       params: {
         objectId: "HOST",
         query: {
-          _agentStatus: "正常",
+          _agentStatus: "正常"
         },
         title: "正常主机个数",
         icon: {
           lib: "antd",
-          type: "dashboard",
+          type: "dashboard"
         },
         format: {
           precision: 0,
-          unit: "个",
+          unit: "个"
         },
-        valueColor: "rgba(140, 140, 140, 1)",
-      },
-    },
+        valueColor: "rgba(140, 140, 140, 1)"
+      }
+    }
   ],
-  doc: docMD,
+  doc: docMD
 };

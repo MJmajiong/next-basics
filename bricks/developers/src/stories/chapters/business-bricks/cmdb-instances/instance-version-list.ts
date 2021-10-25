@@ -7,15 +7,15 @@ export const story: Story = {
   author: "lynette",
   text: {
     en: "instance-version-list",
-    zh: "时间线卡片列表",
+    zh: "时间线卡片列表"
   },
   description: {
     en: "cmdb instance version timeline",
-    zh: "cmdb 版本时间线卡片列表",
+    zh: "cmdb 版本时间线卡片列表"
   },
   icon: {
     lib: "fa",
-    icon: "history",
+    icon: "history"
   },
   conf: {
     brick: "cmdb-instances.instance-version-list",
@@ -23,9 +23,9 @@ export const story: Story = {
       objectId: "TOOL_HISTORY_VERSION",
       showFilter: true,
       card: {
-        fields: ["vName", "vCreator", "checkType", "ctime"],
-      },
-    },
+        fields: ["vName", "vCreator", "checkType", "ctime"]
+      }
+    }
   },
-  doc: docMD,
+  doc: docMD
 };

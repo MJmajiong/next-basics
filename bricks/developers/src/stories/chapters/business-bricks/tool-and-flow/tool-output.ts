@@ -7,21 +7,21 @@ export const story: Story = {
   author: "jo",
   text: {
     en: "Tool Log Output",
-    zh: "工具执行日志信息输出",
+    zh: "工具执行日志信息输出"
   },
   description: {
     en: "Show Tool Log Message",
-    zh: "展示工具输出的日志信息",
+    zh: "展示工具输出的日志信息"
   },
   icon: {
     lib: "fa",
-    icon: "tools",
+    icon: "tools"
   },
   conf: {
     template: "tools.tool-output",
     params: {
-      execId: "201912_task15dd8a076c97b622279c",
-    },
+      execId: "201912_task15dd8a076c97b622279c"
+    }
   },
-  doc: docMD,
+  doc: docMD
 };

@@ -12,7 +12,8 @@ export const story: Story = {
     zh: "自定义数据转换函数",
   },
   description: {
-    en: "you can define custom function to process data and pass precessed data to other bricks",
+    en:
+      "you can define custom function to process data and pass precessed data to other bricks",
     zh: "可自定义函数来转换数据，并将处理后的数据给到其他构件",
   },
   icon: {
@@ -82,7 +83,8 @@ export const story: Story = {
               brick: "basic-bricks.script-brick",
               properties: {
                 id: "example-2",
-                fun: "console.log('data', data);return {'hostname': '通过useResolve获得主机名：'+data.hostname};",
+                fun:
+                  "console.log('data', data);return {'hostname': '通过useResolve获得主机名：'+data.hostname};",
                 target: "#id-div-demo-2",
                 transform: {
                   textContent: "@{hostname}",

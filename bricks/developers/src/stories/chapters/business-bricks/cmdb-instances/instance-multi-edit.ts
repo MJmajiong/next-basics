@@ -8,34 +8,34 @@ export const story: Story = {
   author: "lynette",
   text: {
     en: "Instance Multi Edit",
-    zh: "多实例单属性编辑",
+    zh: "多实例单属性编辑"
   },
   description: {
     en: "cmdb multiple instances edit",
-    zh: "cmdb 多实例单属性编辑",
+    zh: "cmdb 多实例单属性编辑"
   },
   icon: {
     lib: "fa",
-    icon: "edit",
+    icon: "edit"
   },
   conf: {
     brick: "cmdb-instances.instance-multi-edit",
     properties: {
       selectedKeys: [CMDB_APP_INSTANCE_ID],
-      objectId: "APP",
-    },
+      objectId: "APP"
+    }
   },
   actions: [
     {
       text: "Open Modal",
       method: "onHandleVisible",
-      args: [true],
+      args: [true]
     },
     {
       text: "Close Modal",
       method: "onHandleVisible",
-      args: [false],
-    },
+      args: [false]
+    }
   ],
-  doc: docMD,
+  doc: docMD
 };

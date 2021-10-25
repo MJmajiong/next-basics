@@ -7,25 +7,25 @@ export const story: Story = {
   author: "jo",
   text: {
     en: "Deploy List",
-    zh: "部署列表",
+    zh: "部署列表"
   },
   description: {
     en: "Show History Deploy Record",
-    zh: "展示历史部署的记录",
+    zh: "展示历史部署的记录"
   },
   icon: {
     lib: "fa",
-    icon: "history",
+    icon: "history"
   },
   conf: {
     template: "deploy-history.list",
     params: {
       cardProps: {
-        cardTitle: "部署列表",
+        cardTitle: "部署列表"
       },
       start_time: "now-30d",
-      linkUrl: "deploy/#{app_id}",
-    },
+      linkUrl: "deploy/#{app_id}"
+    }
   },
-  doc: docMD,
+  doc: docMD
 };

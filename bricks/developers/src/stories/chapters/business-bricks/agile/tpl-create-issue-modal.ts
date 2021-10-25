@@ -7,16 +7,16 @@ export const story: Story = {
   author: "alren",
   text: {
     en: "issue create modal",
-    zh: "新建ISSUE弹框模板",
+    zh: "新建ISSUE弹框模板"
   },
   icon: {
     lib: "fa",
     icon: "comments",
-    prefix: "fas",
+    prefix: "fas"
   },
   description: {
     en: "issue create modal",
-    zh: "封装了标准issue新建的弹框",
+    zh: "封装了标准issue新建的弹框"
   },
   conf: [
     {
@@ -28,7 +28,7 @@ export const story: Story = {
             {
               brick: "basic-bricks.general-button",
               properties: {
-                buttonName: "click",
+                buttonName: "click"
               },
               events: {
                 "general.button.click": [
@@ -38,24 +38,24 @@ export const story: Story = {
                     args: [
                       {
                         author: "${SYS.userInstanceId}",
-                        title: "create demo",
-                      },
-                    ],
+                        title: "create demo"
+                      }
+                    ]
                   },
                   {
                     target: "agile\\.tpl-create-issue-modal",
                     properties: {
                       staticValues: {
-                        step: "to-be-developed",
-                      },
-                    },
+                        step: "to-be-developed"
+                      }
+                    }
                   },
                   {
                     target: "agile\\.tpl-create-issue-modal",
-                    method: "open",
-                  },
-                ],
-              },
+                    method: "open"
+                  }
+                ]
+              }
             },
             {
               brick: "agile.tpl-create-issue-modal",
@@ -68,17 +68,17 @@ export const story: Story = {
                       properties: {
                         name: "custom",
                         label: "自定义",
-                        placeholder: "通过插槽额外添加的表单项",
-                      },
-                    },
-                  ],
-                },
-              },
-            },
-          ],
-        },
-      },
-    },
+                        placeholder: "通过插槽额外添加的表单项"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
   ],
-  doc: docMD,
+  doc: docMD
 };

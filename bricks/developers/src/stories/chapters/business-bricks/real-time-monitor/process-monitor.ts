@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import docMD from "../../../docs/real-time-monitor/process-monitor.md";
 import {
   CMDB_HOST_INSTANCE_ID,
-  CMDB_HOST_INSTANCE_IP,
+  CMDB_HOST_INSTANCE_IP
 } from "../../../constants";
 
 export const story: Story = {
@@ -11,15 +11,15 @@ export const story: Story = {
   author: "lynette",
   text: {
     en: "Process Monitor",
-    zh: "进程监控",
+    zh: "进程监控"
   },
   description: {
     en: "Process Monitor",
-    zh: "cpu进程和内存进程趋势图",
+    zh: "cpu进程和内存进程趋势图"
   },
   icon: {
     lib: "antd",
-    type: "number",
+    type: "number"
   },
   conf: {
     template: "real-time-monitor.process-monitor",
@@ -27,11 +27,11 @@ export const story: Story = {
       targets: [
         {
           instanceId: CMDB_HOST_INSTANCE_ID,
-          ip: CMDB_HOST_INSTANCE_IP,
-        },
+          ip: CMDB_HOST_INSTANCE_IP
+        }
       ],
-      keyword: "cmdb_service",
-    },
+      keyword: "cmdb_service"
+    }
   },
-  doc: docMD,
+  doc: docMD
 };

@@ -8,28 +8,28 @@ export const story: Story = {
   author: "cyril",
   text: {
     en: "Instance Edit",
-    zh: "单实例编辑",
+    zh: "单实例编辑"
   },
   description: {
     en: "cmdb instances edit",
-    zh: "cmdb 单实例编辑",
+    zh: "cmdb 单实例编辑"
   },
   icon: {
     lib: "fa",
-    icon: "pen",
+    icon: "pen"
   },
   conf: {
     brick: "cmdb-instances.instance-edit",
     properties: {
       instanceId: CMDB_HOST_INSTANCE_ID,
       objectId: "HOST",
-      blackList: ["_agentStatus", "_agentHeartBeat"],
+      blackList: ["_agentStatus", "_agentHeartBeat"]
     },
     events: {
       "update.single.cancel": {
-        action: "console.log",
-      },
-    },
+        action: "console.log"
+      }
+    }
   },
-  doc: docMD,
+  doc: docMD
 };

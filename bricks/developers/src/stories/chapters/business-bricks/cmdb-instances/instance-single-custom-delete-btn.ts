@@ -8,15 +8,15 @@ export const story: Story = {
   author: "jo",
   text: {
     en: "Instance Single custom Delete button",
-    zh: "单实例删除按钮（自定义提示）",
+    zh: "单实例删除按钮（自定义提示）"
   },
   description: {
     en: "cmdb single instance delete custom message",
-    zh: "cmdb 单实例删除按钮，可自定义提示内容 ",
+    zh: "cmdb 单实例删除按钮，可自定义提示内容 "
   },
   icon: {
     lib: "fa",
-    icon: "trash",
+    icon: "trash"
   },
   conf: {
     template: "cmdb-instances.general-instance-delete",
@@ -25,8 +25,8 @@ export const story: Story = {
       instanceId: CMDB_APP_DELETE_ID,
       msg: "自定义内容",
       redirectUrl: "/xxxxx",
-      btnName: "删除",
-    },
+      btnName: "删除"
+    }
   },
-  doc: docMD,
+  doc: docMD
 };

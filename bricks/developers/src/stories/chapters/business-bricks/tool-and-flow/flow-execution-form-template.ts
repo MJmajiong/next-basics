@@ -8,15 +8,15 @@ export const story: Story = {
   author: "jo",
   text: {
     en: "Dynamic Flow execution Form Template",
-    zh: "动态参数的流程执行",
+    zh: "动态参数的流程执行"
   },
   description: {
     en: "Dynamic Flow Execution Template",
-    zh: "基于模板搭建的动态参数流程执行场景",
+    zh: "基于模板搭建的动态参数流程执行场景"
   },
   icon: {
     lib: "fa",
-    icon: "running",
+    icon: "running"
   },
   conf: {
     brick: "div",
@@ -26,7 +26,7 @@ export const story: Story = {
         bricks: [
           {
             brick: "presentational-bricks.brick-utils",
-            bg: true,
+            bg: true
           },
           {
             template: "tools.flow-execution-form",
@@ -37,18 +37,18 @@ export const story: Story = {
                   {
                     target: "presentational-bricks\\.brick-utils",
                     method: "message",
-                    args: ["success", "流程执行中"],
+                    args: ["success", "流程执行中"]
                   },
                   {
-                    action: "history.replace",
-                  },
-                ],
-              },
-            },
-          },
-        ],
-      },
-    },
+                    action: "history.replace"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    }
   },
-  doc: docMD,
+  doc: docMD
 };

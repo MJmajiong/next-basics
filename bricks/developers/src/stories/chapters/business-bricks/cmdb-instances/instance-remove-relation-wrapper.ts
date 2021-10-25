@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import docMD from "../../../docs/cmdb-instances/instance-remove-relation-wrapper.md";
 import {
   CMDB_HOST_INSTANCE_ID,
-  CMDB_USER_INSTANCE_ID,
+  CMDB_USER_INSTANCE_ID
 } from "../../../constants";
 
 export const story: Story = {
@@ -11,15 +11,15 @@ export const story: Story = {
   author: "cyril",
   text: {
     en: "instance-remove-relation",
-    zh: "移除实例关系（含提示）",
+    zh: "移除实例关系（含提示）"
   },
   description: {
     en: "cmdb instance remove relation wrapper",
-    zh: "cmdb 移除实例关系（含提示）",
+    zh: "cmdb 移除实例关系（含提示）"
   },
   icon: {
     lib: "fa",
-    icon: "unlink",
+    icon: "unlink"
   },
   conf: {
     template: "cmdb-instances.instance-remove-relation-wrapper",
@@ -30,9 +30,9 @@ export const story: Story = {
       selectedKeys: [CMDB_USER_INSTANCE_ID],
       relationSideId: "owner",
       configProps: {
-        type: "danger",
-      },
-    },
+        type: "danger"
+      }
+    }
   },
-  doc: docMD,
+  doc: docMD
 };

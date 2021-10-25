@@ -2,7 +2,7 @@ import { Story } from "../../../interfaces";
 import docMD from "../../../docs/tools/tool-execution-results-table.md";
 import {
   TOOL_EXECUTE_TASK_ID,
-  CMDB_HOST_INSTANCE_ID,
+  CMDB_HOST_INSTANCE_ID
 } from "../../../constants";
 
 export const story: Story = {
@@ -11,15 +11,15 @@ export const story: Story = {
   author: "lynette",
   text: {
     en: "Tool execution results table",
-    zh: "工具执行结果列表",
+    zh: "工具执行结果列表"
   },
   description: {
     en: "Tool execution results table template",
-    zh: "基于模板搭建的工具执行结果列表场景",
+    zh: "基于模板搭建的工具执行结果列表场景"
   },
   icon: {
     lib: "fa",
-    icon: "table",
+    icon: "table"
   },
   conf: {
     brick: "div",
@@ -35,11 +35,11 @@ export const story: Story = {
                 TOOL_EXECUTE_TASK_ID,
                 {
                   brief: "false",
-                  targetIds: CMDB_HOST_INSTANCE_ID,
+                  targetIds: CMDB_HOST_INSTANCE_ID
                 },
-                "192.168.100.162",
-              ],
-            },
+                "192.168.100.162"
+              ]
+            }
           },
           {
             template: "tools.tool-execution-results-table",
@@ -48,19 +48,19 @@ export const story: Story = {
                 {
                   name: "columns",
                   provider: "tools\\.get-execute-result",
-                  field: "columns",
+                  field: "columns"
                 },
                 {
                   name: "dataSource",
                   provider: "tools\\.get-execute-result",
-                  field: "dataSource",
-                },
-              ],
-            },
-          },
-        ],
-      },
-    },
+                  field: "dataSource"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
   },
-  doc: docMD,
+  doc: docMD
 };

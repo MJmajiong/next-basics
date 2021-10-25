@@ -7,33 +7,33 @@ export const story: Story = {
   author: "lynette",
   text: {
     en: "instance-multi-create",
-    zh: "多实例创建",
+    zh: "多实例创建"
   },
   description: {
     en: "cmdb instance multiple create",
-    zh: "cmdb 多实例创建",
+    zh: "cmdb 多实例创建"
   },
   icon: {
     lib: "fa",
-    icon: "cart-plus",
+    icon: "cart-plus"
   },
   conf: {
     brick: "cmdb-instances.instance-multi-create",
     properties: {
       objectId: "HOST",
-      attributeKeys: ["hostname", "ip"],
+      attributeKeys: ["hostname", "ip"]
     },
     events: {
       "create.multi.success": {
-        action: "console.log",
+        action: "console.log"
       },
       "create.multi.failed": {
-        action: "console.warn",
+        action: "console.warn"
       },
       "create.multi.canceled": {
-        action: "console.warn",
-      },
-    },
+        action: "console.warn"
+      }
+    }
   },
-  doc: docMD,
+  doc: docMD
 };

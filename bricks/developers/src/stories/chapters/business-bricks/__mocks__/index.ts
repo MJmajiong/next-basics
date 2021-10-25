@@ -4,7 +4,7 @@ export const businessBook: Chapter[] = [
   {
     title: {
       en: "Fake Chapter 1",
-      zh: "Fake Chapter 1",
+      zh: "Fake Chapter 1"
     },
     stories: [
       {
@@ -12,20 +12,20 @@ export const businessBook: Chapter[] = [
         type: "template",
         text: {
           en: "Fake Story of Correct En",
-          zh: "Fake Story of Correct Zh",
+          zh: "Fake Story of Correct Zh"
         },
         conf: {
           template: "fake-brick-of-business",
           properties: {
-            for: "good",
+            for: "good"
           },
           events: {
             ok: {
-              action: "console.log",
-            },
-          },
-        },
-      },
-    ],
-  },
+              action: "console.log"
+            }
+          }
+        }
+      }
+    ]
+  }
 ];
