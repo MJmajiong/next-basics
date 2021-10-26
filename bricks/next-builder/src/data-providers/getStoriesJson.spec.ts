@@ -1,5 +1,5 @@
 const mockGetInstance = jest.fn();
-jest.mock("@next-core/editor-bricks-helper", () => {
+jest.mock("./utils/StoriesCache", () => {
   return {
     StoriesCache: {
       getInstance: mockGetInstance,
@@ -40,7 +40,7 @@ describe("getStroriesJSON", () => {
 
   it("should work with args", async () => {
     mockGetInstance.mockReturnValue({
-      storyList: [{ init: true }],
+      storyList: [],
       install: function () {
         this.storyList.push({ id: 1 });
       },
@@ -53,6 +53,52 @@ describe("getStroriesJSON", () => {
         list: [],
         fields: ["install"],
       })
-    ).toEqual([{ init: true }, { id: 1 }]);
+    ).toEqual([{ id: 1 }]);
+  });
+
+  it("getInstallList should work", async () => {
+    mockGetInstance.mockReturnValue({
+      storyList: [{ id: "init" }],
+      install: function (args) {
+        if (args.list) {
+          args.list.forEach((item) => {
+            this.storyList.push({ id: item });
+          });
+        }
+      },
+      getStoryList: function () {
+        return this.storyList;
+      },
+    });
+    expect(
+      await getStoriesJSON({
+        list: [],
+        fields: ["install"],
+        dataSource: [
+          {
+            brick: "a",
+            children: [
+              {
+                brick: "b",
+                children: [
+                  {
+                    brick: "c",
+                  },
+                ],
+              },
+              {
+                brick: "d",
+              },
+            ],
+          },
+        ],
+      })
+    ).toEqual([
+      { id: "init" },
+      { id: "c" },
+      { id: "b" },
+      { id: "d" },
+      { id: "a" },
+    ]);
   });
 });
