@@ -27,7 +27,7 @@
     "change-case": "^4.1.2",
     "classnames": "^2.3.1",
     "react-markdown": "^5.0.3",
-    "remark-gfm": "^1.0.0",
+    "remark-gfm": "^3.0.1",
     "typedoc": "^0.20.37"
   },
   "sideEffects": true,
