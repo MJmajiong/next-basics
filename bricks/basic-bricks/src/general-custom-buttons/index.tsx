@@ -262,7 +262,7 @@ export class GeneralCustomButtonsElement extends UpdatingElement {
   /**
    * @kind Array<'click'|'hover'|'contextMenu'>
    * @required false
-   * @default -
+   * @default ['click']
    * @description 触发的下拉行为
    */
   @property({ attribute: false })
