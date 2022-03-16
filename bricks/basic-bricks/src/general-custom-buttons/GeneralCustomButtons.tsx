@@ -36,6 +36,7 @@ interface AdminButtonProps {
   alignment?: "start" | "center" | "end" | "stretch";
   dropdownPlacement?: DropdownPlacement;
   dropdownBtnType?: "default" | "link";
+  triggerType?: Array<"click" | "hover" | "contextMenu">;
 }
 
 const AvailableButtonTypeSet = new Set([
@@ -49,6 +50,7 @@ const AvailableButtonTypeSet = new Set([
 ]);
 
 export class GeneralCustomButtons extends React.Component<AdminButtonProps> {
+  private divRef = React.createRef<HTMLDivElement>();
   constructor(props: AdminButtonProps) {
     super(props);
     this.handleMenuClick = this.handleMenuClick.bind(this);
@@ -59,6 +61,14 @@ export class GeneralCustomButtons extends React.Component<AdminButtonProps> {
       info.key as string,
       (info.item as React.Component<any>).props["data-button"]
     );
+  }
+
+  componentDidMount() {
+    (this.props.triggerType &&
+      (this.props.triggerType || []).includes("click")) ||
+      this.divRef.current.addEventListener("click", (e) => {
+        e.stopPropagation();
+      });
   }
 
   render() {
@@ -74,6 +84,7 @@ export class GeneralCustomButtons extends React.Component<AdminButtonProps> {
       dropdownBtnText,
       alignment,
       dropdownBtnType,
+      triggerType,
     } = this.props;
     const propsButtons = buttonConfigs.filter((btn) => !btn.hide);
     const buttons = propsButtons
@@ -238,7 +249,7 @@ export class GeneralCustomButtons extends React.Component<AdminButtonProps> {
       dropdown = (
         <Dropdown
           overlay={menu}
-          trigger={["click"]}
+          trigger={triggerType || ["click"]}
           placement={dropdownPlacement ?? "bottomRight"}
         >
           {isMoreButton ? (
@@ -304,6 +315,7 @@ export class GeneralCustomButtons extends React.Component<AdminButtonProps> {
       <div
         className={style.customButtonsContainer}
         style={{ justifyContent: alignment ?? "center" }}
+        ref={this.divRef}
       >
         {buttons}
         {dropdown}

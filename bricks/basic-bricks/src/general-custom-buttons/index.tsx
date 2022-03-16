@@ -259,6 +259,15 @@ export class GeneralCustomButtonsElement extends UpdatingElement {
     }
   }
 
+  /**
+   * @kind Array<'click'|'hover'|'contextMenu'>
+   * @required false
+   * @default -
+   * @description 触发的下拉行为
+   */
+  @property({ attribute: false })
+  triggerType: Array<"click" | "hover" | "contextMenu">;
+
   connectedCallback(): void {
     this._render();
   }
@@ -302,6 +311,7 @@ export class GeneralCustomButtonsElement extends UpdatingElement {
           alignment={this.alignment}
           dropdownPlacement={this.dropdownPlacement}
           dropdownBtnType={this.dropdownBtnType}
+          triggerType={this.triggerType}
         />,
         this
       );
