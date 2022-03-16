@@ -66,7 +66,7 @@ export class GeneralCustomButtons extends React.Component<AdminButtonProps> {
   componentDidMount() {
     this.props.triggerType &&
       !(this.props.triggerType || []).includes("click") &&
-      this.divRef.current.addEventListener("click", (e) => {
+      this.divRef.current?.addEventListener("click", (e) => {
         e.stopPropagation();
       });
   }

@@ -14,6 +14,46 @@ describe("topology view admin buttons", () => {
     expect(wrapper.find("Menu").length).toBe(0);
   });
 
+  it("should work with hover trigger", () => {
+    const mockSave = jest.fn();
+    const buttons: CustomButton[] = [
+      {
+        isDropdown: true,
+        text: "a-button",
+        icon: "save",
+        buttonUrl: "search",
+        eventName: "save",
+      },
+      {
+        isDropdown: false,
+        text: "b-button",
+        icon: "edit",
+        buttonHref: "http://x.y.z",
+        eventName: "edit",
+      },
+      {
+        isDropdown: false,
+        text: "bb-button",
+        icon: "saveAs",
+        eventName: "saveAs",
+      },
+      {
+        isDropdown: true,
+        text: "c-button",
+        icon: "delete",
+        eventName: "delete",
+      },
+    ];
+    const wrapper = shallow(
+      <GeneralCustomButtons
+        buttons={buttons}
+        handleClick={mockSave}
+        triggerType={["hover"]}
+      />
+    );
+    expect(wrapper.find(Dropdown).props().trigger).toEqual(["hover"]);
+  });
+
   it("should work with buttons", () => {
     const buttons: CustomButton[] = [
       {
