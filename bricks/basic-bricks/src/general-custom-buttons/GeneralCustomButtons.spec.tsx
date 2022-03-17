@@ -14,7 +14,7 @@ describe("topology view admin buttons", () => {
     expect(wrapper.find("Menu").length).toBe(0);
   });
 
-  it("should work with hover trigger", () => {
+  it("trigger type", () => {
     const mockSave = jest.fn();
     const buttons: CustomButton[] = [
       {
@@ -52,6 +52,10 @@ describe("topology view admin buttons", () => {
       />
     );
     expect(wrapper.find(Dropdown).props().trigger).toEqual(["hover"]);
+    const defaultWrapper = shallow(
+      <GeneralCustomButtons buttons={buttons} handleClick={mockSave} />
+    );
+    expect(defaultWrapper.find(Dropdown).props().trigger).toEqual(["click"]);
   });
 
   it("should work with buttons", () => {
